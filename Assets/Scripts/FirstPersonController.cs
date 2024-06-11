@@ -1,13 +1,17 @@
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(WaterEffects))]
 public class FirstPersonController : MonoBehaviour
 {
     public float speed = 6.0f;
+    public float runningSpeed = 8.0f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
 
     public float swimSpeed = 3.0f;
+    public float swimRunningSpeed = 3.5f;
     public float swimJumpSpeed = 4.0f;
     public float swimGravity = 2.0f;  // Adjusted for a more realistic sinking effect
     public float passiveSinkSpeed = 1.0f;  // Speed at which the player sinks passively
@@ -16,14 +20,22 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
     private bool isInWater = false;
+    
+    public GameObject fogWall;
+
+    private WaterEffects waterEffects;
+    
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        waterEffects = GetComponent<WaterEffects>();
     }
 
     void Update()
     {
+        fogWall.SetActive(isInWater);
+        
         if (isInWater)
         {
             WaterMovement();
@@ -40,7 +52,7 @@ public class FirstPersonController : MonoBehaviour
         {
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
-            moveDirection *= speed;
+            moveDirection *=  !Input.GetKey(KeyCode.LeftShift)?speed:runningSpeed;
 
             if (Input.GetButton("Jump"))
             {
@@ -57,8 +69,8 @@ public class FirstPersonController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         float verticalMovement = 0;
-
-        if (Input.GetButton("Jump") && transform.position.y < waterSurfaceLevel - 0.5f)
+        // && transform.position.y < waterSurfaceLevel - 0.5f
+        if (Input.GetButton("Jump"))
         {
             verticalMovement = swimJumpSpeed;
         }
@@ -70,14 +82,17 @@ public class FirstPersonController : MonoBehaviour
         {
             verticalMovement = -passiveSinkSpeed;
         }
+        
+        verticalMovement -= swimGravity * Time.deltaTime;
 
         moveDirection = new Vector3(horizontal, verticalMovement, vertical);
         moveDirection = transform.TransformDirection(moveDirection);
-        moveDirection *= swimSpeed;
+        moveDirection *= !Input.GetKey(KeyCode.LeftShift)?swimSpeed:swimRunningSpeed;
 
         // Move the controller
         controller.Move(moveDirection * Time.deltaTime);
 
+        /*
         if (controller.isGrounded && transform.position.y >= waterSurfaceLevel)
         {
             SetInWater(false);
@@ -90,10 +105,21 @@ public class FirstPersonController : MonoBehaviour
             position.y = waterSurfaceLevel;
             transform.position = position;
         }
+        */
     }
 
     public void SetInWater(bool inWater)
     {
         isInWater = inWater;
+
+        if (isInWater)
+        {
+            waterEffects.WaterEffectActive();
+        }
+        else
+        {
+            waterEffects.WaterEffectDisactive();
+        }
+        
     }
 }

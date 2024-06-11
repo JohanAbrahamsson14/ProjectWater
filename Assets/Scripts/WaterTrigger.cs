@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class WaterTrigger : MonoBehaviour
 {
+    
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
