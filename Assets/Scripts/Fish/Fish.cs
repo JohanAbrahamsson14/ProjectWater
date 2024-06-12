@@ -146,7 +146,8 @@ public class Fish : MonoBehaviour
         {
             if (obj != collider)
             {
-                neighbors.Add(obj.GetComponent<Fish>());
+                obj.gameObject.TryGetComponent<Fish>(out Fish fish);
+                neighbors.Add(fish);
             }
         }
 
