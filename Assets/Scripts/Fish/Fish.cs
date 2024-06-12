@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class Fish : MonoBehaviour
 {
     public float speed = 2.0f;
+    public float turnSpeed = 5.0f;
     public float neighborDistance = 3.0f;
     public float separationDistance = 1.0f;
     public float cohesionWeight = 1.0f;
@@ -15,11 +16,12 @@ public class Fish : MonoBehaviour
     public float wallAvoidanceWeight = 5.0f;
     public float wallDetectionDistance = 2.0f;
     public LayerMask wallLayer;
+    
+    public Collider collider;
 
-    public Vector3 beginingDirection = Vector3.forward;
+    public Vector3 initialDirection = Vector3.forward;
 
-    private List<Fish> neighborFish;
-
+    public List<Fish> neighborFish;
     private Vector3 velocity;
 
     private Vector3 direction;
@@ -27,7 +29,7 @@ public class Fish : MonoBehaviour
     void Start()
     {
         velocity = transform.forward * speed;
-        beginingDirection = beginingDirection.normalized;
+        initialDirection = initialDirection.normalized;
     }
 
     void Update()
@@ -40,12 +42,15 @@ public class Fish : MonoBehaviour
         Vector3 predatorAvoidance = AvoidPredators() * predatorAvoidanceWeight;
         Vector3 wallAvoidance = AvoidWalls() * wallAvoidanceWeight;
         
-        direction = cohesion + alignment + separation + predatorAvoidance + wallAvoidance + beginingDirection;
-        velocity += direction * Time.deltaTime;
+        direction = cohesion + alignment + separation + predatorAvoidance + wallAvoidance;
+        velocity += Time.deltaTime * direction;
+        velocity += Time.deltaTime * speed * velocity.normalized;
         velocity = Vector3.ClampMagnitude(velocity, speed);
 
+        Quaternion targetRotation = Quaternion.LookRotation(velocity.normalized);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
+
         transform.position += velocity * Time.deltaTime;
-        transform.forward = velocity.normalized;
     }
 
     Vector3 Cohesion()
@@ -120,15 +125,16 @@ public class Fish : MonoBehaviour
             (transform.forward - transform.up).normalized
         };
 
-        foreach (Vector3 direction in rayDirections)
+        foreach (Vector3 dir in rayDirections)
         {
-            if (Physics.Raycast(transform.position, direction, out hit, wallDetectionDistance, wallLayer))
+            if (Physics.Raycast(transform.position, dir, out hit, wallDetectionDistance, wallLayer))
             {
                 avoidanceForce += (transform.position - hit.point).normalized;
             }
         }
 
-        return avoidanceForce;
+        // Normalize and return the avoidance force
+        return avoidanceForce.normalized;
     }
 
     List<Fish> GetNeighbors()
@@ -138,7 +144,7 @@ public class Fish : MonoBehaviour
 
         foreach (Collider obj in nearbyObjects)
         {
-            if (obj != this.GetComponent<Collider>())
+            if (obj != collider)
             {
                 neighbors.Add(obj.GetComponent<Fish>());
             }
@@ -163,6 +169,13 @@ public class Fish : MonoBehaviour
         Gizmos.DrawRay(transform.position, direction);
         Gizmos.color=Color.yellow;
         Gizmos.DrawRay(transform.position, velocity);
+        
+        Gizmos.color=Color.cyan;
+        Gizmos.DrawRay(transform.position, Cohesion() * cohesionWeight);
+        Gizmos.color=Color.magenta;
+        Gizmos.DrawRay(transform.position, Alignment() * alignmentWeight);
+        Gizmos.color=Color.black;
+        Gizmos.DrawRay(transform.position, Separation() * separationWeight);
 
         Gizmos.color = Color.blue;
         foreach (var ray in rayDirections)

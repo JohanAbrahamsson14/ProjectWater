@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7479214390251129546}
   - component: {fileID: 7479214390251129549}
   - component: {fileID: 7479214390251129551}
+  - component: {fileID: 804549126291443604}
   m_Layer: 3
   m_Name: Fish
   m_TagString: Untagged
@@ -97,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.5
+  turnSpeed: 5
   neighborDistance: 2
   separationDistance: 1.5
   cohesionWeight: 1
@@ -109,4 +111,18 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 1
-  beginingDirection: {x: 0, y: 0, z: 1}
+  initialDirection: {x: 0, y: 0, z: 1}
+  neighborFish: []
+--- !u!135 &804549126291443604
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7479214390251129550}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.70705545
+  m_Center: {x: 0, y: 0.05299171, z: -0.22829393}
