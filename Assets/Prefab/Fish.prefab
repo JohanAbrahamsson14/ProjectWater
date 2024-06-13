@@ -97,8 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fce17b0fe8d412469fe29ab7b8916a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
-  turnSpeed: 5
+  minSpeed: 3.3
+  maxSpeed: 3.7
+  minTurnSpeed: 4.5
+  maxTurnSpeed: 5.5
   neighborDistance: 2
   separationDistance: 1.5
   cohesionWeight: 1
@@ -111,9 +113,10 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 1
-  collider: {fileID: 0}
+  collider: {fileID: 804549126291443604}
   initialDirection: {x: 0, y: 0, z: 1}
   neighborFish: []
+  speedChangeInterval: 0.5
 --- !u!135 &804549126291443604
 SphereCollider:
   m_ObjectHideFlags: 0

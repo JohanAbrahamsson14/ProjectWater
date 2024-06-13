@@ -4,8 +4,10 @@ using System.Collections.Generic;
 
 public class Fish : MonoBehaviour
 {
-    public float speed = 2.0f;
-    public float turnSpeed = 5.0f;
+    public float minSpeed = 3.3f;
+    public float maxSpeed = 3.7f;
+    public float minTurnSpeed = 4.5f;
+    public float maxTurnSpeed = 5.5f;
     public float neighborDistance = 3.0f;
     public float separationDistance = 1.0f;
     public float cohesionWeight = 1.0f;
@@ -26,10 +28,26 @@ public class Fish : MonoBehaviour
 
     private Vector3 direction;
     
+    public float speedChangeInterval = 5.0f; // Interval in seconds for changing speed
+    private float speedChangeTimer;
+    private Vector3 randomMovement;
+    
+    private float speed = 3.5f;
+    private float turnSpeed = 5.0f;
+    
     void Start()
     {
+        speed = UnityEngine.Random.Range(minSpeed, maxSpeed);
+        turnSpeed = UnityEngine.Random.Range(minTurnSpeed, maxTurnSpeed);
+        
+        speedChangeTimer = speedChangeInterval;
         velocity = transform.forward * speed;
         initialDirection = initialDirection.normalized;
+        randomMovement = new Vector3(
+            UnityEngine.Random.Range(-0.3f, 0.3f),
+            UnityEngine.Random.Range(-0.3f, 0.3f),
+            UnityEngine.Random.Range(-0.3f, 0.3f)
+            );
     }
 
     void Update()
@@ -42,7 +60,20 @@ public class Fish : MonoBehaviour
         Vector3 predatorAvoidance = AvoidPredators() * predatorAvoidanceWeight;
         Vector3 wallAvoidance = AvoidWalls() * wallAvoidanceWeight;
         
-        direction = cohesion + alignment + separation + predatorAvoidance + wallAvoidance;
+        speedChangeTimer -= Time.deltaTime;
+        if (speedChangeTimer <= 0)
+        {
+            speed = UnityEngine.Random.Range(minSpeed, maxSpeed);
+            turnSpeed = UnityEngine.Random.Range(minTurnSpeed, maxTurnSpeed);
+            randomMovement = new Vector3(
+                UnityEngine.Random.Range(-0.3f, 0.3f),
+                UnityEngine.Random.Range(-0.3f, 0.3f),
+                UnityEngine.Random.Range(-0.3f, 0.3f)
+            );
+            speedChangeTimer = speedChangeInterval;
+        }
+        
+        direction = cohesion + alignment + separation + predatorAvoidance + wallAvoidance + randomMovement;
         velocity += Time.deltaTime * direction;
         velocity += Time.deltaTime * speed * velocity.normalized;
         velocity = Vector3.ClampMagnitude(velocity, speed);
