@@ -106,11 +106,12 @@ MonoBehaviour:
   separationWeight: 1.5
   predatorAvoidanceWeight: 3
   predatorDetectionRadius: 5
-  wallAvoidanceWeight: 5
-  wallDetectionDistance: 2
+  wallAvoidanceWeight: 8
+  wallDetectionDistance: 3
   wallLayer:
     serializedVersion: 2
     m_Bits: 1
+  collider: {fileID: 0}
   initialDirection: {x: 0, y: 0, z: 1}
   neighborFish: []
 --- !u!135 &804549126291443604
