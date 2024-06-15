@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatrollingShark : Patrolling
+public class Stalking : State
 {
     public override void StartState()
     {

@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class Patrolling : State
 {
-    public virtual void StartState()
+    public override void StartState()
     {
         base.StartState();
     }
     
-    public virtual void EndState()
+    public override void EndState()
     {
         base.EndState();
     }
     
-    public virtual void MainLogic()
+    public override void MainLogic()
     {
         base.MainLogic();
     }
     
-    public virtual void Transition()
+    public override void Transition()
     {
         base.Transition();
     }

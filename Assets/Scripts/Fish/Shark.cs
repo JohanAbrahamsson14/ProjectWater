@@ -1,29 +1,22 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Shark : MonoBehaviour
+public class Shark : EnemyAgent
 {
-    public enum State { Patrolling, Stalking, Attacking, Retreating }
-    
-    public StateMachine stateMachine;
-    public Patrolling partrolling;
-    
-    public State currentState;
-    public Transform player;
-    public float detectionRange = 10.0f;
     public float attackRange = 2.0f;
-    public float health = 100.0f;
     public float retreatThreshold = 20.0f;
 
     public void Start()
     {
-        stateMachine.Initialize();
+        stateMachine.Initialize(this);
     }
 
     void Update()
     {
         stateMachine.currentState.MainLogic();
-        
+        stateMachine.currentState.Transition();
+        /*
         switch (currentState)
         {
             case State.Patrolling:
@@ -47,6 +40,7 @@ public class Shark : MonoBehaviour
                     currentState = State.Patrolling;
                 break;
         }
+        */
     }
 
     void Patrol()
