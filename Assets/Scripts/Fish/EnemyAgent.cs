@@ -28,13 +28,13 @@ public class EnemyAgent : MonoBehaviour
     public float wallDetectionDistance = 2.0f;
     public LayerMask wallLayer;
     public Vector3 initialDirection = Vector3.forward;
-    private Vector3 velocity;
-    private Vector3 direction;
+    [NonSerialized] public Vector3 velocity;
+    [NonSerialized] public Vector3 direction;
     public float speedChangeInterval = 5.0f; // Interval in seconds for changing speed
-    private float speedChangeTimer;
-    private Vector3 randomMovement;
-    private float speed = 3.5f;
-    private float turnSpeed = 5.0f;
+    public float speedChangeTimer;
+    [NonSerialized] public Vector3 randomMovement;
+    [NonSerialized] public float speed = 3.5f;
+    [NonSerialized] public float turnSpeed = 5.0f;
 
     public void Awake()
     {

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 591dee816122f214cb823247e02c44f8, type: 3}
   m_Name: AttackShark
   m_EditorClassIdentifier: 
-  players: []
+  players:
+  - {fileID: 0}
   agent: {fileID: 0}
-  detectionRange: 10
+  attackDistance: 5

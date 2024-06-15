@@ -10,6 +10,16 @@ public class PatrollingShark : Patrolling
     public override void StartState()
     {
         base.StartState();
+        agent.speed = UnityEngine.Random.Range(agent.minSpeed, agent.maxSpeed);
+        agent.turnSpeed = UnityEngine.Random.Range(agent.minTurnSpeed, agent.maxTurnSpeed);
+        
+        agent.speedChangeTimer = agent.speedChangeInterval;
+        agent.velocity = agent.transform.forward * agent.speed;
+        agent.initialDirection = agent.initialDirection.normalized;
+        agent.randomMovement = new Vector3(
+            UnityEngine.Random.Range(-0.3f, 0.3f),
+            UnityEngine.Random.Range(-0.3f, 0.3f),
+            UnityEngine.Random.Range(-0.3f, 0.3f));
     }
     
     public override void EndState()
@@ -19,8 +29,30 @@ public class PatrollingShark : Patrolling
     
     public override void MainLogic()
     {
-        Debug.Log("hello");
         base.MainLogic();
+        
+        agent.speedChangeTimer -= Time.deltaTime;
+        if (agent.speedChangeTimer <= 0)
+        {
+            agent.speed = UnityEngine.Random.Range(agent.minSpeed, agent.maxSpeed);
+            agent.turnSpeed = UnityEngine.Random.Range(agent.minTurnSpeed, agent.maxTurnSpeed);
+            agent.randomMovement = new Vector3(
+                UnityEngine.Random.Range(-0.3f, 0.3f),
+                UnityEngine.Random.Range(-0.3f, 0.3f),
+                UnityEngine.Random.Range(-0.3f, 0.3f)
+            );
+            agent.speedChangeTimer = agent.speedChangeInterval;
+        }
+        
+        agent.direction = agent.randomMovement;
+        agent.velocity += Time.deltaTime * agent.direction;
+        agent.velocity += Time.deltaTime * agent.speed * agent.velocity.normalized;
+        agent.velocity = Vector3.ClampMagnitude(agent.velocity, agent.speed);
+
+        Quaternion targetRotation = Quaternion.LookRotation(agent.velocity.normalized);
+        agent.transform.rotation = Quaternion.Slerp(agent.transform.rotation, targetRotation, agent.turnSpeed * Time.deltaTime);
+
+        agent.transform.position += agent.velocity * Time.deltaTime;
     }
     
     public override void Transition()
