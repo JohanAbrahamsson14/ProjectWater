@@ -10,6 +10,11 @@ public class EnemyAgent : MonoBehaviour
     protected StateMachine stateMachine;
     public Patrolling patrolling;
     public Stalking stalking;
+    public Attacking attacking;
+    public Attack attack;
+    public Grabbed grabbed;
+    public Retreating retreating;
+    public Death death;
     
     public States currentState;
     public List<Transform> players;

@@ -10,9 +10,14 @@ public class StateMachine
     public void Initialize(EnemyAgent agent)
     {
         //Create list and serialize all fields
-        states = new List<State> { agent.patrolling, agent.stalking};
+        states = new List<State> { agent.patrolling, agent.stalking, agent.attacking, agent.attack, agent.grabbed, agent.retreating, agent.death};
         SetStateValues(agent.patrolling, agent, agent.players);
         SetStateValues(agent.stalking, agent, agent.players);
+        SetStateValues(agent.attacking, agent, agent.players);
+        SetStateValues(agent.attack, agent, agent.players);
+        SetStateValues(agent.grabbed, agent, agent.players);
+        SetStateValues(agent.retreating, agent, agent.players);
+        SetStateValues(agent.death, agent, agent.players);
         
         //Start the first state
         currentState = agent.patrolling;

@@ -848,7 +848,6 @@ GameObject:
   - component: {fileID: 1588630244}
   - component: {fileID: 1588630243}
   - component: {fileID: 1588630242}
-  - component: {fileID: 1588630241}
   - component: {fileID: 1588630240}
   m_Layer: 0
   m_Name: Shark
@@ -870,6 +869,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolling: {fileID: 11400000, guid: 4bbe0016dd845a047a52a01dbd547f27, type: 2}
+  stalking: {fileID: 11400000, guid: a7486c4b91dd19447882d891d2285024, type: 2}
+  attacking: {fileID: 11400000, guid: 05bf1cccec4ad7c479be4c7f5720d193, type: 2}
+  attack: {fileID: 11400000, guid: c3edd544d65b1b04a800646fdc8158e6, type: 2}
+  grabbed: {fileID: 11400000, guid: b4e30e963b3e6784399e45c227fc9103, type: 2}
+  retreating: {fileID: 11400000, guid: 711266d75ee0fae4fbc3865be1010d1d, type: 2}
+  death: {fileID: 11400000, guid: 07ef86ec33d017840b30b0273d8ec66e, type: 2}
   currentState: 0
   players:
   - {fileID: 1414578326}
@@ -885,21 +890,7 @@ MonoBehaviour:
     m_Bits: 1
   initialDirection: {x: 0, y: 0, z: 1}
   speedChangeInterval: 5
-  attackRange: 2
   retreatThreshold: 20
---- !u!65 &1588630241
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1588630239}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1588630242
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -958,7 +949,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1588630239}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.86, y: 0.95, z: -3.45}
+  m_LocalPosition: {x: -11.22, y: 0.95, z: -5.05}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []

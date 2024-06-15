@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Shark : EnemyAgent
 {
-    public float attackRange = 2.0f;
     public float retreatThreshold = 20.0f;
 
     public void Start()
