@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be55a57b4cd06044b2867d2ff1e5014, type: 3}
   m_Name: PatrollingShark
   m_EditorClassIdentifier: 
-  detectionRange: 10
+  players:
+  - {fileID: 0}
+  agent: {fileID: 0}
+  detectionRange: 15

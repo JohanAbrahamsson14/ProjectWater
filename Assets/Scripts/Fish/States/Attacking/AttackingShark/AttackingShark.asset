@@ -15,3 +15,6 @@ MonoBehaviour:
   players:
   - {fileID: 0}
   agent: {fileID: 0}
+  attackRange: 4
+  attackingStrength: 10
+  speedIncreaseMultiplyer: 4

@@ -18,7 +18,6 @@ public class EnemyAgent : MonoBehaviour
     
     public States currentState;
     public List<Transform> players;
-    public float health = 100.0f;
     
     public float minSpeed = 3.3f;
     public float maxSpeed = 3.7f;

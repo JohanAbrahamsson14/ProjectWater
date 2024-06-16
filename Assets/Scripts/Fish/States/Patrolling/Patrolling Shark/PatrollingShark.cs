@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 [CreateAssetMenu(fileName = "PatrollingShark", menuName = "State/Patrolling/PatrollingShark")]
 public class PatrollingShark : Patrolling
@@ -59,5 +60,11 @@ public class PatrollingShark : Patrolling
     {
         if (Vector3.Distance(agent.transform.position, players.First().position) < detectionRange) stateMachine.StateTransformation(agent.stalking);
         base.Transition();
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color=Color.red;
+        Gizmos.DrawWireSphere(agent.transform.position, detectionRange);
     }
 }

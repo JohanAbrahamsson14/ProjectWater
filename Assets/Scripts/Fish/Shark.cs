@@ -1,14 +1,17 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Shark : EnemyAgent
+public class Shark : EnemyAgent, IDamageAble
 {
     public float retreatThreshold = 20.0f;
-
+    public float maxHealth { get; set; }
+    public float currentHealth { get; set; }
     public void Start()
     {
         stateMachine.Initialize(this);
+        maxHealth = currentHealth;
     }
 
     void Update()
@@ -60,6 +63,16 @@ public class Shark : EnemyAgent
     void Retreat()
     {
         // Retreating behavior
+    }
+    public void GetDamaged(int value)
+    {
+        currentHealth -= value;
+        if (currentHealth <= 0) Death();
+    }
+
+    public void Death()
+    {
+        stateMachine.StateTransformation(death);
     }
 }
 

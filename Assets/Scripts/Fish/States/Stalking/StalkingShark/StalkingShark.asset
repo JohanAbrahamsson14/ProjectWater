@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7834ef5148861b84e9c66cf933448ce8, type: 3}
   m_Name: StalkingShark
   m_EditorClassIdentifier: 
-  players: []
+  players:
+  - {fileID: 0}
   agent: {fileID: 0}
+  stalkingStrength: 2
+  minimumRange: 22
+  maximumDistance: 30
+  timeToAttack: 20
+  isMovingAway: 0
