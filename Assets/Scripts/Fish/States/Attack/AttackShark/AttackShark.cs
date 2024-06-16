@@ -6,7 +6,7 @@ using UnityEngine;
 public class AttackShark : Attack
 {
     public float attackDistance = 1.0f;
-    
+    public GameObject attackedObject;
     public override void StartState()
     {
         base.StartState();
@@ -19,13 +19,24 @@ public class AttackShark : Attack
     
     public override void MainLogic()
     {
-        Debug.Log("Attack");
         base.MainLogic();
+        
+        Quaternion targetRotation = Quaternion.LookRotation(agent.velocity.normalized);
+        agent.transform.rotation = Quaternion.Slerp(agent.transform.rotation, targetRotation, agent.turnSpeed * Time.deltaTime);
+        
+        agent.transform.position += agent.velocity * Time.deltaTime;
+
+        if (Physics.Raycast(agent.transform.position, agent.transform.TransformDirection(Vector3.forward), out var hit, attackDistance))
+        {
+            attackedObject = hit.collider.CompareTag("Player") ? hit.collider.gameObject : null;
+        }
     }
     
     public override void Transition()
     {
-        stateMachine.StateTransformation(agent.grabbed);
         base.Transition();
+        
+        if(attackedObject != null) stateMachine.StateTransformation(agent.grabbed);
+        else stateMachine.StateTransformation(agent.stalking);
     }
 }

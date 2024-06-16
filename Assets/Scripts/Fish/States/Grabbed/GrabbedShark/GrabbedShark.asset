@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa665113c032964b8a32a1d13dc027b, type: 3}
   m_Name: GrabbedShark
   m_EditorClassIdentifier: 
-  players: []
+  players:
+  - {fileID: 0}
   agent: {fileID: 0}
-  detectionRange: 10
+  timeToRealse: 5
+  currentTime: 0
+  grabbedObject: {fileID: 0}
+  attackDistance: 5
