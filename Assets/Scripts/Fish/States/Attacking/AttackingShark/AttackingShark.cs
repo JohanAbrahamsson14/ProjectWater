@@ -57,7 +57,7 @@ public class AttackingShark : Attacking
             agent.speedChangeTimer = agent.speedChangeInterval;
         }
         
-        agent.direction = agent.randomMovement + StalkingMovementTarget(selectedPlayer, attackingStrength);
+        agent.direction = agent.randomMovement + AttackingMovementTarget(selectedPlayer, attackingStrength);
         agent.velocity += Time.deltaTime * agent.direction;
         agent.velocity += Time.deltaTime * agent.speed * agent.velocity.normalized;
         agent.velocity = Vector3.ClampMagnitude(agent.velocity, agent.speed);
@@ -74,7 +74,7 @@ public class AttackingShark : Attacking
         base.Transition();
     }
     
-    private Vector3 StalkingMovementTarget(Transform target, float value)
+    private Vector3 AttackingMovementTarget(Transform target, float value)
     {
         //The Vector from the agent to the selected player
         Vector3 towardsVector = target.position - agent.transform.position;

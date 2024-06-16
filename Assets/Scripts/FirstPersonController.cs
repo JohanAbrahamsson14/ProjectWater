@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -20,6 +21,7 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
     private bool isInWater = false;
+    private bool isGrabbed = false;
     
     public GameObject fogWall;
 
@@ -35,8 +37,12 @@ public class FirstPersonController : MonoBehaviour
     void Update()
     {
         fogWall.SetActive(isInWater);
-        
-        if (isInWater)
+
+        if (isGrabbed)
+        {
+            GrabbedMovement();
+        }
+        else if (isInWater)
         {
             WaterMovement();
         }
@@ -108,6 +114,12 @@ public class FirstPersonController : MonoBehaviour
         */
     }
 
+    void GrabbedMovement()
+    {
+        Vector3 CombineValue = new Vector3(Math.Abs(Input.GetAxis("Horizontal")), Math.Abs(Input.GetAxis("Jump")), Math.Abs(Input.GetAxis("Vertical")));
+        
+    }
+    
     public void SetInWater(bool inWater)
     {
         isInWater = inWater;
@@ -121,5 +133,10 @@ public class FirstPersonController : MonoBehaviour
             waterEffects.WaterEffectDisactive();
         }
         
+    }
+    
+    public void SetGrabbed(bool grabbed)
+    {
+        isGrabbed = grabbed;
     }
 }

@@ -10,11 +10,13 @@ public class AttackShark : Attack
     public override void StartState()
     {
         base.StartState();
+        attackedObject = null;
     }
     
     public override void EndState()
     {
         base.EndState();
+        attackedObject = null;
     }
     
     public override void MainLogic()
@@ -26,9 +28,13 @@ public class AttackShark : Attack
         
         agent.transform.position += agent.velocity * Time.deltaTime;
 
-        if (Physics.Raycast(agent.transform.position, agent.transform.TransformDirection(Vector3.forward), out var hit, attackDistance))
+        RaycastHit[] hit = Physics.RaycastAll(agent.transform.position,
+            agent.transform.TransformDirection(Vector3.forward), attackDistance);
+
+        if (hit.Any(x => x.collider.CompareTag("Player")))
         {
-            attackedObject = hit.collider.CompareTag("Player") ? hit.collider.gameObject : null;
+            RaycastHit hitSelected = hit.First(x => x.collider.CompareTag("Player"));
+            attackedObject = hitSelected.collider.CompareTag("Player") ? hitSelected.collider.gameObject : null;
         }
     }
     
