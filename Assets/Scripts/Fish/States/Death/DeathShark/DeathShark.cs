@@ -19,7 +19,6 @@ public class DeathShark : Death
     
     public override void MainLogic()
     {
-        Debug.Log("Death");
         base.MainLogic();
     }
     

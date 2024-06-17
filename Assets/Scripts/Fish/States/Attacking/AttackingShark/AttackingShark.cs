@@ -13,9 +13,9 @@ public class AttackingShark : Attacking
     public override void StartState()
     {
         base.StartState();
-        Debug.Log("attacking now");
         
-        selectedPlayer = agent.players.First();
+        players.Sort((a,b) => Vector3.Distance(a.position, agent.transform.position).CompareTo(Vector3.Distance(b.position, agent.transform.position)));
+        selectedPlayer = players.First();
         agent.speed = UnityEngine.Random.Range(agent.minSpeed, agent.maxSpeed);
         agent.turnSpeed = UnityEngine.Random.Range(agent.minTurnSpeed, agent.maxTurnSpeed);
         
@@ -43,7 +43,7 @@ public class AttackingShark : Attacking
     {
         base.MainLogic();
         
-        players.Sort((a,b) => Vector3.Distance(a.position, agent.transform.position).CompareTo(Vector3.Distance(a.position, agent.transform.position)));
+        players.Sort((a,b) => Vector3.Distance(a.position, agent.transform.position).CompareTo(Vector3.Distance(b.position, agent.transform.position)));
         selectedPlayer = players.First();
         
         agent.speedChangeTimer -= Time.deltaTime;

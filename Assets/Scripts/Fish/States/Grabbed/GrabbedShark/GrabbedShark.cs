@@ -9,22 +9,23 @@ using Random = Unity.Mathematics.Random;
 [CreateAssetMenu(fileName = "GrabbedShark", menuName = "State/Grabbed/GrabbedShark")]
 public class GrabbedShark : Grabbed
 {
-    
-    public float timeToRealse = 5.0f;
-    public float currentTime;
     public GameObject grabbedObject;
     public float attackDistance;
+    public float speedIncreaseMultiplyer = 2.0f;
     
     public float selectionDistance = 30;
     public Vector3 selectionPos;
     public float selectionStrength = 3;
     public float grabbOffsetForward = 0.5f;
+
+    public float breakOutValue;
+    private float currentHold;
+
+    public FirstPersonController player;
     
     public override void StartState()
     {
         base.StartState();
-
-        currentTime = 0;
 
         selectionPos = UnityEngine.Random.onUnitSphere * selectionDistance;
         
@@ -36,8 +37,8 @@ public class GrabbedShark : Grabbed
         }
         */
         
-        RaycastHit[] hit = Physics.RaycastAll(agent.transform.position,
-            agent.transform.TransformDirection(Vector3.forward), attackDistance);
+        RaycastHit[] hit = Physics.SphereCastAll(agent.transform.position, attackDistance, 
+            agent.transform.TransformDirection(Vector3.forward));
 
         if (hit.Any(x => x.collider.CompareTag("Player")))
         {
@@ -49,26 +50,29 @@ public class GrabbedShark : Grabbed
         grabbedObject.transform.SetParent(agent.transform);
         grabbedObject.transform.localPosition = Vector3.forward*grabbOffsetForward;
         grabbedObject.transform.Rotate(Vector3.forward, 90);
-        grabbedObject.GetComponent<FirstPersonController>().SetGrabbed(true);
+        player = grabbedObject.GetComponent<FirstPersonController>();
+        player.SetGrabbed(true);
+        
+        agent.speed *= speedIncreaseMultiplyer;
+        currentHold = breakOutValue;
     }
     
     public override void EndState()
     {
         base.EndState();
         
-        currentTime = 0;
-        
         if (grabbedObject == null) return;
         grabbedObject.transform.rotation = quaternion.identity;
         grabbedObject.transform.SetParent(null);
-        grabbedObject.GetComponent<FirstPersonController>().SetGrabbed(false);
+        player.SetGrabbed(false);
+        
+        agent.speed /= speedIncreaseMultiplyer;
+        currentHold = breakOutValue;
     }
     
     public override void MainLogic()
     {
         base.MainLogic();
-        
-        currentTime += Time.deltaTime;
         
         agent.speedChangeTimer -= Time.deltaTime;
         if (agent.speedChangeTimer <= 0)
@@ -90,11 +94,13 @@ public class GrabbedShark : Grabbed
         agent.transform.rotation = Quaternion.Slerp(agent.transform.rotation, targetRotation, agent.turnSpeed * Time.deltaTime);
 
         agent.transform.position += agent.velocity * Time.deltaTime;
+
+        currentHold -= player.GrabbedValue();
     }
     
     public override void Transition()
     {
-        if (currentTime >= timeToRealse) stateMachine.StateTransformation(agent.retreating);
+        if (currentHold <= 0) stateMachine.StateTransformation(agent.retreating);
         base.Transition();
     }
     

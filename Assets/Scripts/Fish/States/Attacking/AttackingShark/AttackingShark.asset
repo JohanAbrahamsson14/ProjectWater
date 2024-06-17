@@ -17,4 +17,4 @@ MonoBehaviour:
   agent: {fileID: 0}
   attackRange: 4
   attackingStrength: 10
-  speedIncreaseMultiplyer: 4
+  speedIncreaseMultiplyer: 5

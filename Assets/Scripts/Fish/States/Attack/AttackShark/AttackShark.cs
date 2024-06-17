@@ -7,6 +7,7 @@ public class AttackShark : Attack
 {
     public float attackDistance = 1.0f;
     public GameObject attackedObject;
+    // ReSharper disable Unity.PerformanceAnalysis
     public override void StartState()
     {
         base.StartState();
@@ -28,8 +29,8 @@ public class AttackShark : Attack
         
         agent.transform.position += agent.velocity * Time.deltaTime;
 
-        RaycastHit[] hit = Physics.RaycastAll(agent.transform.position,
-            agent.transform.TransformDirection(Vector3.forward), attackDistance);
+        RaycastHit[] hit = Physics.SphereCastAll(agent.transform.position, attackDistance, 
+            agent.transform.TransformDirection(Vector3.forward));
 
         if (hit.Any(x => x.collider.CompareTag("Player")))
         {
@@ -38,6 +39,7 @@ public class AttackShark : Attack
         }
     }
     
+    // ReSharper disable Unity.PerformanceAnalysis
     public override void Transition()
     {
         base.Transition();

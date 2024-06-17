@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -27,6 +28,7 @@ public class FirstPersonController : MonoBehaviour
 
     private WaterEffects waterEffects;
     
+    private HashSet<KeyCode> keysToCheck = new HashSet<KeyCode>(){ KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D };
 
     void Start()
     {
@@ -116,8 +118,6 @@ public class FirstPersonController : MonoBehaviour
 
     void GrabbedMovement()
     {
-        Vector3 CombineValue = new Vector3(Math.Abs(Input.GetAxis("Horizontal")), Math.Abs(Input.GetAxis("Jump")), Math.Abs(Input.GetAxis("Vertical")));
-        
     }
     
     public void SetInWater(bool inWater)
@@ -138,5 +138,33 @@ public class FirstPersonController : MonoBehaviour
     public void SetGrabbed(bool grabbed)
     {
         isGrabbed = grabbed;
+    }
+
+    public float GrabbedValue()
+    { 
+        float value = 0;
+        
+        float mouseMoveValue = 3;
+        float keyboardValue = 1;
+        float mouseClickValue = 2;
+        
+        if(Input.GetAxis("Mouse X")<0){
+            value += mouseMoveValue*Time.deltaTime;
+        }
+        if(Input.GetAxis("Mouse X")>0){
+            value += mouseMoveValue*Time.deltaTime;
+        }
+        
+        foreach (var key in keysToCheck)
+        {
+            if(Input.GetKeyDown(key)) value += keyboardValue;
+        }
+        
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+        {
+            value += mouseClickValue;
+        }
+
+        return value;
     }
 }

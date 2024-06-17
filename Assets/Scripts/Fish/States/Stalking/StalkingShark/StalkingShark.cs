@@ -44,7 +44,7 @@ public class StalkingShark : Stalking
     public override void MainLogic()
     {
         base.MainLogic();
-        players.Sort((a,b) => Vector3.Distance(a.position, agent.transform.position).CompareTo(Vector3.Distance(a.position, agent.transform.position)));
+        players.Sort((a,b) => Vector3.Distance(a.position, agent.transform.position).CompareTo(Vector3.Distance(b.position, agent.transform.position)));
         selectedPlayer = players.First();
         
         currentTime += Time.deltaTime;

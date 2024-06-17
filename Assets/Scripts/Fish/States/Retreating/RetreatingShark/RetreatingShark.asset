@@ -14,4 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   players: []
   agent: {fileID: 0}
-  detectionRange: 10
+  timeToBecomeNormal: 5
+  currentTime: 0.0031776
+  selectionDistance: 30
+  selectionPos: {x: 0, y: 0, z: 0}
+  selectionPlayerStrength: 5
+  selectionStrength: 3
+  speedIncreaseMultiplyer: 2.5

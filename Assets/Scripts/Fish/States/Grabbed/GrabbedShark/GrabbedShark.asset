@@ -15,11 +15,12 @@ MonoBehaviour:
   players:
   - {fileID: 0}
   agent: {fileID: 0}
-  timeToRealse: 20
-  currentTime: 18.334223
   grabbedObject: {fileID: 0}
   attackDistance: 8
+  speedIncreaseMultiplyer: 5
   selectionDistance: 30
-  selectionPos: {x: 2.4229028, y: 3.495907, z: 29.69694}
+  selectionPos: {x: 3.9793897, y: -29.734016, z: -0.22937894}
   selectionStrength: 3
   grabbOffsetForward: 0.5
+  breakOutValue: 100
+  player: {fileID: 0}
