@@ -142,6 +142,7 @@ MonoBehaviour:
   swimGravity: 1
   passiveSinkSpeed: 0.5
   waterSurfaceLevel: 5
+  isGrabbed: 0
   fogWall: {fileID: 2918495092968570031}
 --- !u!114 &2918495091219997896
 MonoBehaviour:
@@ -412,6 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 200
   playerBody: {fileID: 2918495091219997903}
+  player: {fileID: 2918495091219997902}
 --- !u!114 &2918495092247321842
 MonoBehaviour:
   m_ObjectHideFlags: 0

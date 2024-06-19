@@ -29,13 +29,24 @@ public class AttackShark : Attack
         
         agent.transform.position += agent.velocity * Time.deltaTime;
 
-        RaycastHit[] hit = Physics.SphereCastAll(agent.transform.position, attackDistance, 
-            agent.transform.TransformDirection(Vector3.forward));
+        RaycastHit[] hits = Physics.SphereCastAll(agent.transform.position, attackDistance, agent.transform.TransformDirection(Vector3.forward));
 
-        if (hit.Any(x => x.collider.CompareTag("Player")))
+        if (hits.Any(hit => hit.collider.CompareTag("Player")))
         {
-            RaycastHit hitSelected = hit.First(x => x.collider.CompareTag("Player"));
-            attackedObject = hitSelected.collider.CompareTag("Player") ? hitSelected.collider.gameObject : null;
+            RaycastHit hitSelected = hits.First(hit => hit.collider.CompareTag("Player"));
+            Vector3 direction = (hitSelected.collider.gameObject.transform.position - agent.transform.position).normalized;
+            Ray ray = new Ray(agent.transform.position, direction);
+
+            // Debugging information
+            //Debug.DrawRay(agent.transform.position, direction * attackDistance, Color.red, 2.0f);
+            
+            //Wall detection
+            int wallLayerMask = LayerMask.GetMask("Wall");
+
+            if (!Physics.Raycast(ray, attackDistance, wallLayerMask))
+            {
+                attackedObject = hitSelected.collider.CompareTag("Player") ? hitSelected.collider.gameObject : null;
+            }
         }
     }
     

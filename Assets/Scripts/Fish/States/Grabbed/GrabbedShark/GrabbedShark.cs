@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Random = Unity.Mathematics.Random;
 
 
@@ -48,8 +49,11 @@ public class GrabbedShark : Grabbed
 
         if (grabbedObject == null) return;
         grabbedObject.transform.SetParent(agent.transform);
-        grabbedObject.transform.localPosition = Vector3.forward*grabbOffsetForward;
+        grabbedObject.transform.localRotation = Quaternion.identity;
         grabbedObject.transform.Rotate(Vector3.forward, 90);
+        grabbedObject.transform.GetChild(0).transform.localRotation = Quaternion.identity;
+        grabbedObject.transform.GetChild(0).transform.Rotate(Vector3.up, 180);
+        grabbedObject.transform.localPosition = Vector3.forward*grabbOffsetForward;
         player = grabbedObject.GetComponent<FirstPersonController>();
         player.SetGrabbed(true);
         

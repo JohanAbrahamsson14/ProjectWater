@@ -22,7 +22,7 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
     private bool isInWater = false;
-    private bool isGrabbed = false;
+    public bool isGrabbed = false;
     
     public GameObject fogWall;
 

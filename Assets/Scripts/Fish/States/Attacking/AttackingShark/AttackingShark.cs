@@ -70,8 +70,11 @@ public class AttackingShark : Attacking
     
     public override void Transition()
     {
-        if (Vector3.Distance(agent.transform.position, selectedPlayer.position) < attackRange) stateMachine.StateTransformation(agent.attack);
         base.Transition();
+        if (Vector3.Distance(agent.transform.position, selectedPlayer.position) < attackRange) stateMachine.StateTransformation(agent.attack);
+        Vector3 dirFromAtoB = (selectedPlayer.position - agent.transform.position).normalized;
+        float dotProd = Vector3.Dot(dirFromAtoB, agent.transform.forward);
+        if(dotProd < 0.35f) stateMachine.StateTransformation(agent.retreating);
     }
     
     private Vector3 AttackingMovementTarget(Transform target, float value)
