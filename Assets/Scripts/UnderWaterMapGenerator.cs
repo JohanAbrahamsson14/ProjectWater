@@ -21,6 +21,7 @@ public class PathwaySegment
     public Vector3 Start { get; set; }
     public Vector3 End { get; set; }
     public bool IsBroken { get; set; }
+    public bool IsStairs { get; set; }
 }
 
 public class Pathway
@@ -33,9 +34,13 @@ public class UnderWaterMapGenerator : MonoBehaviour
     public int Seed;
     private System.Random random;
 
-    public GameObject Station;
-    public GameObject Path;
-    public GameObject PathEnd;
+    public GameObject stationPrefab;
+    public GameObject pathwayPrefab;
+    public GameObject stairsPrefab;
+    
+    public float pathwaySizeX = 10.0f; // Width of the pathway model
+    public float pathwaySizeZ = 10.0f; // Depth of the pathway model
+    public float stairsHeight = 3.0f;  // Height of the stairs model
     
     int numberOfStations = 2;
 
@@ -53,11 +58,13 @@ public class UnderWaterMapGenerator : MonoBehaviour
         GenerateStations(stations);
         GeneratePathways(stations, pathways);
 
+        /*
         while (!EnsureConnectivity(stations, pathways))
         {
             pathways.Clear();
             GeneratePathways(stations, pathways);
         }
+        */
 
         // Instantiate stations and pathways in the scene
         InstantiateMap(stations, pathways);
@@ -65,11 +72,21 @@ public class UnderWaterMapGenerator : MonoBehaviour
 
     void GenerateStations(List<Station> stations)
     {
+        Station startStation = new Station
+        {
+            Position = Vector3.zero,
+            //Rooms = GenerateRooms(random.Next(5, 15))
+        };
+        stations.Add(startStation);
         for (int i = 0; i < numberOfStations; i++)
         {
             Station station = new Station
             {
-                Position = new Vector3(random.Next(-25, 25), random.Next(-3, 3), random.Next(-25, 25)),
+                Position = new Vector3(
+                    Mathf.Round(random.Next(-10, 10) * pathwaySizeX),
+                    Mathf.Round(random.Next(-3, 3) * stairsHeight), // Assuming stations are at ground level
+                    Mathf.Round(random.Next(-10, 10) * pathwaySizeZ)
+                ),
                 //Rooms = GenerateRooms(random.Next(5, 15))
             };
 
@@ -77,34 +94,104 @@ public class UnderWaterMapGenerator : MonoBehaviour
         }
     }
 
-    void GeneratePathways(List<Station> stations, List<Pathway> pathways)
+void GeneratePathways(List<Station> stations, List<Pathway> pathways)
+{
+    for (int i = 0; i < stations.Count - 1; i++)
     {
-        for (int i = 0; i < stations.Count - 1; i++)
-        {
-            Pathway pathway = new Pathway();
-            Vector3 start = stations[i].Position;
-            Vector3 end = stations[i + 1].Position;
+        Pathway pathway = new Pathway();
+        Vector3 start = stations[i].Position;
+        Vector3 end = stations[i + 1].Position;
+        Vector3 currentPos = start;
 
-            // Limit the number of segments
-            int maxSegments = 20;
-            Vector3 currentPos = start;
-            while (Vector3.Distance(currentPos, end) > 10 && maxSegments > 0)
+        while (Vector3.Distance(currentPos, end) > pathwaySizeX || Mathf.Abs(end.y - currentPos.y) >= stairsHeight)
+        {
+            Vector3 nextPos = currentPos;
+
+            // Randomly decide whether to move vertically or horizontally, but ensure proper distribution
+            bool moveVertically = random.Next(0, 10) < 5 && Mathf.Abs(end.y - currentPos.y) >= stairsHeight;
+
+            if (moveVertically)
             {
-                Vector3 nextPos = Vector3.Lerp(currentPos, end, 0.1f);
-                bool isBroken = random.Next(0, 10) < 3; // 30% chance of being broken
-                PathwaySegment segment = new PathwaySegment { Start = currentPos, End = nextPos, IsBroken = isBroken };
+                nextPos.y += Mathf.Sign(end.y - currentPos.y) * stairsHeight;
+
+                // Move horizontally as well to maintain pathway direction
+                if (Mathf.Abs(end.x - currentPos.x) >= pathwaySizeX)
+                {
+                    nextPos.x += Mathf.Sign(end.x - currentPos.x) * pathwaySizeX;
+                }
+                else if (Mathf.Abs(end.z - currentPos.z) >= pathwaySizeZ)
+                {
+                    nextPos.z += Mathf.Sign(end.z - currentPos.z) * pathwaySizeZ;
+                }
+
+                nextPos = AlignToGrid(nextPos);
+
+                PathwaySegment stairsSegment = new PathwaySegment
+                {
+                    Start = currentPos,
+                    End = nextPos,
+                    IsBroken = random.Next(0, 10) < 3, // 30% chance of being broken
+                    IsStairs = true
+                };
+
+                pathway.Segments.Add(stairsSegment);
+                currentPos = nextPos;
+            }
+            else
+            {
+                // Move in the X or Z direction if not moving vertically
+                if (Mathf.Abs(end.x - currentPos.x) >= pathwaySizeX)
+                {
+                    nextPos.x += Mathf.Sign(end.x - currentPos.x) * pathwaySizeX;
+                }
+                else if (Mathf.Abs(end.z - currentPos.z) >= pathwaySizeZ)
+                {
+                    nextPos.z += Mathf.Sign(end.z - currentPos.z) * pathwaySizeZ;
+                }
+
+                nextPos = AlignToGrid(nextPos);
+
+                PathwaySegment segment = new PathwaySegment
+                {
+                    Start = currentPos,
+                    End = nextPos,
+                    IsBroken = random.Next(0, 10) < 3, // 30% chance of being broken
+                    IsStairs = false
+                };
+
                 pathway.Segments.Add(segment);
                 currentPos = nextPos;
-                maxSegments--;
             }
-
-            // Final segment to reach the end position
-            PathwaySegment finalSegment = new PathwaySegment { Start = currentPos, End = end, IsBroken = false };
-            pathway.Segments.Add(finalSegment);
-
-            pathways.Add(pathway);
         }
+
+        // Add final segment to reach the end
+        PathwaySegment finalSegment = new PathwaySegment
+        {
+            Start = currentPos,
+            End = end,
+            IsBroken = false,
+            IsStairs = Mathf.Abs(end.y - currentPos.y) >= stairsHeight / 2
+        };
+        pathway.Segments.Add(finalSegment);
+
+        pathways.Add(pathway);
     }
+}
+
+Vector3 AlignToGrid(Vector3 position)
+{
+    float x = Mathf.Round(position.x / pathwaySizeX) * pathwaySizeX;
+    float y = Mathf.Round(position.y / stairsHeight) * stairsHeight;
+    float z = Mathf.Round(position.z / pathwaySizeZ) * pathwaySizeZ;
+
+    return new Vector3(x, y, z);
+}
+
+
+
+
+
+
 
     void InstantiateMap(List<Station> stations, List<Pathway> pathways)
     {
@@ -117,7 +204,7 @@ public class UnderWaterMapGenerator : MonoBehaviour
         {
             foreach (var segment in pathway.Segments)
             {
-                if (!segment.IsBroken)
+                //if (!segment.IsBroken)
                 {
                     InstantiatePathwaySegment(segment);
                 }
@@ -127,18 +214,54 @@ public class UnderWaterMapGenerator : MonoBehaviour
 
     void InstantiateStation(Station station)
     {
-        // Instantiate station at station.Position
-        // Use object pooling if possible
-        Instantiate(Station, station.Position, quaternion.identity);
+        // Instantiate station prefab at station.Position
+        GameObject stationObj = Instantiate(stationPrefab, station.Position, Quaternion.identity);
+        // Adjust station scale and rotation as needed
     }
 
     void InstantiatePathwaySegment(PathwaySegment segment)
     {
-        // Instantiate pathway segment between segment.Start and segment.End
-        // Use object pooling if possible
-        Instantiate(Path, (segment.Start+segment.End)/2, quaternion.identity);
+        if (segment.IsStairs)
+        {
+            // Instantiate stairs model between segment.Start and segment.End
+            InstantiateStairs(segment.Start, segment.End);
+        }
+        else
+        {
+            // Instantiate flat pathway model between segment.Start and segment.End
+            InstantiateFlatPathway(segment.Start, segment.End);
+        }
     }
+
+    void InstantiateStairs(Vector3 start, Vector3 end)
+    {
+        // Calculate the midpoint and direction
+        Vector3 midpoint = (start + end) / 2;
+        Vector3 direction = end - start;
+        Quaternion rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+
+        // Instantiate your stairs prefab and position it between start and end
+        GameObject stairs = Instantiate(stairsPrefab, midpoint, rotation);
+        // Adjust the scale and rotation as needed
+    }
+
+    void InstantiateFlatPathway(Vector3 start, Vector3 end)
+    {
+        // Calculate the midpoint and direction
+        Vector3 midpoint = (start + end) / 2;
+        Vector3 direction = end - start;
+        Quaternion rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+
+        // Instantiate your flat pathway prefab and position it between start and end
+        GameObject pathway = Instantiate(pathwayPrefab, midpoint, rotation);
+        // Adjust the scale and rotation as needed
+    }
+
+
+
+
     
+    /*
     bool EnsureConnectivity(List<Station> stations, List<Pathway> pathways)
     {
         // Implement a simple connectivity check using BFS or DFS
@@ -166,6 +289,7 @@ public class UnderWaterMapGenerator : MonoBehaviour
 
         return false;
     }
+    */
 
     Station GetConnectedStation(Station current, Pathway pathway, List<Station> stations)
     {
