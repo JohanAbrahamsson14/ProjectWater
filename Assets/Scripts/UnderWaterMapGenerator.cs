@@ -37,6 +37,7 @@ public class UnderWaterMapGenerator : MonoBehaviour
     public GameObject stationPrefab;
     public GameObject pathwayPrefab;
     public GameObject stairsPrefab;
+    public GameObject brokenPrefab;
     
     public float pathwaySizeX = 10.0f; // Width of the pathway model
     public float pathwaySizeZ = 10.0f; // Depth of the pathway model
@@ -78,7 +79,7 @@ public class UnderWaterMapGenerator : MonoBehaviour
             //Rooms = GenerateRooms(random.Next(5, 15))
         };
         stations.Add(startStation);
-        for (int i = 0; i < numberOfStations; i++)
+        for (int i = 1; i < numberOfStations; i++)
         {
             Station station = new Station
             {
@@ -214,10 +215,7 @@ Vector3 AlignToGrid(Vector3 position)
         {
             foreach (var segment in pathway.Segments)
             {
-                //if (!segment.IsBroken)
-                {
                     InstantiatePathwaySegment(segment);
-                }
             }
         }
     }
@@ -231,7 +229,11 @@ Vector3 AlignToGrid(Vector3 position)
 
     void InstantiatePathwaySegment(PathwaySegment segment)
     {
-        if (segment.IsStairs)
+        if (segment.IsBroken)
+        {
+            InstantiateBroken(segment.Start, segment.End);
+        }
+        else if (segment.IsStairs)
         {
             // Instantiate stairs model between segment.Start and segment.End
             InstantiateStairs(segment.Start, segment.End);
@@ -243,6 +245,18 @@ Vector3 AlignToGrid(Vector3 position)
         }
     }
 
+    
+    void InstantiateBroken(Vector3 start, Vector3 end)
+    {
+        // Calculate the midpoint and direction
+        Vector3 midpoint = (start + end) / 2;
+        Vector3 direction = end - start;
+        Quaternion rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+
+        // Instantiate your stairs prefab and position it between start and end
+        GameObject broken = Instantiate(brokenPrefab, midpoint, rotation);
+        // Adjust the scale and rotation as needed
+    }
     void InstantiateStairs(Vector3 start, Vector3 end)
     {
         // Calculate the midpoint and direction
