@@ -103,16 +103,24 @@ void GeneratePathways(List<Station> stations, List<Pathway> pathways)
         Vector3 end = stations[i + 1].Position;
         Vector3 currentPos = start;
 
+        float totalHeightDifference = Mathf.Abs(end.y - start.y);
+        int totalSegments = Mathf.CeilToInt(Vector3.Distance(start, end) / pathwaySizeX);
+        int stairsSegments = Mathf.CeilToInt(totalHeightDifference / stairsHeight);
+
+        int segmentsBetweenStairs = totalSegments / (stairsSegments + 1);
+
+        int segmentCounter = 0;
         while (Vector3.Distance(currentPos, end) > pathwaySizeX || Mathf.Abs(end.y - currentPos.y) >= stairsHeight)
         {
             Vector3 nextPos = currentPos;
 
-            // Randomly decide whether to move vertically or horizontally, but ensure proper distribution
-            bool moveVertically = random.Next(0, 10) < 5 && Mathf.Abs(end.y - currentPos.y) >= stairsHeight;
+            // Ensure a more even distribution of stairs segments
+            bool moveVertically = segmentCounter % (segmentsBetweenStairs + 1) == 0 && stairsSegments > 0;
 
             if (moveVertically)
             {
                 nextPos.y += Mathf.Sign(end.y - currentPos.y) * stairsHeight;
+                stairsSegments--;
 
                 // Move horizontally as well to maintain pathway direction
                 if (Mathf.Abs(end.x - currentPos.x) >= pathwaySizeX)
@@ -162,6 +170,7 @@ void GeneratePathways(List<Station> stations, List<Pathway> pathways)
                 pathway.Segments.Add(segment);
                 currentPos = nextPos;
             }
+            segmentCounter++;
         }
 
         // Add final segment to reach the end
@@ -186,6 +195,7 @@ Vector3 AlignToGrid(Vector3 position)
 
     return new Vector3(x, y, z);
 }
+
 
 
 
@@ -238,6 +248,7 @@ Vector3 AlignToGrid(Vector3 position)
         // Calculate the midpoint and direction
         Vector3 midpoint = (start + end) / 2;
         Vector3 direction = end - start;
+        if (start.y > end.y) direction = start - end;
         Quaternion rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
 
         // Instantiate your stairs prefab and position it between start and end
