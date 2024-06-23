@@ -38,6 +38,7 @@ public class UnderWaterMapGenerator : MonoBehaviour
     public GameObject pathwayPrefab;
     public GameObject stairsPrefab;
     public GameObject brokenPrefab;
+    public GameObject brokenStairsPrefab;
     
     public float pathwaySizeX = 10.0f; // Width of the pathway model
     public float pathwaySizeZ = 10.0f; // Depth of the pathway model
@@ -85,11 +86,12 @@ public class UnderWaterMapGenerator : MonoBehaviour
             {
                 Position = new Vector3(
                     Mathf.Round(random.Next(-10, 10) * pathwaySizeX),
-                    Mathf.Round(random.Next(-3, 3) * stairsHeight), // Assuming stations are at ground level
+                    Mathf.Round(random.Next(-3, 3) * stairsHeight),
                     Mathf.Round(random.Next(-10, 10) * pathwaySizeZ)
                 ),
                 //Rooms = GenerateRooms(random.Next(5, 15))
             };
+            
 
             stations.Add(station);
         }
@@ -229,34 +231,42 @@ Vector3 AlignToGrid(Vector3 position)
 
     void InstantiatePathwaySegment(PathwaySegment segment)
     {
-        if (segment.IsBroken)
+        if (segment.IsStairs)
         {
-            InstantiateBroken(segment.Start, segment.End);
-        }
-        else if (segment.IsStairs)
-        {
+            if (segment.IsBroken)
+            {
+              InstantiateBrokenStairs(segment.Start, segment.End);
+                return;
+            }
             // Instantiate stairs model between segment.Start and segment.End
             InstantiateStairs(segment.Start, segment.End);
         }
         else
         {
+            if (segment.IsBroken)
+            {
+               InstantiateBroken(segment.Start, segment.End);
+                return;
+            }
             // Instantiate flat pathway model between segment.Start and segment.End
             InstantiateFlatPathway(segment.Start, segment.End);
         }
     }
 
     
-    void InstantiateBroken(Vector3 start, Vector3 end)
+    void InstantiateBrokenStairs(Vector3 start, Vector3 end)
     {
         // Calculate the midpoint and direction
         Vector3 midpoint = (start + end) / 2;
         Vector3 direction = end - start;
+        if (start.y > end.y) direction = start - end;
         Quaternion rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
 
         // Instantiate your stairs prefab and position it between start and end
-        GameObject broken = Instantiate(brokenPrefab, midpoint, rotation);
+        GameObject stairs = Instantiate(brokenStairsPrefab, midpoint, rotation);
         // Adjust the scale and rotation as needed
     }
+    
     void InstantiateStairs(Vector3 start, Vector3 end)
     {
         // Calculate the midpoint and direction
@@ -269,7 +279,19 @@ Vector3 AlignToGrid(Vector3 position)
         GameObject stairs = Instantiate(stairsPrefab, midpoint, rotation);
         // Adjust the scale and rotation as needed
     }
-
+    
+     void InstantiateBroken(Vector3 start, Vector3 end)
+     {
+            // Calculate the midpoint and direction
+            Vector3 midpoint = (start + end) / 2;
+            Vector3 direction = end - start;
+            Quaternion rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+    
+            // Instantiate your stairs prefab and position it between start and end
+            GameObject broken = Instantiate(brokenPrefab, midpoint, rotation);
+            // Adjust the scale and rotation as needed
+     }
+    
     void InstantiateFlatPathway(Vector3 start, Vector3 end)
     {
         // Calculate the midpoint and direction
