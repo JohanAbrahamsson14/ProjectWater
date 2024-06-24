@@ -74,12 +74,14 @@ public class UnderWaterMapGenerator : MonoBehaviour
 
     void GenerateStations(List<Station> stations)
     {
+        
         Station startStation = new Station
         {
             Position = Vector3.zero,
             //Rooms = GenerateRooms(random.Next(5, 15))
         };
         stations.Add(startStation);
+        
         for (int i = 1; i < numberOfStations; i++)
         {
             Station station = new Station
@@ -96,7 +98,6 @@ public class UnderWaterMapGenerator : MonoBehaviour
             stations.Add(station);
         }
     }
-
 void GeneratePathways(List<Station> stations, List<Pathway> pathways)
 {
     for (int i = 0; i < stations.Count - 1; i++)
@@ -104,19 +105,30 @@ void GeneratePathways(List<Station> stations, List<Pathway> pathways)
         Pathway pathway = new Pathway();
         Vector3 start = stations[i].Position;
         Vector3 end = stations[i + 1].Position;
-        Vector3 currentPos = start;
+        Vector3 direction = Vector3.forward;
+        Vector3 currentPos = start+direction*pathwaySizeX;
 
         float totalHeightDifference = Mathf.Abs(end.y - start.y);
-        int totalSegments = Mathf.CeilToInt(Vector3.Distance(start, end) / pathwaySizeX);
+        int totalSegments = Mathf.CeilToInt(Vector3.Distance(currentPos, end) / pathwaySizeX);
         int stairsSegments = Mathf.CeilToInt(totalHeightDifference / stairsHeight);
 
         int segmentsBetweenStairs = totalSegments / (stairsSegments + 1);
 
         int segmentCounter = 0;
+        
+        PathwaySegment firstSegment = new PathwaySegment
+        {
+            Start = start,
+            End = currentPos,
+            IsBroken = false,
+            IsStairs = false,
+        };
+        pathway.Segments.Add(firstSegment);
+        
         while (Vector3.Distance(currentPos, end) > pathwaySizeX || Mathf.Abs(end.y - currentPos.y) >= stairsHeight)
         {
             Vector3 nextPos = currentPos;
-
+            
             // Ensure a more even distribution of stairs segments
             bool moveVertically = segmentCounter % (segmentsBetweenStairs + 1) == 0 && stairsSegments > 0;
 
@@ -176,6 +188,7 @@ void GeneratePathways(List<Station> stations, List<Pathway> pathways)
             segmentCounter++;
         }
 
+        
         // Add final segment to reach the end
         PathwaySegment finalSegment = new PathwaySegment
         {
@@ -185,6 +198,7 @@ void GeneratePathways(List<Station> stations, List<Pathway> pathways)
             IsStairs = Mathf.Abs(end.y - currentPos.y) >= stairsHeight / 2
         };
         pathway.Segments.Add(finalSegment);
+        
 
         pathways.Add(pathway);
     }
@@ -200,11 +214,48 @@ Vector3 AlignToGrid(Vector3 position)
 }
 
 
+void CreateDeadEndPathway(Vector3 startPos, List<Pathway> pathways)
+{
+    Pathway deadEndPathway = new Pathway();
+    Vector3 currentPos = startPos;
 
+    int deadEndLength = random.Next(1, 4); // Dead-end length between 1 to 3 segments
 
+    for (int i = 0; i < deadEndLength; i++)
+    {
+        Vector3 nextPos = currentPos;
 
+        // Randomly choose a direction for the dead-end pathway, ensuring grid alignment
+        int direction = random.Next(0, 3);
+        if (direction == 0)
+        {
+            nextPos.x += pathwaySizeX * (random.Next(0, 2) == 0 ? 1 : -1);
+        }
+        else if (direction == 1)
+        {
+            nextPos.z += pathwaySizeZ * (random.Next(0, 2) == 0 ? 1 : -1);
+        }
+        else if (direction == 2)
+        {
+            nextPos.y += stairsHeight * (random.Next(0, 2) == 0 ? 1 : -1);
+        }
 
+        nextPos = AlignToGrid(nextPos);
 
+        PathwaySegment segment = new PathwaySegment
+        {
+            Start = currentPos,
+            End = nextPos,
+            IsBroken = random.Next(0, 10) < 3, // 30% chance of being broken
+            IsStairs = Mathf.Abs(nextPos.y - currentPos.y) > stairsHeight / 2
+        };
+
+        deadEndPathway.Segments.Add(segment);
+        currentPos = nextPos;
+    }
+
+    pathways.Add(deadEndPathway);
+}
 
     void InstantiateMap(List<Station> stations, List<Pathway> pathways)
     {
@@ -263,8 +314,9 @@ Vector3 AlignToGrid(Vector3 position)
         Quaternion rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
 
         // Instantiate your stairs prefab and position it between start and end
-        GameObject stairs = Instantiate(brokenStairsPrefab, midpoint, rotation);
+        GameObject stairs = Instantiate(brokenStairsPrefab, new Vector3(end.x, midpoint.y, end.z), rotation);
         // Adjust the scale and rotation as needed
+        stairs.isStatic = true;
     }
     
     void InstantiateStairs(Vector3 start, Vector3 end)
@@ -276,8 +328,9 @@ Vector3 AlignToGrid(Vector3 position)
         Quaternion rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
 
         // Instantiate your stairs prefab and position it between start and end
-        GameObject stairs = Instantiate(stairsPrefab, midpoint, rotation);
+        GameObject stairs = Instantiate(stairsPrefab, new Vector3(end.x, midpoint.y, end.z), rotation);
         // Adjust the scale and rotation as needed
+        stairs.isStatic = true;
     }
     
      void InstantiateBroken(Vector3 start, Vector3 end)
@@ -288,8 +341,9 @@ Vector3 AlignToGrid(Vector3 position)
             Quaternion rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
     
             // Instantiate your stairs prefab and position it between start and end
-            GameObject broken = Instantiate(brokenPrefab, midpoint, rotation);
+            GameObject broken = Instantiate(brokenPrefab, end, rotation);
             // Adjust the scale and rotation as needed
+            broken.isStatic = true;
      }
     
     void InstantiateFlatPathway(Vector3 start, Vector3 end)
@@ -300,8 +354,9 @@ Vector3 AlignToGrid(Vector3 position)
         Quaternion rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
 
         // Instantiate your flat pathway prefab and position it between start and end
-        GameObject pathway = Instantiate(pathwayPrefab, midpoint, rotation);
+        GameObject pathway = Instantiate(pathwayPrefab, end, rotation);
         // Adjust the scale and rotation as needed
+        pathway.isStatic = true;
     }
 
 
