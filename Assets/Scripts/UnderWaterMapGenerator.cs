@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -161,16 +162,30 @@ void GeneratePathways(List<Station> stations, List<Pathway> pathways)
             }
             else
             {
-                // Move in the X or Z direction if not moving vertically
-                if (Mathf.Abs(end.x - currentPos.x) >= pathwaySizeX)
+                if (random.Next(0, 10) < 6)
                 {
-                    nextPos.x += Mathf.Sign(end.x - currentPos.x) * pathwaySizeX;
+                    // Move in the X or Z direction if not moving vertically
+                    if (Mathf.Abs(end.x - currentPos.x) >= pathwaySizeX)
+                    {
+                        nextPos.x += Mathf.Sign(end.x - currentPos.x) * pathwaySizeX;
+                    }
+                    else if (Mathf.Abs(end.z - currentPos.z) >= pathwaySizeZ)
+                    {
+                        nextPos.z += Mathf.Sign(end.z - currentPos.z) * pathwaySizeZ;
+                    }
                 }
-                else if (Mathf.Abs(end.z - currentPos.z) >= pathwaySizeZ)
+                else
                 {
-                    nextPos.z += Mathf.Sign(end.z - currentPos.z) * pathwaySizeZ;
+                    if (Mathf.Abs(end.x - currentPos.x) >= pathwaySizeX)
+                    {
+                        nextPos.z += (random.Next(0,2)==0?1:-1) * pathwaySizeZ;
+                    }
+                    else if (Mathf.Abs(end.z - currentPos.z) >= pathwaySizeZ)
+                    {
+                        nextPos.x += (random.Next(0,2)==0?1:-1) * pathwaySizeX;
+                    }
                 }
-
+                
                 nextPos = AlignToGrid(nextPos);
 
                 PathwaySegment segment = new PathwaySegment
