@@ -87,9 +87,9 @@ public class UnderWaterMapGenerator : MonoBehaviour
             Station station = new Station
             {
                 Position = new Vector3(
-                    Mathf.Round(random.Next(-10, 10) * pathwaySizeX),
-                    Mathf.Round(random.Next(-3, 3) * stairsHeight),
-                    Mathf.Round(random.Next(-10, 10) * pathwaySizeZ)
+                    Mathf.Round(random.Next(-10, 10) * pathwaySizeX*2),
+                    Mathf.Round(random.Next(-10, 10) * stairsHeight*2),
+                    Mathf.Round(random.Next(1, 15) * pathwaySizeZ*2)
                 ),
                 //Rooms = GenerateRooms(random.Next(5, 15))
             };
@@ -158,7 +158,6 @@ void GeneratePathways(List<Station> stations, List<Pathway> pathways)
                 };
 
                 pathway.Segments.Add(stairsSegment);
-                currentPos = nextPos;
             }
             else
             {
@@ -183,12 +182,14 @@ void GeneratePathways(List<Station> stations, List<Pathway> pathways)
                 };
 
                 pathway.Segments.Add(segment);
-                currentPos = nextPos;
             }
             segmentCounter++;
+            
+            if(random.Next(0,10)<2&&Vector3.Distance(currentPos, end) > pathwaySizeX*3) CreateDeadEndPathway(nextPos,pathways, nextPos-currentPos);
+            currentPos = nextPos;
         }
 
-        
+        /*
         // Add final segment to reach the end
         PathwaySegment finalSegment = new PathwaySegment
         {
@@ -198,7 +199,7 @@ void GeneratePathways(List<Station> stations, List<Pathway> pathways)
             IsStairs = Mathf.Abs(end.y - currentPos.y) >= stairsHeight / 2
         };
         pathway.Segments.Add(finalSegment);
-        
+        */
 
         pathways.Add(pathway);
     }
@@ -214,28 +215,31 @@ Vector3 AlignToGrid(Vector3 position)
 }
 
 
-void CreateDeadEndPathway(Vector3 startPos, List<Pathway> pathways)
+void CreateDeadEndPathway(Vector3 startPos, List<Pathway> pathways, Vector3 notDirection)
 {
     Pathway deadEndPathway = new Pathway();
     Vector3 currentPos = startPos;
 
-    int deadEndLength = random.Next(1, 4); // Dead-end length between 1 to 3 segments
+    int deadEndLength = random.Next(2, 8); // Dead-end length between 2 to 7 segments
+    int direction = random.Next(0, 2);
+
+    bool isXNormal = Mathf.Abs(notDirection.x) <= Mathf.Abs(notDirection.z);
 
     for (int i = 0; i < deadEndLength; i++)
     {
         Vector3 nextPos = currentPos;
 
         // Randomly choose a direction for the dead-end pathway, ensuring grid alignment
-        int direction = random.Next(0, 3);
-        if (direction == 0)
+        if (isXNormal)
         {
-            nextPos.x += pathwaySizeX * (random.Next(0, 2) == 0 ? 1 : -1);
+            nextPos.x += pathwaySizeX * (direction== 0 ? 1 : -1);
         }
-        else if (direction == 1)
+        else if (!isXNormal)
         {
-            nextPos.z += pathwaySizeZ * (random.Next(0, 2) == 0 ? 1 : -1);
+            nextPos.z += pathwaySizeZ * (direction== 0 ? 1 : -1);
         }
-        else if (direction == 2)
+        
+        if (random.Next(0, 10) < 1)
         {
             nextPos.y += stairsHeight * (random.Next(0, 2) == 0 ? 1 : -1);
         }
@@ -252,6 +256,11 @@ void CreateDeadEndPathway(Vector3 startPos, List<Pathway> pathways)
 
         deadEndPathway.Segments.Add(segment);
         currentPos = nextPos;
+        if (random.Next(0, 10) < 2)
+        {
+            direction = random.Next(0, 2);
+            isXNormal = !isXNormal;
+        }
     }
 
     pathways.Add(deadEndPathway);
