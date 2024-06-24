@@ -17,7 +17,8 @@ public class FirstPersonController : MonoBehaviour
     public float swimJumpSpeed = 4.0f;
     public float swimGravity = 2.0f;  // Adjusted for a more realistic sinking effect
     public float passiveSinkSpeed = 1.0f;  // Speed at which the player sinks passively
-    public float waterSurfaceLevel = 5.0f;  // Example water surface level, adjust as needed
+    public float waterSurfaceLevel = 5.0f; // Example water surface level, adjust as needed
+    public float Weight = 80f;
 
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
@@ -34,7 +35,7 @@ public class FirstPersonController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         waterEffects = GetComponent<WaterEffects>();
-        //SetInWater(true);
+        SetInWater(true);
     }
 
     void Update()
@@ -75,8 +76,8 @@ public class FirstPersonController : MonoBehaviour
 
     void WaterMovement()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        float horizontal = Input.GetAxis("Horizontal") * (!Input.GetKey(KeyCode.LeftShift)?swimSpeed:swimRunningSpeed);
+        float vertical = Input.GetAxis("Vertical") * (!Input.GetKey(KeyCode.LeftShift)?swimSpeed:swimRunningSpeed);
         float verticalMovement = 0;
         // && transform.position.y < waterSurfaceLevel - 0.5f
         if (Input.GetButton("Jump"))
@@ -87,16 +88,10 @@ public class FirstPersonController : MonoBehaviour
         {
             verticalMovement = -swimJumpSpeed;
         }
-        else
-        {
-            verticalMovement = -passiveSinkSpeed;
-        }
-        
-        verticalMovement -= swimGravity * Time.deltaTime;
 
         moveDirection = new Vector3(horizontal, verticalMovement, vertical);
+        moveDirection.y -= swimGravity * (Weight/80) * Time.deltaTime;
         moveDirection = transform.TransformDirection(moveDirection);
-        moveDirection *= !Input.GetKey(KeyCode.LeftShift)?swimSpeed:swimRunningSpeed;
 
         // Move the controller
         controller.Move(moveDirection * Time.deltaTime);

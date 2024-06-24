@@ -959,6 +959,11 @@ PrefabInstance:
       propertyPath: sun
       value: 
       objectReference: {fileID: 1797020145}
+    - target: {fileID: 2918495091219997902, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: Weight
+      value: 160
+      objectReference: {fileID: 0}
     - target: {fileID: 2918495091219997903, guid: 8e44961fb20b8154889fe862444e0942,
         type: 3}
       propertyPath: m_RootOrder
