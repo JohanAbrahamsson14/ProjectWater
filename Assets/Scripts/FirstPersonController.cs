@@ -34,6 +34,7 @@ public class FirstPersonController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         waterEffects = GetComponent<WaterEffects>();
+        //SetInWater(true);
     }
 
     void Update()

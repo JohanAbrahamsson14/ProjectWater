@@ -88,8 +88,8 @@ public class UnderWaterMapGenerator : MonoBehaviour
             {
                 Position = new Vector3(
                     Mathf.Round(random.Next(-10, 10) * pathwaySizeX*2),
-                    Mathf.Round(random.Next(-10, 10) * stairsHeight*2),
-                    Mathf.Round(random.Next(1, 15) * pathwaySizeZ*2)
+                    Mathf.Round(random.Next(-3, 3) * stairsHeight*2),
+                    Mathf.Round(random.Next(8, 15) * pathwaySizeZ*2)
                 ),
                 //Rooms = GenerateRooms(random.Next(5, 15))
             };
