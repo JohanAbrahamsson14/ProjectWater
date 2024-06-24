@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b88fa17af20523746817c9022567435b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Seed: 1256634
+  Seed: 9172
   stationPrefab: {fileID: 2110648806}
   pathwayPrefab: {fileID: 2066305130}
   stairsPrefab: {fileID: 510616281}
@@ -1013,6 +1013,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918495092247321840, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: far clip plane
+      value: 51
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e44961fb20b8154889fe862444e0942, type: 3}

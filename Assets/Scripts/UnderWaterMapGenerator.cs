@@ -116,6 +116,8 @@ void GeneratePathways(List<Station> stations, List<Pathway> pathways)
         int segmentsBetweenStairs = totalSegments / (stairsSegments + 1);
 
         int segmentCounter = 0;
+
+        int randomDirection = 0;
         
         PathwaySegment firstSegment = new PathwaySegment
         {
@@ -162,29 +164,17 @@ void GeneratePathways(List<Station> stations, List<Pathway> pathways)
             }
             else
             {
-                if (random.Next(0, 10) < 6)
+                //70% Chance to be normal
+                // Move in the X or Z direction if not moving vertically
+                if (random.Next(0, 10) < 7 && Mathf.Abs(end.x - currentPos.x) >= pathwaySizeX)
                 {
-                    // Move in the X or Z direction if not moving vertically
-                    if (Mathf.Abs(end.x - currentPos.x) >= pathwaySizeX)
-                    {
-                        nextPos.x += Mathf.Sign(end.x - currentPos.x) * pathwaySizeX;
-                    }
-                    else if (Mathf.Abs(end.z - currentPos.z) >= pathwaySizeZ)
-                    {
-                        nextPos.z += Mathf.Sign(end.z - currentPos.z) * pathwaySizeZ;
-                    }
+                    nextPos.x += Mathf.Sign(end.x - currentPos.x) * pathwaySizeX;
                 }
-                else
+                else if (Mathf.Abs(end.z - currentPos.z) >= pathwaySizeZ)
                 {
-                    if (Mathf.Abs(end.x - currentPos.x) >= pathwaySizeX)
-                    {
-                        nextPos.z += (random.Next(0,2)==0?1:-1) * pathwaySizeZ;
-                    }
-                    else if (Mathf.Abs(end.z - currentPos.z) >= pathwaySizeZ)
-                    {
-                        nextPos.x += (random.Next(0,2)==0?1:-1) * pathwaySizeX;
-                    }
+                    nextPos.z += Mathf.Sign(end.z - currentPos.z) * pathwaySizeZ;
                 }
+                
                 
                 nextPos = AlignToGrid(nextPos);
 
@@ -200,7 +190,7 @@ void GeneratePathways(List<Station> stations, List<Pathway> pathways)
             }
             segmentCounter++;
             
-            if(random.Next(0,10)<2&&Vector3.Distance(currentPos, end) > pathwaySizeX*3) CreateDeadEndPathway(nextPos,pathways, nextPos-currentPos);
+            if(random.Next(0,10)<2&&Vector3.Distance(currentPos, end) > pathwaySizeX*8&&Vector3.Distance(currentPos, start) > pathwaySizeX*8) CreateDeadEndPathway(nextPos,pathways, nextPos-currentPos);
             currentPos = nextPos;
         }
 
