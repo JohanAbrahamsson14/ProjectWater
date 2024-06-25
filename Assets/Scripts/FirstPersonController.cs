@@ -190,7 +190,6 @@ public class FirstPersonController : MonoBehaviour, IDamageAble
     }
     
     public float maxHealth { get; set; }
-    public float maxHealth { get; set; }
     public float currentHealth { get; set; }
     public void GetDamaged(float value)
     {
