@@ -23,4 +23,6 @@ MonoBehaviour:
   selectionStrength: 3
   grabbOffsetForward: 0.5
   breakOutValue: 50
+  grabbedDamage: 15
+  thrashingDamage: 5
   player: {fileID: 0}

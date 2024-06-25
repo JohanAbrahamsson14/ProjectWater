@@ -64,7 +64,7 @@ public class Shark : EnemyAgent, IDamageAble
     {
         // Retreating behavior
     }
-    public void GetDamaged(int value)
+    public void GetDamaged(float value)
     {
         currentHealth -= value;
         if (currentHealth <= 0) Death();

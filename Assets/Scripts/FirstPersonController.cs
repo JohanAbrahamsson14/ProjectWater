@@ -5,7 +5,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(WaterEffects))]
-public class FirstPersonController : MonoBehaviour
+public class FirstPersonController : MonoBehaviour, IDamageAble
 {
     public float speed = 6.0f;
     public float runningSpeed = 8.0f;
@@ -36,12 +36,16 @@ public class FirstPersonController : MonoBehaviour
     
     private HashSet<KeyCode> keysToCheck = new HashSet<KeyCode>(){ KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D };
 
+    public float playerMaxHealth;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
         waterEffects = GetComponent<WaterEffects>();
         staminaCurrent = staminaBase;
         SetInWater(true);
+        maxHealth = playerMaxHealth;
+        currentHealth = maxHealth;
     }
 
     void Update()
@@ -183,5 +187,19 @@ public class FirstPersonController : MonoBehaviour
         }
 
         return value;
+    }
+    
+    public float maxHealth { get; set; }
+    public float maxHealth { get; set; }
+    public float currentHealth { get; set; }
+    public void GetDamaged(float value)
+    {
+        currentHealth -= value;
+        if (currentHealth <= 0) Death();
+    }
+
+    public void Death()
+    {
+       Debug.Log("dead");
     }
 }

@@ -22,6 +22,9 @@ public class GrabbedShark : Grabbed
     public float breakOutValue;
     private float currentHold;
 
+    public float grabbedDamage = 10f;
+    public float thrashingDamage = 5f;
+
     public FirstPersonController player;
     
     public override void StartState()
@@ -55,6 +58,7 @@ public class GrabbedShark : Grabbed
         grabbedObject.transform.GetChild(0).transform.Rotate(Vector3.up, 180);
         grabbedObject.transform.localPosition = Vector3.forward*grabbOffsetForward;
         player = grabbedObject.GetComponent<FirstPersonController>();
+        player.GetDamaged(grabbedDamage);
         player.SetGrabbed(true);
         
         agent.speed *= speedIncreaseMultiplyer;
@@ -77,6 +81,8 @@ public class GrabbedShark : Grabbed
     public override void MainLogic()
     {
         base.MainLogic();
+        
+        player.GetDamaged(thrashingDamage*Time.deltaTime);
         
         agent.speedChangeTimer -= Time.deltaTime;
         if (agent.speedChangeTimer <= 0)
