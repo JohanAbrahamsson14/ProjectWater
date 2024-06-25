@@ -38,12 +38,12 @@ public class EnemyAgent : MonoBehaviour
     public void Awake()
     {
         stateMachine = new StateMachine();
-        patrolling = ScriptableObject.CreateInstance<Patrolling>();
-        stalking = ScriptableObject.CreateInstance<Stalking>();
-        attacking = ScriptableObject.CreateInstance<Attacking>();
-        attack = ScriptableObject.CreateInstance<Attack>();
-        grabbed = ScriptableObject.CreateInstance<Grabbed>();
-        retreating = ScriptableObject.CreateInstance<Retreating>();
-        death = ScriptableObject.CreateInstance<Death>();
+        patrolling = (Patrolling)patrolling.Clone();
+        stalking = (Stalking)stalking.Clone();
+        attacking = (Attacking)attacking.Clone();
+        attack = (Attack)attack.Clone();
+        grabbed = (Grabbed)grabbed.Clone();
+        retreating = (Retreating)retreating.Clone();
+        death = (Death)death.Clone();
     }
 }
