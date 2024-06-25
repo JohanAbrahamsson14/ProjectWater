@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae025c9dcdca7e54d82fef76e562ec62, type: 3}
   m_Name: RetreatingShark
   m_EditorClassIdentifier: 
-  players: []
+  players:
+  - {fileID: 0}
   agent: {fileID: 0}
   timeToBecomeNormal: 5
-  currentTime: 0.0031776
+  currentTime: 0
   selectionDistance: 30
-  selectionPos: {x: 0, y: 0, z: 0}
+  selectionPos: {x: 20.058456, y: -16.268175, z: 15.264494}
   selectionPlayerStrength: 5
   selectionStrength: 3
-  speedIncreaseMultiplyer: 2.5
+  speedIncreaseMultiplyer: 4.5

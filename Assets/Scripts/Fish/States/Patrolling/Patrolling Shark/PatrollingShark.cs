@@ -6,11 +6,18 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PatrollingShark", menuName = "State/Patrolling/PatrollingShark")]
 public class PatrollingShark : Patrolling
 {
+    private Transform selectedPlayer;
+    private float patrollingTowardsPlayerStrength = 1.3f;
     public float detectionRange = 10.0f;
+    public float distanceBase = 50f;
+    private float currentDistance = 0f;
+    public float distanceDegration = 2f;
     
     public override void StartState()
     {
         base.StartState();
+        currentDistance = distanceBase;
+        
         agent.speed = UnityEngine.Random.Range(agent.minSpeed, agent.maxSpeed);
         agent.turnSpeed = UnityEngine.Random.Range(agent.minTurnSpeed, agent.maxTurnSpeed);
         
@@ -31,6 +38,11 @@ public class PatrollingShark : Patrolling
     public override void MainLogic()
     {
         base.MainLogic();
+        players.Sort((a,b) => Vector3.Distance(a.position, agent.transform.position).CompareTo(Vector3.Distance(b.position, agent.transform.position)));
+        selectedPlayer = players.First();
+
+        currentDistance -= distanceDegration * Time.deltaTime;
+        currentDistance = Mathf.Clamp(currentDistance, 0, distanceBase);
         
         agent.speedChangeTimer -= Time.deltaTime;
         if (agent.speedChangeTimer <= 0)
@@ -45,7 +57,7 @@ public class PatrollingShark : Patrolling
             agent.speedChangeTimer = agent.speedChangeInterval;
         }
         
-        agent.direction = agent.randomMovement;
+        agent.direction = agent.randomMovement + PatrolingTowardsTarget(selectedPlayer, patrollingTowardsPlayerStrength);
         agent.velocity += Time.deltaTime * agent.direction;
         agent.velocity += Time.deltaTime * agent.speed * agent.velocity.normalized;
         agent.velocity = Vector3.ClampMagnitude(agent.velocity, agent.speed);
@@ -58,13 +70,16 @@ public class PatrollingShark : Patrolling
     
     public override void Transition()
     {
-        if (Vector3.Distance(agent.transform.position, players.First().position) < detectionRange) stateMachine.StateTransformation(agent.stalking);
+        if (Vector3.Distance(agent.transform.position, selectedPlayer.position) < detectionRange) stateMachine.StateTransformation(agent.stalking);
         base.Transition();
     }
-
-    public void OnDrawGizmos()
+    
+    private Vector3 PatrolingTowardsTarget(Transform target, float value)
     {
-        Gizmos.color=Color.red;
-        Gizmos.DrawWireSphere(agent.transform.position, detectionRange);
+        Vector3 patrollingPoint = target.position + Random.onUnitSphere * currentDistance;
+        //The Vector from the agent to the selected player
+        Vector3 towardsVector = patrollingPoint - agent.transform.position;
+        
+        return towardsVector.normalized * value;
     }
 }

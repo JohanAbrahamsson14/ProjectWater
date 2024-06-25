@@ -136,12 +136,16 @@ MonoBehaviour:
   runningSpeed: 8
   jumpSpeed: 8
   gravity: 20
+  staminaBase: 6
+  staminaRefreshRate: 4
+  staminaUsageRate: 6
   swimSpeed: 2.5
   swimRunningSpeed: 4.5
-  swimJumpSpeed: 1.5
-  swimGravity: 1
+  swimJumpSpeed: 2.5
+  swimGravity: 0.75
   passiveSinkSpeed: 0.5
   waterSurfaceLevel: 5
+  Weight: 80
   isGrabbed: 0
   fogWall: {fileID: 2918495092968570031}
 --- !u!114 &2918495091219997896

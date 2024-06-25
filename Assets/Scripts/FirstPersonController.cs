@@ -12,6 +12,11 @@ public class FirstPersonController : MonoBehaviour
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
 
+    public float staminaBase = 10f;
+    private float staminaCurrent;
+    public float staminaRefreshRate = 4f;
+    public float staminaUsageRate = 6f;
+
     public float swimSpeed = 3.0f;
     public float swimRunningSpeed = 3.5f;
     public float swimJumpSpeed = 4.0f;
@@ -35,11 +40,15 @@ public class FirstPersonController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         waterEffects = GetComponent<WaterEffects>();
+        staminaCurrent = staminaBase;
         SetInWater(true);
     }
 
     void Update()
     {
+        staminaCurrent += staminaRefreshRate * Time.deltaTime;
+        if(Input.GetKey(KeyCode.LeftShift)) staminaCurrent -= staminaUsageRate * Time.deltaTime;
+        staminaCurrent = Mathf.Clamp(staminaCurrent, 0, staminaBase);
         fogWall.SetActive(isInWater);
 
         if (isGrabbed)
@@ -62,7 +71,7 @@ public class FirstPersonController : MonoBehaviour
         {
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
-            moveDirection *=  !Input.GetKey(KeyCode.LeftShift)?speed:runningSpeed;
+            moveDirection *= Input.GetKey(KeyCode.LeftShift)&& staminaCurrent>0?runningSpeed:speed;
 
             if (Input.GetButton("Jump"))
             {
@@ -76,25 +85,37 @@ public class FirstPersonController : MonoBehaviour
 
     void WaterMovement()
     {
-        float horizontal = Input.GetAxis("Horizontal") * (!Input.GetKey(KeyCode.LeftShift)?swimSpeed:swimRunningSpeed);
-        float vertical = Input.GetAxis("Vertical") * (!Input.GetKey(KeyCode.LeftShift)?swimSpeed:swimRunningSpeed);
-        float verticalMovement = 0;
-        // && transform.position.y < waterSurfaceLevel - 0.5f
-        if (Input.GetButton("Jump"))
-        {
-            verticalMovement = swimJumpSpeed;
-        }
-        else if (Input.GetKey(KeyCode.LeftControl))
-        {
-            verticalMovement = -swimJumpSpeed;
-        }
+            float horizontalSpeed = (Input.GetKey(KeyCode.LeftShift)&& staminaCurrent>0 ? swimRunningSpeed:swimSpeed);
+            float verticalSpeed = (Input.GetKey(KeyCode.LeftShift)&& staminaCurrent>0 ? swimRunningSpeed:swimSpeed);
 
-        moveDirection = new Vector3(horizontal, verticalMovement, vertical);
-        moveDirection.y -= swimGravity * (Weight/80) * Time.deltaTime;
-        moveDirection = transform.TransformDirection(moveDirection);
+            float horizontal = Input.GetAxis("Horizontal") * horizontalSpeed;
+            float vertical = Input.GetAxis("Vertical") * verticalSpeed;
 
-        // Move the controller
-        controller.Move(moveDirection * Time.deltaTime);
+            float verticalMovement = 0;
+
+            if (Input.GetButton("Jump"))
+            {
+                verticalMovement = swimJumpSpeed;
+            }
+            else if (Input.GetKey(KeyCode.LeftControl))
+            {
+                verticalMovement = -swimJumpSpeed;
+            }
+
+            Vector3 horizontalMovement = new Vector3(horizontal, 0, vertical);
+            horizontalMovement = transform.TransformDirection(horizontalMovement);
+
+            // Applying the vertical movement separately
+            Vector3 verticalDirection = new Vector3(0, verticalMovement, 0);
+
+            // Combining both movements
+            moveDirection = horizontalMovement + verticalDirection;
+            moveDirection.y -= swimGravity* (Weight*Weight/6400);
+            // Apply movement to the controller
+            controller.Move(moveDirection * Time.deltaTime);
+
+
+
 
         /*
         if (controller.isGrounded && transform.position.y >= waterSurfaceLevel)
