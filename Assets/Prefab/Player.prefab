@@ -148,6 +148,7 @@ MonoBehaviour:
   Weight: 80
   isGrabbed: 0
   fogWall: {fileID: 2918495092968570031}
+  playerMaxHealth: 100
 --- !u!114 &2918495091219997896
 MonoBehaviour:
   m_ObjectHideFlags: 0

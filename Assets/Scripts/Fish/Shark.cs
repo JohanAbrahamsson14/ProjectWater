@@ -1,21 +1,25 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Shark : EnemyAgent, IDamageAble
 {
     public float retreatThreshold = 20.0f;
+    private Renderer renderer;
     public float maxHealth { get; set; }
     public float currentHealth { get; set; }
     public void Start()
     {
         stateMachine.Initialize(this);
         maxHealth = currentHealth;
+        renderer = GetComponent<Renderer>();
     }
 
     void Update()
     {
+        renderer.material.SetFloat("_Speed", speed);
         stateMachine.currentState.MainLogic();
         stateMachine.currentState.Transition();
         /*

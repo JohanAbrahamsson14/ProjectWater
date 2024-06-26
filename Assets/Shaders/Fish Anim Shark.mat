@@ -40,6 +40,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlongCoordinate: 0
+    - _AlongSideRotation: 0
     - _Maximum_Movement: 100
     - _PassiveMoveOffset: 0.03
     - _QueueControl: 0
