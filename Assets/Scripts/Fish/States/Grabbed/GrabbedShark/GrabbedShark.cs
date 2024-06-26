@@ -17,7 +17,7 @@ public class GrabbedShark : Grabbed
     public float selectionDistance = 30;
     public Vector3 selectionPos;
     public float selectionStrength = 3;
-    public float grabbOffsetForward = 0.5f;
+    public Vector3 grabbOffset;
 
     public float breakOutValue;
     private float currentHold;
@@ -56,7 +56,7 @@ public class GrabbedShark : Grabbed
         grabbedObject.transform.Rotate(Vector3.forward, 90);
         grabbedObject.transform.GetChild(0).transform.localRotation = Quaternion.identity;
         grabbedObject.transform.GetChild(0).transform.Rotate(Vector3.up, 180);
-        grabbedObject.transform.localPosition = Vector3.forward*grabbOffsetForward;
+        grabbedObject.transform.localPosition = grabbOffset;
         player = grabbedObject.GetComponent<FirstPersonController>();
         player.GetDamaged(grabbedDamage);
         player.SetGrabbed(true);

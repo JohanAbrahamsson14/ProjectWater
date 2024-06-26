@@ -21,7 +21,7 @@ MonoBehaviour:
   selectionDistance: 30
   selectionPos: {x: -18.894085, y: 19.653873, z: -12.51954}
   selectionStrength: 3
-  grabbOffsetForward: 0.5
+  grabbOffset: {x: -0.154, y: -0.561, z: 3.4}
   breakOutValue: 50
   grabbedDamage: 15
   thrashingDamage: 5
