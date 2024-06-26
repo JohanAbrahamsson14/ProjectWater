@@ -40,18 +40,19 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlongCoordinate: 0
+    - _Maximum_Movement: 10
     - _PassiveMoveOffset: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RotateYawSpeed: 5
-    - _RotationYawOffset: 0.3
+    - _RotationYawOffset: 0.15
     - _SetColorPositionMode: 0
     - _Speed_Offset: 3
     - _WobbleAmount: 1
-    - _WobbleDistance: 0.15
-    - _WobbleFrequency: 2.5
-    - _WobbleSpeed: 3
-    - _alongCoordinateValue: -0.5
+    - _WobbleDistance: 0.22
+    - _WobbleFrequency: 3
+    - _WobbleSpeed: 5
+    - _alongCoordinateValue: -0.25
     m_Colors:
     - _Color: {r: 1, g: 0, b: 0, a: 0}
     - _Transverse: {r: 0.02, g: 0, b: 0, a: 0}
