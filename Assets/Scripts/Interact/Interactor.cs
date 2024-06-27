@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class Interactor : MonoBehaviour
 {
-    public void Interact(Ray ray, float distance)
+    public void Interact(Ray ray, float distance, FirstPersonController player)
     {
         if (!Physics.Raycast(ray, out RaycastHit hitData, distance, LayerMask.GetMask("Interactable"))) return;
-        if (hitData.collider.gameObject.TryGetComponent<IInteractable>(out IInteractable interactable)) interactable.Action();
+        if (hitData.collider.gameObject.TryGetComponent<IInteractable>(out IInteractable interactable)) interactable.Action(player);
     }
 }

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    public void Action();
+    public void Action(FirstPersonController player);
 }

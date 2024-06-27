@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestInteract : MonoBehaviour, IInteractable
 {
-    public void Action()
+    public void Action(FirstPersonController player)
     {
         Debug.Log("hello!");
     }

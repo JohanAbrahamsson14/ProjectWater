@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using Random = System.Random;
@@ -40,9 +41,11 @@ public class FirstPersonController : MonoBehaviour, IDamageAble
 
     public float playerMaxHealth;
 
-    public Camera _camera;
+    private Camera _camera;
     private Interactor _interactor;
     public float interactRange;
+
+    public List<Item> inventory;
 
     void Start()
     {
@@ -93,7 +96,16 @@ public class FirstPersonController : MonoBehaviour, IDamageAble
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            _interactor.Interact(_camera.ViewportPointToRay(new Vector3 (0.5f, 0.5f, 0)), interactRange);
+            _interactor.Interact(_camera.ViewportPointToRay(new Vector3 (0.5f, 0.5f, 0)), interactRange, this);
+        }
+        if (Input.GetKeyDown(KeyCode.G) && inventory.Count > 0)
+        {
+            Item selectedItem = inventory.Last();
+            GameObject selectedItemObject = selectedItem.itemObject;
+            selectedItemObject.transform.position = transform.position+Vector3.down;
+            Weight -= selectedItem.weight;
+            selectedItemObject.SetActive(true);
+            inventory.Remove(selectedItem);
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
@@ -133,7 +145,16 @@ public class FirstPersonController : MonoBehaviour, IDamageAble
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                _interactor.Interact(_camera.ViewportPointToRay(new Vector3 (0.5f, 0.5f, 0)), interactRange);
+                _interactor.Interact(_camera.ViewportPointToRay(new Vector3 (0.5f, 0.5f, 0)), interactRange, this);
+            }
+            if (Input.GetKeyDown(KeyCode.G) && inventory.Count > 0)
+            {
+                Item selectedItem = inventory.Last();
+                GameObject selectedItemObject = selectedItem.itemObject;
+                selectedItemObject.transform.position = transform.position+Vector3.down;
+                Weight -= selectedItem.weight;
+                selectedItemObject.SetActive(true);
+                inventory.Remove(selectedItem);
             }
 
 
