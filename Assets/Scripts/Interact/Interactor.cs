@@ -8,18 +8,7 @@ public class Interactor : MonoBehaviour
 {
     public void Interact(Ray ray, float distance)
     {
-        if (!Physics.Raycast(ray, out RaycastHit hitData, distance, LayerMask.GetMask("Interactable")))
-        {
-            Debug.Log("no hit");
-        }
-        else
-        {
-            if (hitData.collider.gameObject.TryGetComponent<IInteractable>(out IInteractable interactable))
-                interactable.Action();
-            else
-            {
-                Debug.Log("heelo");
-            }
-        }
+        if (!Physics.Raycast(ray, out RaycastHit hitData, distance, LayerMask.GetMask("Interactable"))) return;
+        if (hitData.collider.gameObject.TryGetComponent<IInteractable>(out IInteractable interactable)) interactable.Action();
     }
 }

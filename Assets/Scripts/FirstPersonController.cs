@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using Random = System.Random;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(WaterEffects))]
+[RequireComponent(typeof(Interactor))]
 public class FirstPersonController : MonoBehaviour, IDamageAble
 {
     public float speed = 6.0f;
@@ -38,10 +40,16 @@ public class FirstPersonController : MonoBehaviour, IDamageAble
 
     public float playerMaxHealth;
 
+    public Camera _camera;
+    private Interactor _interactor;
+    public float interactRange;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
         waterEffects = GetComponent<WaterEffects>();
+        _interactor = GetComponent<Interactor>();
+        _camera = GetComponentInChildren<Camera>();
         staminaCurrent = staminaBase;
         SetInWater(true);
         maxHealth = playerMaxHealth;
@@ -83,6 +91,11 @@ public class FirstPersonController : MonoBehaviour, IDamageAble
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            _interactor.Interact(_camera.ViewportPointToRay(new Vector3 (0.5f, 0.5f, 0)), interactRange);
+        }
+
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
     }
@@ -118,7 +131,10 @@ public class FirstPersonController : MonoBehaviour, IDamageAble
             // Apply movement to the controller
             controller.Move(moveDirection * Time.deltaTime);
 
-
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                _interactor.Interact(_camera.ViewportPointToRay(new Vector3 (0.5f, 0.5f, 0)), interactRange);
+            }
 
 
         /*
