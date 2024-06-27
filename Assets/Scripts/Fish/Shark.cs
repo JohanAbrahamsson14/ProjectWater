@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = System.Random;
 
 public class Shark : EnemyAgent, IDamageAble
 {
@@ -15,6 +16,7 @@ public class Shark : EnemyAgent, IDamageAble
         stateMachine.Initialize(this);
         maxHealth = currentHealth;
         renderer = GetComponent<Renderer>();
+        renderer.material.SetFloat("_RandomValue", UnityEngine.Random.Range(0,99999));
     }
 
     void Update()

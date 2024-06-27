@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using Random = UnityEngine.Random;
 
 public class Fish : MonoBehaviour
 {
@@ -35,8 +36,13 @@ public class Fish : MonoBehaviour
     private float speed = 3.5f;
     private float turnSpeed = 5.0f;
     
+    private Renderer renderer;
+    
     void Start()
     {
+        renderer = GetComponent<Renderer>();
+        renderer.material.SetFloat("_RandomValue", UnityEngine.Random.Range(0,99999));
+        
         speed = UnityEngine.Random.Range(minSpeed, maxSpeed);
         turnSpeed = UnityEngine.Random.Range(minTurnSpeed, maxTurnSpeed);
         

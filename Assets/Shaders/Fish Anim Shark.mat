@@ -45,6 +45,7 @@ Material:
     - _PassiveMoveOffset: 0.03
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _RandomValue: 0
     - _RotateYawSpeed: 5
     - _RotationYawOffset: 0.1
     - _SetColorPositionMode: 0
