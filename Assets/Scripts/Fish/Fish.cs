@@ -132,12 +132,13 @@ public class Fish : MonoBehaviour
     Vector3 Separation()
     {
         Vector3 separationForce = Vector3.zero;
+        Vector3 position = transform.position;
 
         foreach (Fish fish in neighborFish)
         {
-            if (Vector3.Distance(transform.position, fish.transform.position) < separationDistance)
+            if (Vector3.Distance(position, fish.transform.position) < separationDistance)
             {
-                separationForce += transform.position - fish.transform.position;
+                separationForce += position - fish.transform.position;
             }
         }
 
