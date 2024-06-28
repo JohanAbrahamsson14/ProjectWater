@@ -13,7 +13,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -45,6 +45,7 @@ Material:
     - _PassiveMoveOffset: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _RandomValue: 0
     - _RotateYawSpeed: 5
     - _RotationYawOffset: 0.3
     - _SetColorPositionMode: 0
