@@ -59,6 +59,6 @@ public class AttackShark : Attack
         base.Transition();
         
         if(attackedObject != null) stateMachine.StateTransformation(agent.grabbed);
-        else stateMachine.StateTransformation(agent.stalking);
+        else stateMachine.StateTransformation(agent.retreating);
     }
 }
