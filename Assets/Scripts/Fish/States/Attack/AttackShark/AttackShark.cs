@@ -32,12 +32,12 @@ public class AttackShark : Attack
 
         Vector3 pointOfAttack = agent.transform.position + attackedOffset;
 
-        RaycastHit[] hits = Physics.SphereCastAll(pointOfAttack, attackDistance, agent.transform.TransformDirection(Vector3.forward));
-
-        if (hits.Any(hit => hit.collider.CompareTag("Player")))
+        Collider[] hits = Physics.OverlapSphere(pointOfAttack, attackDistance);
+        //agent.transform.TransformDirection(Vector3.forward)
+        if (hits.Any(hit => hit.CompareTag("Player")))
         {
-            RaycastHit hitSelected = hits.First(hit => hit.collider.CompareTag("Player"));
-            Vector3 direction = (hitSelected.collider.gameObject.transform.position - pointOfAttack).normalized;
+            Collider hitSelected = hits.First(hit => hit.CompareTag("Player"));
+            Vector3 direction = (hitSelected.gameObject.transform.position - pointOfAttack).normalized;
             Ray ray = new Ray(pointOfAttack, direction);
 
             // Debugging information
@@ -46,9 +46,9 @@ public class AttackShark : Attack
             //Wall detection
             int wallLayerMask = LayerMask.GetMask("Wall");
 
-            if (!Physics.Raycast(ray, (hitSelected.collider.gameObject.transform.position - pointOfAttack).magnitude, wallLayerMask))
+            if (!Physics.Raycast(ray, (hitSelected.gameObject.transform.position - pointOfAttack).magnitude, wallLayerMask))
             {
-                attackedObject = hitSelected.collider.CompareTag("Player") ? hitSelected.collider.gameObject : null;
+                attackedObject = hitSelected.CompareTag("Player") ? hitSelected.gameObject : null;
             }
         }
     }

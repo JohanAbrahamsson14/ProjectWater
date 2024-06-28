@@ -40,14 +40,14 @@ public class GrabbedShark : Grabbed
             grabbedObject = hit.collider.CompareTag("Player") ? hit.collider.gameObject : null;
         }
         */
-        
-        RaycastHit[] hit = Physics.SphereCastAll(agent.transform.position, attackDistance, 
-            agent.transform.TransformDirection(Vector3.forward));
+        Vector3 pointOfAttack = agent.transform.position + grabbOffset;
+        Collider[] hits = Physics.OverlapSphere(pointOfAttack, attackDistance);
+        //agent.transform.TransformDirection(Vector3.forward)
 
-        if (hit.Any(x => x.collider.CompareTag("Player")))
+        if (hits.Any(x => x.CompareTag("Player")))
         {
-            RaycastHit hitSelected = hit.First(x => x.collider.CompareTag("Player"));
-            grabbedObject = hitSelected.collider.CompareTag("Player") ? hitSelected.collider.gameObject : null;
+            Collider hitSelected = hits.First(x => x.CompareTag("Player"));
+            grabbedObject = hitSelected.CompareTag("Player") ? hitSelected.gameObject : null;
         }
 
         if (grabbedObject == null) return;

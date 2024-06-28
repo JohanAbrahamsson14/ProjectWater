@@ -193,8 +193,60 @@ public class Fish : MonoBehaviour
     List<Fish> GetNeighbors()
     {
         List<Fish> neighbors = new List<Fish>();
+        
         Collider[] nearbyObjects = Physics.OverlapSphere(transform.position, neighborDistance, LayerMask.GetMask("Fish"));
+        
 
+        /*
+        RaycastHit hit;
+        Vector3[] rayDirectionsNeighbours = {
+            transform.forward,
+            (transform.forward + transform.right).normalized,
+            (transform.forward - transform.right).normalized,
+            (transform.forward + transform.up).normalized,
+            (transform.forward - transform.up).normalized,
+            
+            (transform.forward + transform.right + transform.up).normalized,
+            (transform.forward - transform.right + transform.up).normalized,
+            (transform.forward + transform.right - transform.up).normalized,
+            (transform.forward - transform.right - transform.up).normalized,
+            
+            (transform.forward*2 + transform.right).normalized,
+            (transform.forward*2 - transform.right).normalized,
+            (transform.forward*2 + transform.up).normalized,
+            (transform.forward*2 - transform.up).normalized,
+            
+            (transform.forward*2 + transform.right + transform.up).normalized,
+            (transform.forward*2 - transform.right + transform.up).normalized,
+            (transform.forward*2 + transform.right - transform.up).normalized,
+            (transform.forward*2 - transform.right - transform.up).normalized,
+            
+            transform.right,
+            -transform.right,
+            transform.up,
+            -transform.up,
+            (-transform.forward + transform.right).normalized,
+            (-transform.forward - transform.right).normalized,
+            (-transform.forward + transform.up).normalized,
+            (-transform.forward - transform.up).normalized
+            
+        };
+        */
+        /*
+        foreach (Vector3 dir in rayDirectionsNeighbours)
+        {
+            if (Physics.Raycast(transform.position, dir, out hit, neighborDistance, LayerMask.GetMask("Fish")))
+            {
+                if (hit.collider != collider)
+                {
+                    hit.collider.gameObject.TryGetComponent<Fish>(out Fish fish);
+                    if(!neighbors.Contains(fish)) neighbors.Add(fish);
+                }
+            }
+        }
+        */
+        
+        
         foreach (Collider obj in nearbyObjects)
         {
             if (obj != collider)
@@ -203,6 +255,7 @@ public class Fish : MonoBehaviour
                 neighbors.Add(fish);
             }
         }
+        
 
         return neighbors;
     }
