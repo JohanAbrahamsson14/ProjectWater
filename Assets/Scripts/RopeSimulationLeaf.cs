@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class RopeSimulation : MonoBehaviour
+public class RopeSimulationLeaf : MonoBehaviour
 {
     public int segmentCount = 10;
     public float segmentLength = 0.5f;
     public float ropeStiffness = 0.5f;
-    public GameObject leafPrefab;
     public float buoyancyForce = 1.0f;
+    public Vector3 direction;
 
     private LineRenderer lineRenderer;
     private Rigidbody[] segments;
@@ -29,7 +29,7 @@ public class RopeSimulation : MonoBehaviour
         for (int i = 0; i < segmentCount; i++)
         {
             GameObject segment = new GameObject("Segment" + i);
-            segment.transform.position = startPosition + Vector3.up * segmentLength * i;
+            segment.transform.position = startPosition + direction.normalized * segmentLength * i;
             segment.transform.parent = transform; // Set parent to main rope GameObject
 
             Rigidbody rb = segment.AddComponent<Rigidbody>();
@@ -46,7 +46,7 @@ public class RopeSimulation : MonoBehaviour
             {
                 HingeJoint joint = segment.AddComponent<HingeJoint>();
                 joint.connectedBody = segments[i - 1];
-                joint.anchor = Vector3.down * segmentLength;
+                joint.anchor = direction.normalized * segmentLength;
                 joint.useSpring = true;
                 JointSpring spring = joint.spring;
                 spring.spring = ropeStiffness;
@@ -55,8 +55,6 @@ public class RopeSimulation : MonoBehaviour
                 segment.AddComponent<Buoyancy>().buoyancyForce = buoyancyForce; // Add buoyancy
             }
         }
-
-        AttachLeaves();
     }
 
     void FixedUpdate()
@@ -65,25 +63,5 @@ public class RopeSimulation : MonoBehaviour
         {
             lineRenderer.SetPosition(i, segments[i].transform.position);
         }
-    }
-
-    void AttachLeaves()
-    {
-        if (leafPrefab != null)
-        {
-            for (int i = 1; i < segmentCount - 1; i += 3)
-            {
-                addLeave(leafPrefab,Vector3.right , i);
-                addLeave(leafPrefab,Vector3.left, i);
-            }
-        }
-    }
-
-    void addLeave(GameObject leaf, Vector3 direction, int i)
-    {
-        leaf = Instantiate(leafPrefab, segments[i].transform);
-        leafPrefab.TryGetComponent(out RopeSimulationLeaf rope);
-        rope.direction = (direction + Random.onUnitSphere).normalized;
-        leaf.transform.localPosition = Vector3.zero;
     }
 }

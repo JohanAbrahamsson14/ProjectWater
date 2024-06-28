@@ -4,7 +4,7 @@ public class Buoyancy : MonoBehaviour
 {
     public float buoyancyForce = 10.0f;
     public Vector3 windDirection = Vector3.forward;
-    public float windStrength = 1f;
+    public float windStrength = 0.1f;
     
     private Rigidbody rb;
 
@@ -15,6 +15,7 @@ public class Buoyancy : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.AddForce(Vector3.up * buoyancyForce + windDirection * windStrength, ForceMode.Acceleration);
+        rb.AddForce(Vector3.up * buoyancyForce, ForceMode.Acceleration);
+        rb.AddForce(windDirection * windStrength, ForceMode.Acceleration);
     }
 }
