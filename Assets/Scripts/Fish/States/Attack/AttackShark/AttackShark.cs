@@ -6,6 +6,7 @@ using UnityEngine;
 public class AttackShark : Attack
 {
     public float attackDistance = 1.0f;
+    public Vector3 attackedOffset;
     public GameObject attackedObject;
     // ReSharper disable Unity.PerformanceAnalysis
     public override void StartState()
@@ -29,13 +30,15 @@ public class AttackShark : Attack
         
         agent.transform.position += agent.velocity * Time.deltaTime;
 
-        RaycastHit[] hits = Physics.SphereCastAll(agent.transform.position, attackDistance, agent.transform.TransformDirection(Vector3.forward));
+        Vector3 pointOfAttack = agent.transform.position + attackedOffset;
+
+        RaycastHit[] hits = Physics.SphereCastAll(pointOfAttack, attackDistance, agent.transform.TransformDirection(Vector3.forward));
 
         if (hits.Any(hit => hit.collider.CompareTag("Player")))
         {
             RaycastHit hitSelected = hits.First(hit => hit.collider.CompareTag("Player"));
-            Vector3 direction = (hitSelected.collider.gameObject.transform.position - agent.transform.position).normalized;
-            Ray ray = new Ray(agent.transform.position, direction);
+            Vector3 direction = (hitSelected.collider.gameObject.transform.position - pointOfAttack).normalized;
+            Ray ray = new Ray(pointOfAttack, direction);
 
             // Debugging information
             //Debug.DrawRay(agent.transform.position, direction * attackDistance, Color.red, 2.0f);
@@ -43,7 +46,7 @@ public class AttackShark : Attack
             //Wall detection
             int wallLayerMask = LayerMask.GetMask("Wall");
 
-            if (!Physics.Raycast(ray, attackDistance, wallLayerMask))
+            if (!Physics.Raycast(ray, (hitSelected.collider.gameObject.transform.position - pointOfAttack).magnitude, wallLayerMask))
             {
                 attackedObject = hitSelected.collider.CompareTag("Player") ? hitSelected.collider.gameObject : null;
             }

@@ -15,5 +15,6 @@ MonoBehaviour:
   players:
   - {fileID: 0}
   agent: {fileID: 0}
-  attackDistance: 7
+  attackDistance: 3
+  attackedOffset: {x: 0, y: -0.561, z: 3.4}
   attackedObject: {fileID: 0}

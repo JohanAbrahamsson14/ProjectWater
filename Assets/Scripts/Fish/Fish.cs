@@ -1,35 +1,44 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Random = UnityEngine.Random;
 
 public class Fish : MonoBehaviour
 {
+    [Header("Speed")]
     public float minSpeed = 3.3f;
     public float maxSpeed = 3.7f;
+    public float speedChangeInterval = 5.0f; // Interval in seconds for changing speed
+    [Header("TurnSpeed")]
     public float minTurnSpeed = 4.5f;
     public float maxTurnSpeed = 5.5f;
-    public float neighborDistance = 3.0f;
-    public float separationDistance = 1.0f;
+    [Header("Weights")]
     public float cohesionWeight = 1.0f;
     public float alignmentWeight = 1.0f;
     public float separationWeight = 1.5f;
+    public float wallAvoidanceWeight = 5.0f;
+    public float selectionPointWeight = 10f;
+    [Header("Neighbours")]
+    public float neighborDistance = 3.0f;
+    public List<Fish> neighborFish;
+    [Header("Seperation & Predetor")]
+    public float separationDistance = 1.0f;
     public float predatorAvoidanceWeight = 3.0f;
     public float predatorDetectionRadius = 5.0f;
-    public float wallAvoidanceWeight = 5.0f;
+    [Header("Wall")]
     public float wallDetectionDistance = 2.0f;
     public LayerMask wallLayer;
-    
+    [Header("Selection Point")]
+    public float distanceFromSelectionPoint = 10f;
+    public Vector3 selectionPoint;
+    [Header("Other")]
     public Collider collider;
-
-    public Vector3 initialDirection = Vector3.forward;
-
-    public List<Fish> neighborFish;
+    
     private Vector3 velocity;
 
     private Vector3 direction;
     
-    public float speedChangeInterval = 5.0f; // Interval in seconds for changing speed
     private float speedChangeTimer;
     private Vector3 randomMovement;
     
@@ -48,7 +57,6 @@ public class Fish : MonoBehaviour
         
         speedChangeTimer = speedChangeInterval;
         velocity = transform.forward * speed;
-        initialDirection = initialDirection.normalized;
         randomMovement = new Vector3(
             UnityEngine.Random.Range(-0.3f, 0.3f),
             UnityEngine.Random.Range(-0.3f, 0.3f),
@@ -65,6 +73,7 @@ public class Fish : MonoBehaviour
         Vector3 separation = Separation() * separationWeight;
         Vector3 predatorAvoidance = AvoidPredators() * predatorAvoidanceWeight;
         Vector3 wallAvoidance = AvoidWalls() * wallAvoidanceWeight;
+        Vector3 selectionPoint = SelectionPoint() * selectionPointWeight;
         
         speedChangeTimer -= Time.deltaTime;
         if (speedChangeTimer <= 0)
@@ -79,7 +88,7 @@ public class Fish : MonoBehaviour
             speedChangeTimer = speedChangeInterval;
         }
         
-        direction = cohesion + alignment + separation + predatorAvoidance + wallAvoidance + randomMovement;
+        direction = cohesion + alignment + separation + predatorAvoidance + wallAvoidance + selectionPoint + randomMovement;
         velocity += Time.deltaTime * direction;
         velocity += Time.deltaTime * speed * velocity.normalized;
         velocity = Vector3.ClampMagnitude(velocity, speed);
@@ -173,6 +182,13 @@ public class Fish : MonoBehaviour
         // Normalize and return the avoidance force
         return avoidanceForce.normalized;
     }
+    
+    Vector3 SelectionPoint()
+    {
+        Vector3 returnToStart;
+        if(Vector3.Distance(transform.position, selectionPoint)>distanceFromSelectionPoint) return (selectionPoint-transform.position).normalized;
+        return Vector3.zero;
+    }
 
     List<Fish> GetNeighbors()
     {
@@ -220,5 +236,8 @@ public class Fish : MonoBehaviour
         {
             Gizmos.DrawRay(transform.position,ray*wallDetectionDistance);
         }
+        
+        Gizmos.color=Color.white;
+        Gizmos.DrawWireSphere(selectionPoint, distanceFromSelectionPoint);
     }
 }

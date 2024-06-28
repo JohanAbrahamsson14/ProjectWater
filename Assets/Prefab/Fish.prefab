@@ -99,24 +99,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSpeed: 3.3
   maxSpeed: 3.7
+  speedChangeInterval: 0.5
   minTurnSpeed: 4.5
   maxTurnSpeed: 5.5
-  neighborDistance: 2
-  separationDistance: 1.5
   cohesionWeight: 1
   alignmentWeight: 1
   separationWeight: 1.5
+  wallAvoidanceWeight: 8
+  selectionPointWeight: 6
+  neighborDistance: 2
+  neighborFish: []
+  separationDistance: 1.5
   predatorAvoidanceWeight: 3
   predatorDetectionRadius: 5
-  wallAvoidanceWeight: 8
   wallDetectionDistance: 3
   wallLayer:
     serializedVersion: 2
     m_Bits: 1
+  distanceFromSelectionPoint: 10
+  selectionPoint: {x: 0, y: 0, z: 0}
   collider: {fileID: 804549126291443604}
-  initialDirection: {x: 0, y: 0, z: 1}
-  neighborFish: []
-  speedChangeInterval: 0.5
 --- !u!135 &804549126291443604
 SphereCollider:
   m_ObjectHideFlags: 0

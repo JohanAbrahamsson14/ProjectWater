@@ -16,3 +16,10 @@ MonoBehaviour:
   - {fileID: 0}
   agent: {fileID: 0}
   detectionRange: 15
+  distanceBase: 50
+  distanceDegration: 2
+  wallAvoidanceWeight: 4
+  wallDetectionDistance: 4
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 128

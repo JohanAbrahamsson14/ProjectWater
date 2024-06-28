@@ -8,10 +8,13 @@ public class PatrollingShark : Patrolling
 {
     private Transform selectedPlayer;
     private float patrollingTowardsPlayerStrength = 1.3f;
-    public float detectionRange = 10.0f;
+    public float detectionRange = 15.0f;
     public float distanceBase = 50f;
     private float currentDistance = 0f;
     public float distanceDegration = 2f;
+    public float wallAvoidanceWeight = 3.0f;
+    public float wallDetectionDistance = 4.0f;
+    public LayerMask wallLayer;
     
     public override void StartState()
     {
@@ -57,7 +60,7 @@ public class PatrollingShark : Patrolling
             agent.speedChangeTimer = agent.speedChangeInterval;
         }
         
-        agent.direction = agent.randomMovement + PatrolingTowardsTarget(selectedPlayer, patrollingTowardsPlayerStrength);
+        agent.direction = agent.randomMovement + PatrolingTowardsTarget(selectedPlayer, patrollingTowardsPlayerStrength) + AvoidWalls(wallAvoidanceWeight);
         agent.velocity += Time.deltaTime * agent.direction;
         agent.velocity += Time.deltaTime * agent.speed * agent.velocity.normalized;
         agent.velocity = Vector3.ClampMagnitude(agent.velocity, agent.speed);
@@ -81,5 +84,31 @@ public class PatrollingShark : Patrolling
         Vector3 towardsVector = patrollingPoint - agent.transform.position;
         
         return towardsVector.normalized * value;
+    }
+    
+    Vector3 AvoidWalls(float value)
+    {
+        Vector3 avoidanceForce = Vector3.zero;
+        RaycastHit hit;
+
+        // Cast rays in multiple directions to detect walls
+        Vector3[] rayDirections = {
+            agent.transform.forward,
+            (agent.transform.forward + agent.transform.right).normalized,
+            (agent.transform.forward - agent.transform.right).normalized,
+            (agent.transform.forward + agent.transform.up).normalized,
+            (agent.transform.forward - agent.transform.up).normalized
+        };
+
+        foreach (Vector3 dir in rayDirections)
+        {
+            if (Physics.Raycast(agent.transform.position, dir, out hit, wallDetectionDistance, wallLayer))
+            {
+                avoidanceForce += (agent.transform.position - hit.point).normalized;
+            }
+        }
+
+        // Normalize and return the avoidance force
+        return avoidanceForce.normalized*value;
     }
 }
