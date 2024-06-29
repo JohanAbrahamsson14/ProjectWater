@@ -106,6 +106,9 @@ public class LeafSimulation : MonoBehaviour
                 // Apply swaying effect
                 float swayOffset = Mathf.Sin(Time.time * swayFrequency + i) * swayAmplitude;
                 rb.AddForce(new Vector3(swayOffset, 0, 0), ForceMode.Acceleration);
+
+                // Apply wind effect
+                rb.AddForce(Vector3.right * 0.1f, ForceMode.Acceleration); // Example wind effect
             }
         }
     }

@@ -9,6 +9,13 @@ public class KelpStalk : MonoBehaviour
     public float radius = 0.1f;
     public Material stalkMaterial;
 
+    [Header("Stalk Buoyancy and Swaying")]
+    public float stalkBuoyancyForce = 1.0f;
+    public float stalkSwayFrequency = 1.0f;
+    public float stalkSwayAmplitude = 0.1f;
+    public Vector3 windDirection = Vector3.right;
+    public float windForce = 0.1f;
+    
     [Header("Buoyancy and Swaying")]
     public float buoyancyForce = 1.0f;
     public float swayFrequency = 1.0f;
@@ -19,26 +26,30 @@ public class KelpStalk : MonoBehaviour
     public float leafSegmentLength = 0.2f;
     public float leafWidth = 0.2f;
     public int leafGroups = 3;
+    public int leavesPerSegment = 3;
+    public int leavesAtTopSegment = 10;
     public float leafRandomness = 0.1f;
     public Material leafMaterial;
 
     private Transform[] segments;
+    private Rigidbody[] segmentRigidbodies;
 
     void Start()
     {
         segments = new Transform[segmentCount];
+        segmentRigidbodies = new Rigidbody[segmentCount];
         Vector3 startPosition = transform.position;
 
         for (int i = 0; i < segmentCount; i++)
         {
             GameObject segment = new GameObject("Segment" + i);
-            segment.isStatic = true;
             segment.transform.position = startPosition + Vector3.up * segmentLength * i;
             segment.transform.parent = transform;
             segments[i] = segment.transform;
 
             Rigidbody rb = segment.AddComponent<Rigidbody>();
             rb.useGravity = false;
+            segmentRigidbodies[i] = rb;
 
             if (i > 0)
             {
@@ -98,32 +109,33 @@ public class KelpStalk : MonoBehaviour
     {
         for (int i = 1; i < segmentCount; i++)
         {
-            Rigidbody rb = segments[i].GetComponent<Rigidbody>();
+            Rigidbody rb = segmentRigidbodies[i];
             if (rb != null)
             {
                 // Apply buoyancy
-                rb.AddForce(Vector3.up * buoyancyForce / segmentCount, ForceMode.Acceleration);
+                rb.AddForce(Vector3.up * stalkBuoyancyForce / segmentCount, ForceMode.Acceleration);
 
                 // Apply swaying effect
-                float swayOffset = Mathf.Sin(Time.time * swayFrequency + i) * swayAmplitude;
+                float swayOffset = Mathf.Sin(Time.time * stalkSwayFrequency + i) * stalkSwayAmplitude;
                 rb.AddForce(new Vector3(swayOffset, 0, 0), ForceMode.Acceleration);
+
+                // Apply wind effect
+                rb.AddForce(windDirection * windForce, ForceMode.Acceleration);
             }
         }
     }
 
     void AttachLeaves()
     {
-        for (int group = 0; group < leafGroups; group++)
+        for (int i = 1; i < segmentCount; i++)
         {
-            int startSegment = (int)((float)group / leafGroups * segmentCount);
-            int endSegment = (int)((float)(group + 1) / leafGroups * segmentCount);
+            int numLeaves = (i == segmentCount - 1) ? leavesAtTopSegment : leavesPerSegment;
 
-            for (int i = startSegment; i < endSegment; i++)
+            for (int j = 0; j < numLeaves; j++)
             {
-                if (Random.value > 0.1f)
+                if (Random.value > 0.5f)
                 {
                     GameObject leaf = new GameObject("Leaf");
-                    leaf.isStatic = true;
                     leaf.transform.parent = segments[i];
 
                     float angle = Random.Range(0f, 360f);
@@ -134,10 +146,17 @@ public class KelpStalk : MonoBehaviour
                     leaf.transform.localPosition = direction * radius;
 
                     // Random rotation around the stalk
-                    leaf.transform.localRotation = Quaternion.Euler(0, angle, 0);
+                    Quaternion randomRotation = Quaternion.Euler(Random.Range(0f, 360f), angle, 0);
+                    leaf.transform.localRotation = randomRotation;
 
                     LeafSimulation leafSim = leaf.AddComponent<LeafSimulation>();
-                    leafSim.Initialize(direction, angle, leafSegmentCount, leafSegmentLength, leafWidth, swayFrequency, swayAmplitude + Random.Range(-leafRandomness, leafRandomness), buoyancyForce * 0.5f, leafMaterial);
+                    leafSim.Initialize(direction, angle, leafSegmentCount, leafSegmentLength, leafWidth, swayFrequency, swayAmplitude + Random.Range(-leafRandomness, leafRandomness), stalkBuoyancyForce * 0.5f, leafMaterial);
+
+                    // For top segment, make leaves point upwards
+                    if (i == segmentCount - 1)
+                    {
+                        leaf.transform.localRotation = Quaternion.Euler(-90f, angle, 0);
+                    }
                 }
             }
         }
@@ -166,7 +185,7 @@ public class KelpStalk : MonoBehaviour
                 float x = Mathf.Cos(angle) * radius;
                 float z = Mathf.Sin(angle) * radius;
                 vertices[i * radialSegments + j] = new Vector3(x, y, z);
-                uv[i * radialSegments + j] = new Vector2((float)j / radialSegments, (float)i / segmentCount);
+                uv[i * radialSegments + j] = new Vector2((float)j / radialSegments, (float)i);
 
                 boneWeights[i * radialSegments + j].boneIndex0 = i;
                 boneWeights[i * radialSegments + j].weight0 = 1.0f;
