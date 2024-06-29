@@ -130,8 +130,8 @@ public class LeafSimulation : MonoBehaviour
             vertices[i * 2] = segments[i].localPosition + new Vector3(0, -width / 2, 0);
             vertices[i * 2 + 1] = segments[i].localPosition + new Vector3(0, width / 2, 0);
 
-            uv[i * 2] = new Vector2((float)i / segmentCount, 0);
-            uv[i * 2 + 1] = new Vector2((float)i / segmentCount, 1);
+            uv[i * 2] = new Vector2((float)(i) / (segmentCount-1), 0);
+            uv[i * 2 + 1] = new Vector2((float)(i) / (segmentCount-1), 1);
 
             if (i < segmentCount - 1)
             {
