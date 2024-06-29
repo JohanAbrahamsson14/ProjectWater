@@ -124,6 +124,64 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &54346115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 54346117}
+  - component: {fileID: 54346116}
+  m_Layer: 0
+  m_Name: KelpStalk (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &54346116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54346115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &54346117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54346115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.73, y: 0, z: -6.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 33
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &62102733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -198,6 +256,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e20580eee7776124f8c67a1b33565eb9, type: 3}
+--- !u!1 &69651927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 69651929}
+  - component: {fileID: 69651928}
+  m_Layer: 0
+  m_Name: KelpStalk (12)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &69651928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69651927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &69651929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69651927}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.04, y: 0, z: -1.06}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 44
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &126405505
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +561,193 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &184969696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 184969702}
+  - component: {fileID: 184969701}
+  - component: {fileID: 184969700}
+  - component: {fileID: 184969699}
+  - component: {fileID: 184969698}
+  - component: {fileID: 184969697}
+  m_Layer: 0
+  m_Name: KelpLeaf
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &184969697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184969696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91830a0cf4042e14bbd3ecc86b2974d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swayFrequency: 1
+  swayAmplitude: 0.1
+--- !u!54 &184969698
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184969696}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &184969699
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184969696}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &184969700
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184969696}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &184969701
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184969696}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &184969702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184969696}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.45, y: 1.39, z: -23.63}
+  m_LocalScale: {x: 1, y: 0.1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &272402410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272402412}
+  - component: {fileID: 272402411}
+  m_Layer: 0
+  m_Name: KelpStalk (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &272402411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272402410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &272402412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272402410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.73, y: 0, z: -2.78}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &291635204
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &291635205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,7 +781,7 @@ MonoBehaviour:
   segmentCount: 10
   segmentLength: 1.8
   ropeStiffness: 2.5
-  leafPrefab: {fileID: 360334792}
+  leafPrefab: {fileID: 0}
   buoyancyForce: 4
 --- !u!120 &291635206
 LineRenderer:
@@ -521,14 +824,7 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Positions:
-  - {x: 10, y: 0, z: 0}
-  - {x: 10, y: 1, z: 0}
-  - {x: 10, y: 2, z: 0}
-  - {x: 10, y: 3, z: 0}
-  - {x: 10, y: 4, z: 0}
-  - {x: 10, y: 5, z: 0}
-  - {x: 10, y: 6, z: 0}
+  m_Positions: []
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -624,7 +920,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &360334792
 GameObject:
@@ -643,7 +939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!120 &360334794
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -779,7 +1075,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &360334796
 MonoBehaviour:
@@ -1181,6 +1477,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &581848095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 581848097}
+  - component: {fileID: 581848096}
+  m_Layer: 0
+  m_Name: KelpStalk (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &581848096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581848095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &581848097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581848095}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.65, y: 0, z: -2.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 36
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &598650750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1638,238 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &627288055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 627288057}
+  - component: {fileID: 627288056}
+  m_Layer: 0
+  m_Name: KelpStalk (15)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &627288056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627288055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &627288057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627288055}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.79, y: 0, z: -8.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 47
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &705949085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 705949087}
+  - component: {fileID: 705949086}
+  m_Layer: 0
+  m_Name: KelpStalk (16)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &705949086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705949085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &705949087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705949085}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.79, y: 0, z: -8.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 48
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &722598655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 722598657}
+  - component: {fileID: 722598656}
+  m_Layer: 0
+  m_Name: KelpStalk (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &722598656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722598655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &722598657
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722598655}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.04, y: 0, z: -8.08}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 42
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &791119528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 791119530}
+  - component: {fileID: 791119529}
+  m_Layer: 0
+  m_Name: KelpStalk (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &791119529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791119528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &791119530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791119528}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.53, y: 0, z: -4.46}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 37
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,6 +1937,64 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!1 &837591410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 837591412}
+  - component: {fileID: 837591411}
+  m_Layer: 0
+  m_Name: KelpStalk (13)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &837591411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837591410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &837591412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837591410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.96, y: 0, z: -3.53}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 45
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &910874972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,6 +2129,64 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2918495090953351749}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1010994875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1010994877}
+  - component: {fileID: 1010994876}
+  m_Layer: 0
+  m_Name: KelpStalk (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &1010994876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010994875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &1010994877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010994875}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.04, y: 0, z: -4.1099997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 43
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1056563690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1668,6 +2370,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1101376395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1101376397}
+  - component: {fileID: 1101376396}
+  m_Layer: 0
+  m_Name: KelpStalk (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &1101376396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101376395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &1101376397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101376395}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.48, y: 0, z: -6.69}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1157948162
 GameObject:
@@ -1919,6 +2679,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e20580eee7776124f8c67a1b33565eb9, type: 3}
+--- !u!1 &1214090784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1214090786}
+  - component: {fileID: 1214090785}
+  m_Layer: 0
+  m_Name: KelpStalk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &1214090785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214090784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &1214090786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214090784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.73, y: 0, z: -10.46}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 32
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1215868762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2028,7 +2846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bad5aaf12016cc545b8ae521b1f5906c, type: 3}
---- !u!1 &1351353732
+--- !u!1 &1297615768
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2036,128 +2854,56 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1351353737}
-  - component: {fileID: 1351353736}
-  - component: {fileID: 1351353735}
-  - component: {fileID: 1351353734}
-  - component: {fileID: 1351353733}
-  - component: {fileID: 1351353738}
+  - component: {fileID: 1297615770}
+  - component: {fileID: 1297615769}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: KelpStalk (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!54 &1351353733
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351353732}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &1351353734
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351353732}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1351353735
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351353732}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1351353736
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351353732}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1351353737
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351353732}
-  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0, z: -2.339}
-  m_LocalScale: {x: 0.1, y: 1, z: 0.2}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 29
-  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
---- !u!114 &1351353738
+--- !u!114 &1297615769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351353732}
+  m_GameObject: {fileID: 1297615768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7faf35d33e66b54c8e8f2b5e000b141, type: 3}
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buoyancyForce: 10
-  windDirection: {x: 0, y: 0, z: 1}
-  windStrength: 1
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &1297615770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297615768}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.78, y: 0, z: -10.28}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 40
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1414578326 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2918495091219997903, guid: 8e44961fb20b8154889fe862444e0942,
@@ -2359,6 +3105,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1528878547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1528878549}
+  - component: {fileID: 1528878548}
+  m_Layer: 0
+  m_Name: KelpStalk (17)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &1528878548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528878547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &1528878549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528878547}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.09, y: 0, z: -11.61}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1534047705
 PrefabInstance:
@@ -2610,6 +3414,64 @@ Transform:
   - {fileID: 1198541288}
   m_Father: {fileID: 0}
   m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1699177438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1699177440}
+  - component: {fileID: 1699177439}
+  m_Layer: 0
+  m_Name: KelpStalk (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &1699177439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699177438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &1699177440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699177438}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.48, y: 0, z: -6.69}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1747798933
 GameObject:
@@ -2885,6 +3747,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9315cdb9dd95d3846978b39f2360756d, type: 3}
+--- !u!1 &1824485243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1824485245}
+  - component: {fileID: 1824485244}
+  m_Layer: 0
+  m_Name: KelpStalk (14)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &1824485244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824485243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &1824485245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824485243}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.84, y: 0, z: -5.79}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 46
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1955227066
 GameObject:
   m_ObjectHideFlags: 0
@@ -3164,6 +4084,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e20580eee7776124f8c67a1b33565eb9, type: 3}
+--- !u!1 &2091487751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2091487753}
+  - component: {fileID: 2091487752}
+  m_Layer: 0
+  m_Name: KelpStalk (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &2091487752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091487751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &2091487753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091487751}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.73, y: 0, z: 0.27}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 35
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2105720089
 GameObject:
   m_ObjectHideFlags: 0
@@ -3261,6 +4239,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2132949470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2132949472}
+  - component: {fileID: 2132949471}
+  m_Layer: 0
+  m_Name: KelpStalk (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &2132949471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132949470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 10
+  segmentLength: 1
+  radialSegments: 8
+  radius: 0.1
+  stalkMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  buoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafSegmentCount: 5
+  leafSegmentLength: 0.5
+  leafWidth: 0.2
+  leafGroups: 1
+  leafRandomness: 0.1
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &2132949472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132949470}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.04, y: 0, z: -11.79}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &356868695342338185
 PrefabInstance:

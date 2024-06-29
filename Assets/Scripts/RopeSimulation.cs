@@ -13,8 +13,10 @@ public class RopeSimulation : MonoBehaviour
 
     void Start()
     {
+        /*
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = segmentCount;
+        */
         /*
         lineRenderer.startWidth = 0.1f;
         lineRenderer.endWidth = 0.1f;
@@ -28,7 +30,8 @@ public class RopeSimulation : MonoBehaviour
 
         for (int i = 0; i < segmentCount; i++)
         {
-            GameObject segment = new GameObject("Segment" + i);
+            //GameObject segment = new GameObject("Segment" + i);
+            GameObject segment = Instantiate(leafPrefab);
             segment.transform.position = startPosition + Vector3.up * segmentLength * i;
             segment.transform.parent = transform; // Set parent to main rope GameObject
 
@@ -63,6 +66,7 @@ public class RopeSimulation : MonoBehaviour
     {
         for (int i = 0; i < segmentCount; i++)
         {
+            //GetComponentInChildren<Transform>().position;
             lineRenderer.SetPosition(i, segments[i].transform.position);
         }
     }
@@ -82,8 +86,10 @@ public class RopeSimulation : MonoBehaviour
     void addLeave(GameObject leaf, Vector3 direction, int i)
     {
         leaf = Instantiate(leafPrefab, segments[i].transform);
+        /*
         leafPrefab.TryGetComponent(out RopeSimulationLeaf rope);
         rope.direction = (direction + Random.onUnitSphere).normalized;
+        */
         leaf.transform.localPosition = Vector3.zero;
     }
 }
