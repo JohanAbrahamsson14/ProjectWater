@@ -748,6 +748,72 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &329308216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 329308218}
+  - component: {fileID: 329308217}
+  m_Layer: 0
+  m_Name: KelpStalk (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &329308217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329308216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 20
+  segmentLength: 1
+  radialSegments: 4
+  baseRadius: 0.1
+  topRadius: 0.04
+  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
+  stalkBuoyancyForce: 3
+  stalkSwayFrequency: 1
+  stalkSwayAmplitude: 0.1
+  windDirection: {x: 1, y: 0, z: 0}
+  windForce: 0.015
+  leafSegmentCount: 5
+  leafSegmentLength: 0.96
+  leafWidth: 0.6
+  leafGroups: 3
+  leavesPerSegment: 2
+  leavesAtTopSegment: 10
+  leafRandomness: 0.3
+  leafBuoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &329308218
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329308216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 40.64, y: -20, z: -8.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 41
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &360334792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1198,138 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &430943091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 430943093}
+  - component: {fileID: 430943092}
+  m_Layer: 0
+  m_Name: KelpStalk (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &430943092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430943091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 20
+  segmentLength: 1
+  radialSegments: 4
+  baseRadius: 0.1
+  topRadius: 0.04
+  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
+  stalkBuoyancyForce: 3
+  stalkSwayFrequency: 1
+  stalkSwayAmplitude: 0.1
+  windDirection: {x: 1, y: 0, z: 0}
+  windForce: 0.015
+  leafSegmentCount: 5
+  leafSegmentLength: 0.96
+  leafWidth: 0.6
+  leafGroups: 3
+  leavesPerSegment: 2
+  leavesAtTopSegment: 10
+  leafRandomness: 0.3
+  leafBuoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &430943093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430943091}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 33.71, y: -20, z: -22.07}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 39
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &431223456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 431223458}
+  - component: {fileID: 431223457}
+  m_Layer: 0
+  m_Name: KelpStalk (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &431223457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431223456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 20
+  segmentLength: 1
+  radialSegments: 4
+  baseRadius: 0.1
+  topRadius: 0.04
+  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
+  stalkBuoyancyForce: 3
+  stalkSwayFrequency: 1
+  stalkSwayAmplitude: 0.1
+  windDirection: {x: 1, y: 0, z: 0}
+  windForce: 0.015
+  leafSegmentCount: 5
+  leafSegmentLength: 0.96
+  leafWidth: 0.6
+  leafGroups: 3
+  leavesPerSegment: 2
+  leavesAtTopSegment: 10
+  leafRandomness: 0.3
+  leafBuoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &431223458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431223456}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 37.07, y: -20, z: -11.97}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 43
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &458510106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1206,6 +1404,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 906a1a21444782947892d5642deb74e2, type: 3}
+--- !u!1 &521108672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 521108674}
+  - component: {fileID: 521108673}
+  m_Layer: 0
+  m_Name: KelpStalk (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &521108673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521108672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 20
+  segmentLength: 1
+  radialSegments: 4
+  baseRadius: 0.1
+  topRadius: 0.04
+  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
+  stalkBuoyancyForce: 3
+  stalkSwayFrequency: 1
+  stalkSwayAmplitude: 0.1
+  windDirection: {x: 1, y: 0, z: 0}
+  windForce: 0.015
+  leafSegmentCount: 5
+  leafSegmentLength: 0.96
+  leafWidth: 0.6
+  leafGroups: 3
+  leavesPerSegment: 2
+  leavesAtTopSegment: 10
+  leafRandomness: 0.3
+  leafBuoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &521108674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521108672}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 32.079998, y: -20, z: -15.14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 40
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &559530859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,6 +1737,204 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!1 &836588457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 836588459}
+  - component: {fileID: 836588458}
+  m_Layer: 0
+  m_Name: KelpStalk (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &836588458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836588457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 20
+  segmentLength: 1
+  radialSegments: 4
+  baseRadius: 0.1
+  topRadius: 0.04
+  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
+  stalkBuoyancyForce: 3
+  stalkSwayFrequency: 1
+  stalkSwayAmplitude: 0.1
+  windDirection: {x: 1, y: 0, z: 0}
+  windForce: 0.015
+  leafSegmentCount: 5
+  leafSegmentLength: 0.96
+  leafWidth: 0.6
+  leafGroups: 3
+  leavesPerSegment: 2
+  leavesAtTopSegment: 10
+  leafRandomness: 0.3
+  leafBuoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &836588459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836588457}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 33.68, y: -20, z: -10.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 42
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &848510643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 848510645}
+  - component: {fileID: 848510644}
+  m_Layer: 0
+  m_Name: KelpStalk (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &848510644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848510643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 20
+  segmentLength: 1
+  radialSegments: 4
+  baseRadius: 0.1
+  topRadius: 0.04
+  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
+  stalkBuoyancyForce: 3
+  stalkSwayFrequency: 1
+  stalkSwayAmplitude: 0.1
+  windDirection: {x: 1, y: 0, z: 0}
+  windForce: 0.015
+  leafSegmentCount: 5
+  leafSegmentLength: 0.96
+  leafWidth: 0.6
+  leafGroups: 3
+  leavesPerSegment: 2
+  leavesAtTopSegment: 10
+  leafRandomness: 0.3
+  leafBuoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &848510645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848510643}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.61, y: -20, z: -4.83}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &860687814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 860687816}
+  - component: {fileID: 860687815}
+  m_Layer: 0
+  m_Name: KelpStalk (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &860687815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860687814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 20
+  segmentLength: 1
+  radialSegments: 4
+  baseRadius: 0.1
+  topRadius: 0.04
+  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
+  stalkBuoyancyForce: 3
+  stalkSwayFrequency: 1
+  stalkSwayAmplitude: 0.1
+  windDirection: {x: 1, y: 0, z: 0}
+  windForce: 0.015
+  leafSegmentCount: 5
+  leafSegmentLength: 0.96
+  leafWidth: 0.6
+  leafGroups: 3
+  leavesPerSegment: 2
+  leavesAtTopSegment: 10
+  leafRandomness: 0.3
+  leafBuoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &860687816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860687814}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.26, y: -20, z: -10.27}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 36
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &910874972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,6 +2253,72 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1119151092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1119151094}
+  - component: {fileID: 1119151093}
+  m_Layer: 0
+  m_Name: KelpStalk (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &1119151093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119151092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 20
+  segmentLength: 1
+  radialSegments: 4
+  baseRadius: 0.1
+  topRadius: 0.04
+  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
+  stalkBuoyancyForce: 3
+  stalkSwayFrequency: 1
+  stalkSwayAmplitude: 0.1
+  windDirection: {x: 1, y: 0, z: 0}
+  windForce: 0.015
+  leafSegmentCount: 5
+  leafSegmentLength: 0.96
+  leafWidth: 0.6
+  leafGroups: 3
+  leavesPerSegment: 2
+  leavesAtTopSegment: 10
+  leafRandomness: 0.3
+  leafBuoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &1119151094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119151092}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 42.71, y: -20, z: -14.39}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 38
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1157948162
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,26 +2598,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  segmentCount: 10
+  segmentCount: 20
   segmentLength: 1
-  radialSegments: 8
-  radius: 0.1
+  radialSegments: 4
+  baseRadius: 0.1
+  topRadius: 0.04
   stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
   stalkBuoyancyForce: 3
   stalkSwayFrequency: 1
   stalkSwayAmplitude: 0.1
   windDirection: {x: 1, y: 0, z: 0}
-  windForce: 0.01
-  buoyancyForce: 1
+  windForce: 0.015
+  leafSegmentCount: 5
+  leafSegmentLength: 0.96
+  leafWidth: 0.6
+  leafGroups: 3
+  leavesPerSegment: 2
+  leavesAtTopSegment: 10
+  leafRandomness: 0.3
+  leafBuoyancyForce: 1
   swayFrequency: 2
   swayAmplitude: 0.2
-  leafSegmentCount: 5
-  leafSegmentLength: 0.42666668
-  leafWidth: 0.53333336
-  leafGroups: 3
-  leavesPerSegment: 3
-  leavesAtTopSegment: 25
-  leafRandomness: 0.1
   leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
 --- !u!4 &1214090786
 Transform:
@@ -2099,7 +2628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214090784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.37, y: 0, z: -10.46}
+  m_LocalPosition: {x: 38.14, y: -20, z: -7.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2233,6 +2762,138 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9cc23d6501c4d4395f7b759111820b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1465769199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1465769201}
+  - component: {fileID: 1465769200}
+  m_Layer: 0
+  m_Name: KelpStalk (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &1465769200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465769199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 20
+  segmentLength: 1
+  radialSegments: 4
+  baseRadius: 0.1
+  topRadius: 0.04
+  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
+  stalkBuoyancyForce: 3
+  stalkSwayFrequency: 1
+  stalkSwayAmplitude: 0.1
+  windDirection: {x: 1, y: 0, z: 0}
+  windForce: 0.015
+  leafSegmentCount: 5
+  leafSegmentLength: 0.96
+  leafWidth: 0.6
+  leafGroups: 3
+  leavesPerSegment: 2
+  leavesAtTopSegment: 10
+  leafRandomness: 0.3
+  leafBuoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &1465769201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465769199}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 37.23, y: -20, z: -12.43}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 35
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1472234114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1472234116}
+  - component: {fileID: 1472234115}
+  m_Layer: 0
+  m_Name: KelpStalk (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &1472234115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472234114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 20
+  segmentLength: 1
+  radialSegments: 4
+  baseRadius: 0.1
+  topRadius: 0.04
+  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
+  stalkBuoyancyForce: 3
+  stalkSwayFrequency: 1
+  stalkSwayAmplitude: 0.1
+  windDirection: {x: 1, y: 0, z: 0}
+  windForce: 0.015
+  leafSegmentCount: 5
+  leafSegmentLength: 0.96
+  leafWidth: 0.6
+  leafGroups: 3
+  leavesPerSegment: 2
+  leavesAtTopSegment: 10
+  leafRandomness: 0.3
+  leafBuoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &1472234116
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472234114}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 42.18, y: -20, z: -21.92}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 37
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1479816892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2491,6 +3152,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9315cdb9dd95d3846978b39f2360756d, type: 3}
+--- !u!1 &1637121777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1637121779}
+  - component: {fileID: 1637121778}
+  m_Layer: 0
+  m_Name: KelpStalk (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &1637121778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637121777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 20
+  segmentLength: 1
+  radialSegments: 4
+  baseRadius: 0.1
+  topRadius: 0.04
+  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
+  stalkBuoyancyForce: 3
+  stalkSwayFrequency: 1
+  stalkSwayAmplitude: 0.1
+  windDirection: {x: 1, y: 0, z: 0}
+  windForce: 0.015
+  leafSegmentCount: 5
+  leafSegmentLength: 0.96
+  leafWidth: 0.6
+  leafGroups: 3
+  leavesPerSegment: 2
+  leavesAtTopSegment: 10
+  leafRandomness: 0.3
+  leafBuoyancyForce: 1
+  swayFrequency: 2
+  swayAmplitude: 0.2
+  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+--- !u!4 &1637121779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637121777}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 39.86, y: -20, z: -11.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 33
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1658721022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3147,74 +3874,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemObject: {fileID: 598650750}
   weight: 5
---- !u!1 &2028575564
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2028575567}
-  - component: {fileID: 2028575566}
-  - component: {fileID: 2028575565}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2028575565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028575564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &2028575566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028575564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &2028575567
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028575564}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 33
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2066303023
 PrefabInstance:
   m_ObjectHideFlags: 0

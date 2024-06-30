@@ -6,7 +6,8 @@ public class KelpStalk : MonoBehaviour
     public int segmentCount = 10;
     public float segmentLength = 0.5f;
     public int radialSegments = 8;
-    public float radius = 0.1f;
+    public float baseRadius = 0.1f;
+    public float topRadius = 0.05f;
     public Material stalkMaterial;
 
     [Header("Stalk Buoyancy and Swaying")]
@@ -15,11 +16,6 @@ public class KelpStalk : MonoBehaviour
     public float stalkSwayAmplitude = 0.1f;
     public Vector3 windDirection = Vector3.right;
     public float windForce = 0.1f;
-    
-    [Header("Buoyancy and Swaying")]
-    public float buoyancyForce = 1.0f;
-    public float swayFrequency = 1.0f;
-    public float swayAmplitude = 0.1f;
 
     [Header("Leaf Settings")]
     public int leafSegmentCount = 5;
@@ -29,6 +25,9 @@ public class KelpStalk : MonoBehaviour
     public int leavesPerSegment = 3;
     public int leavesAtTopSegment = 10;
     public float leafRandomness = 0.1f;
+    public float leafBuoyancyForce = 1f;
+    public float swayFrequency = 1.0f;
+    public float swayAmplitude = 0.1f;
     public Material leafMaterial;
 
     private Transform[] segments;
@@ -110,18 +109,15 @@ public class KelpStalk : MonoBehaviour
         for (int i = 1; i < segmentCount; i++)
         {
             Rigidbody rb = segmentRigidbodies[i];
-            if (rb != null)
-            {
-                // Apply buoyancy
-                rb.AddForce(Vector3.up * stalkBuoyancyForce / segmentCount, ForceMode.Acceleration);
+            // Apply buoyancy
+            rb.AddForce(Vector3.up * stalkBuoyancyForce / segmentCount, ForceMode.Acceleration);
 
-                // Apply swaying effect
-                float swayOffset = Mathf.Sin(Time.time * stalkSwayFrequency + i) * stalkSwayAmplitude;
-                rb.AddForce(new Vector3(swayOffset, 0, 0), ForceMode.Acceleration);
+            // Apply swaying effect
+            float swayOffset = Mathf.Sin(Time.time * stalkSwayFrequency + i) * stalkSwayAmplitude;
+            rb.AddForce(new Vector3(swayOffset, 0, 0), ForceMode.Acceleration);
 
-                // Apply wind effect
-                rb.AddForce(windDirection * windForce, ForceMode.Acceleration);
-            }
+            // Apply wind effect
+            rb.AddForce(windDirection * windForce, ForceMode.Acceleration);
         }
     }
 
@@ -143,14 +139,14 @@ public class KelpStalk : MonoBehaviour
 
                     // Random position around the stalk
                     Vector3 direction = new Vector3(Mathf.Cos(radians), 0, Mathf.Sin(radians));
-                    leaf.transform.localPosition = direction * radius;
+                    leaf.transform.localPosition = direction * GetRadiusAtHeight(i);
 
                     // Random rotation around the stalk
                     Quaternion randomRotation = Quaternion.Euler(Random.Range(0f, 360f), angle, 0);
                     leaf.transform.localRotation = randomRotation;
 
                     LeafSimulation leafSim = leaf.AddComponent<LeafSimulation>();
-                    leafSim.Initialize(direction, angle, leafSegmentCount, leafSegmentLength, leafWidth, swayFrequency, swayAmplitude + Random.Range(-leafRandomness, leafRandomness), stalkBuoyancyForce * 0.5f, leafMaterial);
+                    leafSim.Initialize(direction, angle, leafSegmentCount, leafSegmentLength, leafWidth, swayFrequency, swayAmplitude + Random.Range(-leafRandomness, leafRandomness), leafBuoyancyForce, leafMaterial);
 
                     // For top segment, make leaves point upwards
                     if (i == segmentCount - 1)
@@ -160,6 +156,12 @@ public class KelpStalk : MonoBehaviour
                 }
             }
         }
+    }
+
+    float GetRadiusAtHeight(int segmentIndex)
+    {
+        float t = (float)segmentIndex / (segmentCount - 1);
+        return Mathf.Lerp(baseRadius, topRadius, t);
     }
 
     void CreateCylindricalSkinnedMesh()
@@ -179,13 +181,14 @@ public class KelpStalk : MonoBehaviour
         for (int i = 0; i < segmentCount; i++)
         {
             float y = i * segmentLength;
+            float radius = GetRadiusAtHeight(i);
             for (int j = 0; j < radialSegments; j++)
             {
                 float angle = j * Mathf.PI * 2 / radialSegments;
                 float x = Mathf.Cos(angle) * radius;
                 float z = Mathf.Sin(angle) * radius;
                 vertices[i * radialSegments + j] = new Vector3(x, y, z);
-                uv[i * radialSegments + j] = new Vector2((float)j / radialSegments, (float)i);
+                uv[i * radialSegments + j] = new Vector2((float)j / radialSegments, (float)i / segmentCount);
 
                 boneWeights[i * radialSegments + j].boneIndex0 = i;
                 boneWeights[i * radialSegments + j].weight0 = 1.0f;

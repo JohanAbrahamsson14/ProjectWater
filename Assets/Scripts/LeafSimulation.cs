@@ -3,6 +3,7 @@ using UnityEngine;
 public class LeafSimulation : MonoBehaviour
 {
     private Transform[] segments;
+    private Rigidbody[] segmentRigidbodies;
     private Mesh leafMesh;
     private int segmentCount;
     private float segmentLength;
@@ -35,6 +36,7 @@ public class LeafSimulation : MonoBehaviour
     private void InitializeSegments(Vector3 direction, float angle)
     {
         segments = new Transform[segmentCount];
+        segmentRigidbodies = new Rigidbody[segmentCount];
         Vector3 startPosition = transform.position;
 
         for (int i = 0; i < segmentCount; i++)
@@ -46,6 +48,7 @@ public class LeafSimulation : MonoBehaviour
 
             Rigidbody rb = segment.AddComponent<Rigidbody>();
             rb.useGravity = false;
+            segmentRigidbodies[i] = rb;
 
             if (i > 0)
             {
@@ -97,19 +100,16 @@ public class LeafSimulation : MonoBehaviour
     {
         for (int i = 1; i < segmentCount; i++)
         {
-            Rigidbody rb = segments[i].GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                // Apply buoyancy
-                rb.AddForce(Vector3.up * buoyancyForce / segmentCount, ForceMode.Acceleration);
+            Rigidbody rb = segmentRigidbodies[i];
+            // Apply buoyancy
+            rb.AddForce(Vector3.up * buoyancyForce / segmentCount, ForceMode.Acceleration);
 
-                // Apply swaying effect
-                float swayOffset = Mathf.Sin(Time.time * swayFrequency + i) * swayAmplitude;
-                rb.AddForce(new Vector3(swayOffset, 0, 0), ForceMode.Acceleration);
+            // Apply swaying effect
+            float swayOffset = Mathf.Sin(Time.time * swayFrequency + i) * swayAmplitude;
+            rb.AddForce(new Vector3(swayOffset, 0, 0), ForceMode.Acceleration);
 
-                // Apply wind effect
-                rb.AddForce(Vector3.right * 0.1f, ForceMode.Acceleration); // Example wind effect
-            }
+            // Apply wind effect
+            rb.AddForce(Vector3.right * 0.1f, ForceMode.Acceleration); // Example wind effect
         }
     }
 
@@ -117,6 +117,7 @@ public class LeafSimulation : MonoBehaviour
     {
         MeshRenderer meshRenderer = gameObject.AddComponent<MeshRenderer>();
         meshRenderer.material = leafMaterial;
+        meshRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.TwoSided;
 
         MeshFilter meshFilter = gameObject.AddComponent<MeshFilter>();
         leafMesh = new Mesh();
@@ -130,8 +131,8 @@ public class LeafSimulation : MonoBehaviour
             vertices[i * 2] = segments[i].localPosition + new Vector3(0, -width / 2, 0);
             vertices[i * 2 + 1] = segments[i].localPosition + new Vector3(0, width / 2, 0);
 
-            uv[i * 2] = new Vector2((float)(i) / (segmentCount-1), 0);
-            uv[i * 2 + 1] = new Vector2((float)(i) / (segmentCount-1), 1);
+            uv[i * 2] = new Vector2((float)(i+1) / (segmentCount), 0);
+            uv[i * 2 + 1] = new Vector2((float)(i+1) / (segmentCount), 1);
 
             if (i < segmentCount - 1)
             {
