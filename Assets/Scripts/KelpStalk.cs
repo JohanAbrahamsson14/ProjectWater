@@ -227,4 +227,10 @@ public class KelpStalk : MonoBehaviour
         skinnedMeshRenderer.rootBone = segments[0];
         skinnedMeshRenderer.material = stalkMaterial != null ? stalkMaterial : new Material(Shader.Find("Standard")) { color = Color.green };
     }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, baseRadius);
+    }
 }

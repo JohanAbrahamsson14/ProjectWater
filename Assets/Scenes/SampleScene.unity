@@ -443,7 +443,7 @@ Transform:
   m_Children:
   - {fileID: 1955227067}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &184969696
 GameObject:
@@ -568,12 +568,106 @@ Transform:
   m_GameObject: {fileID: 184969696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.45, y: 1.39, z: -23.63}
-  m_LocalScale: {x: 1, y: 0.1, z: 4.5}
+  m_LocalScale: {x: 4.8, y: 0.1, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &205758408
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1933467377}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.34999996
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 340dae0524c13f34db139efff6a5c467, type: 2}
+    - target: {fileID: 919132149155446097, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_Name
+      value: LightCone 3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7326f592f0dee234485eb62a6c801cff, type: 3}
 --- !u!1 &291635204
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,73 +840,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &329308216
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 329308218}
-  - component: {fileID: 329308217}
-  m_Layer: 0
-  m_Name: KelpStalk (9)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!114 &329308217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329308216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  segmentCount: 20
-  segmentLength: 1
-  radialSegments: 4
-  baseRadius: 0.1
-  topRadius: 0.04
-  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
-  stalkBuoyancyForce: 3
-  stalkSwayFrequency: 1
-  stalkSwayAmplitude: 0.1
-  windDirection: {x: 1, y: 0, z: 0}
-  windForce: 0.015
-  leafSegmentCount: 5
-  leafSegmentLength: 0.96
-  leafWidth: 0.6
-  leafGroups: 3
-  leavesPerSegment: 2
-  leavesAtTopSegment: 10
-  leafRandomness: 0.3
-  leafBuoyancyForce: 1
-  swayFrequency: 2
-  swayAmplitude: 0.2
-  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
---- !u!4 &329308218
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329308216}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.64, y: -20, z: -8.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 41
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &360334792
 GameObject:
@@ -967,7 +995,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &360334796
 MonoBehaviour:
@@ -986,6 +1014,122 @@ MonoBehaviour:
   ropeStiffness: 1
   buoyancyForce: 1
   direction: {x: 0, y: 0, z: 0}
+--- !u!1 &367390581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 367390584}
+  - component: {fileID: 367390583}
+  - component: {fileID: 367390582}
+  m_Layer: 0
+  m_Name: Spot Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &367390582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367390581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+--- !u!108 &367390583
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367390581}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 0.9702162, g: 0.9716981, b: 0.56376827, a: 1}
+  m_Intensity: 100
+  m_Range: 20
+  m_SpotAngle: 55.823837
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 0
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &367390584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367390581}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -12.62, y: 10.54, z: 9.99}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 523000304}
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,138 +1342,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &430943091
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 430943093}
-  - component: {fileID: 430943092}
-  m_Layer: 0
-  m_Name: KelpStalk (7)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!114 &430943092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430943091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  segmentCount: 20
-  segmentLength: 1
-  radialSegments: 4
-  baseRadius: 0.1
-  topRadius: 0.04
-  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
-  stalkBuoyancyForce: 3
-  stalkSwayFrequency: 1
-  stalkSwayAmplitude: 0.1
-  windDirection: {x: 1, y: 0, z: 0}
-  windForce: 0.015
-  leafSegmentCount: 5
-  leafSegmentLength: 0.96
-  leafWidth: 0.6
-  leafGroups: 3
-  leavesPerSegment: 2
-  leavesAtTopSegment: 10
-  leafRandomness: 0.3
-  leafBuoyancyForce: 1
-  swayFrequency: 2
-  swayAmplitude: 0.2
-  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
---- !u!4 &430943093
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430943091}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.71, y: -20, z: -22.07}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 39
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &431223456
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 431223458}
-  - component: {fileID: 431223457}
-  m_Layer: 0
-  m_Name: KelpStalk (11)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!114 &431223457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 431223456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  segmentCount: 20
-  segmentLength: 1
-  radialSegments: 4
-  baseRadius: 0.1
-  topRadius: 0.04
-  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
-  stalkBuoyancyForce: 3
-  stalkSwayFrequency: 1
-  stalkSwayAmplitude: 0.1
-  windDirection: {x: 1, y: 0, z: 0}
-  windForce: 0.015
-  leafSegmentCount: 5
-  leafSegmentLength: 0.96
-  leafWidth: 0.6
-  leafGroups: 3
-  leavesPerSegment: 2
-  leavesAtTopSegment: 10
-  leafRandomness: 0.3
-  leafBuoyancyForce: 1
-  swayFrequency: 2
-  swayAmplitude: 0.2
-  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
---- !u!4 &431223458
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 431223456}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.07, y: -20, z: -11.97}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 43
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &458510106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1404,72 +1416,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 906a1a21444782947892d5642deb74e2, type: 3}
---- !u!1 &521108672
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 521108674}
-  - component: {fileID: 521108673}
-  m_Layer: 0
-  m_Name: KelpStalk (8)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!114 &521108673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521108672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  segmentCount: 20
-  segmentLength: 1
-  radialSegments: 4
-  baseRadius: 0.1
-  topRadius: 0.04
-  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
-  stalkBuoyancyForce: 3
-  stalkSwayFrequency: 1
-  stalkSwayAmplitude: 0.1
-  windDirection: {x: 1, y: 0, z: 0}
-  windForce: 0.015
-  leafSegmentCount: 5
-  leafSegmentLength: 0.96
-  leafWidth: 0.6
-  leafGroups: 3
-  leavesPerSegment: 2
-  leavesAtTopSegment: 10
-  leafRandomness: 0.3
-  leafBuoyancyForce: 1
-  swayFrequency: 2
-  swayAmplitude: 0.2
-  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
---- !u!4 &521108674
+--- !u!4 &523000304 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+    type: 3}
+  m_PrefabInstance: {fileID: 1793828365}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521108672}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.079998, y: -20, z: -15.14}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 40
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &559530859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,7 +1517,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &598650750
 GameObject:
@@ -1668,7 +1620,56 @@ Transform:
   m_Children:
   - {fileID: 1993282797}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &793171534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 793171536}
+  - component: {fileID: 793171535}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &793171535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793171534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: a6560a915ef98420e9faacc1c7438823, type: 2}
+--- !u!4 &793171536
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793171534}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
@@ -1737,204 +1738,6 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
---- !u!1 &836588457
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 836588459}
-  - component: {fileID: 836588458}
-  m_Layer: 0
-  m_Name: KelpStalk (10)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!114 &836588458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 836588457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  segmentCount: 20
-  segmentLength: 1
-  radialSegments: 4
-  baseRadius: 0.1
-  topRadius: 0.04
-  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
-  stalkBuoyancyForce: 3
-  stalkSwayFrequency: 1
-  stalkSwayAmplitude: 0.1
-  windDirection: {x: 1, y: 0, z: 0}
-  windForce: 0.015
-  leafSegmentCount: 5
-  leafSegmentLength: 0.96
-  leafWidth: 0.6
-  leafGroups: 3
-  leavesPerSegment: 2
-  leavesAtTopSegment: 10
-  leafRandomness: 0.3
-  leafBuoyancyForce: 1
-  swayFrequency: 2
-  swayAmplitude: 0.2
-  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
---- !u!4 &836588459
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 836588457}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.68, y: -20, z: -10.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 42
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &848510643
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 848510645}
-  - component: {fileID: 848510644}
-  m_Layer: 0
-  m_Name: KelpStalk (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!114 &848510644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848510643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  segmentCount: 20
-  segmentLength: 1
-  radialSegments: 4
-  baseRadius: 0.1
-  topRadius: 0.04
-  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
-  stalkBuoyancyForce: 3
-  stalkSwayFrequency: 1
-  stalkSwayAmplitude: 0.1
-  windDirection: {x: 1, y: 0, z: 0}
-  windForce: 0.015
-  leafSegmentCount: 5
-  leafSegmentLength: 0.96
-  leafWidth: 0.6
-  leafGroups: 3
-  leavesPerSegment: 2
-  leavesAtTopSegment: 10
-  leafRandomness: 0.3
-  leafBuoyancyForce: 1
-  swayFrequency: 2
-  swayAmplitude: 0.2
-  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
---- !u!4 &848510645
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848510643}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.61, y: -20, z: -4.83}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 34
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &860687814
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 860687816}
-  - component: {fileID: 860687815}
-  m_Layer: 0
-  m_Name: KelpStalk (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!114 &860687815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860687814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  segmentCount: 20
-  segmentLength: 1
-  radialSegments: 4
-  baseRadius: 0.1
-  topRadius: 0.04
-  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
-  stalkBuoyancyForce: 3
-  stalkSwayFrequency: 1
-  stalkSwayAmplitude: 0.1
-  windDirection: {x: 1, y: 0, z: 0}
-  windForce: 0.015
-  leafSegmentCount: 5
-  leafSegmentLength: 0.96
-  leafWidth: 0.6
-  leafGroups: 3
-  leavesPerSegment: 2
-  leavesAtTopSegment: 10
-  leafRandomness: 0.3
-  leafBuoyancyForce: 1
-  swayFrequency: 2
-  swayAmplitude: 0.2
-  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
---- !u!4 &860687816
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860687814}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.26, y: -20, z: -10.27}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 36
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &910874972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,7 +1767,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!1 &948231353
 GameObject:
@@ -2251,73 +2054,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1119151092
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1119151094}
-  - component: {fileID: 1119151093}
-  m_Layer: 0
-  m_Name: KelpStalk (6)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!114 &1119151093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119151092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  segmentCount: 20
-  segmentLength: 1
-  radialSegments: 4
-  baseRadius: 0.1
-  topRadius: 0.04
-  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
-  stalkBuoyancyForce: 3
-  stalkSwayFrequency: 1
-  stalkSwayAmplitude: 0.1
-  windDirection: {x: 1, y: 0, z: 0}
-  windForce: 0.015
-  leafSegmentCount: 5
-  leafSegmentLength: 0.96
-  leafWidth: 0.6
-  leafGroups: 3
-  leavesPerSegment: 2
-  leavesAtTopSegment: 10
-  leafRandomness: 0.3
-  leafBuoyancyForce: 1
-  swayFrequency: 2
-  swayAmplitude: 0.2
-  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
---- !u!4 &1119151094
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119151092}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.71, y: -20, z: -14.39}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1157948162
 GameObject:
@@ -2432,7 +2169,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1198541287
 GameObject:
@@ -2598,7 +2335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  segmentCount: 20
+  segmentCount: 10
   segmentLength: 1
   radialSegments: 4
   baseRadius: 0.1
@@ -2613,13 +2350,13 @@ MonoBehaviour:
   leafSegmentLength: 0.96
   leafWidth: 0.6
   leafGroups: 3
-  leavesPerSegment: 2
-  leavesAtTopSegment: 10
+  leavesPerSegment: 3
+  leavesAtTopSegment: 15
   leafRandomness: 0.3
   leafBuoyancyForce: 1
   swayFrequency: 2
   swayAmplitude: 0.2
-  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
+  leafMaterial: {fileID: 2100000, guid: 81d15f442b2509e4e92040a45b66c32c, type: 2}
 --- !u!4 &1214090786
 Transform:
   m_ObjectHideFlags: 0
@@ -2628,12 +2365,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214090784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.14, y: -20, z: -7.61}
+  m_LocalPosition: {x: 13.97, y: 0, z: -7.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1215868762
 PrefabInstance:
@@ -2690,7 +2427,7 @@ PrefabInstance:
     - target: {fileID: 356868696660427373, guid: bad5aaf12016cc545b8ae521b1f5906c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 356868696660427373, guid: bad5aaf12016cc545b8ae521b1f5906c,
         type: 3}
@@ -2762,138 +2499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9cc23d6501c4d4395f7b759111820b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1465769199
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1465769201}
-  - component: {fileID: 1465769200}
-  m_Layer: 0
-  m_Name: KelpStalk (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!114 &1465769200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1465769199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  segmentCount: 20
-  segmentLength: 1
-  radialSegments: 4
-  baseRadius: 0.1
-  topRadius: 0.04
-  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
-  stalkBuoyancyForce: 3
-  stalkSwayFrequency: 1
-  stalkSwayAmplitude: 0.1
-  windDirection: {x: 1, y: 0, z: 0}
-  windForce: 0.015
-  leafSegmentCount: 5
-  leafSegmentLength: 0.96
-  leafWidth: 0.6
-  leafGroups: 3
-  leavesPerSegment: 2
-  leavesAtTopSegment: 10
-  leafRandomness: 0.3
-  leafBuoyancyForce: 1
-  swayFrequency: 2
-  swayAmplitude: 0.2
-  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
---- !u!4 &1465769201
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1465769199}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.23, y: -20, z: -12.43}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 35
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1472234114
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1472234116}
-  - component: {fileID: 1472234115}
-  m_Layer: 0
-  m_Name: KelpStalk (5)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!114 &1472234115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472234114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  segmentCount: 20
-  segmentLength: 1
-  radialSegments: 4
-  baseRadius: 0.1
-  topRadius: 0.04
-  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
-  stalkBuoyancyForce: 3
-  stalkSwayFrequency: 1
-  stalkSwayAmplitude: 0.1
-  windDirection: {x: 1, y: 0, z: 0}
-  windForce: 0.015
-  leafSegmentCount: 5
-  leafSegmentLength: 0.96
-  leafWidth: 0.6
-  leafGroups: 3
-  leavesPerSegment: 2
-  leavesAtTopSegment: 10
-  leafRandomness: 0.3
-  leafBuoyancyForce: 1
-  swayFrequency: 2
-  swayAmplitude: 0.2
-  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
---- !u!4 &1472234116
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472234114}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.18, y: -20, z: -21.92}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 37
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1479816892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3152,72 +2757,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9315cdb9dd95d3846978b39f2360756d, type: 3}
---- !u!1 &1637121777
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1637121779}
-  - component: {fileID: 1637121778}
-  m_Layer: 0
-  m_Name: KelpStalk (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!114 &1637121778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637121777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71296dd8434dcf84e97bd1e10cf976aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  segmentCount: 20
-  segmentLength: 1
-  radialSegments: 4
-  baseRadius: 0.1
-  topRadius: 0.04
-  stalkMaterial: {fileID: 2100000, guid: e5d59d614629cf24db4dd4e715152e9d, type: 2}
-  stalkBuoyancyForce: 3
-  stalkSwayFrequency: 1
-  stalkSwayAmplitude: 0.1
-  windDirection: {x: 1, y: 0, z: 0}
-  windForce: 0.015
-  leafSegmentCount: 5
-  leafSegmentLength: 0.96
-  leafWidth: 0.6
-  leafGroups: 3
-  leavesPerSegment: 2
-  leavesAtTopSegment: 10
-  leafRandomness: 0.3
-  leafBuoyancyForce: 1
-  swayFrequency: 2
-  swayAmplitude: 0.2
-  leafMaterial: {fileID: 2100000, guid: 00784341996d6d441a33b77075b78bcd, type: 2}
---- !u!4 &1637121779
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637121777}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.86, y: -20, z: -11.26}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 33
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1658721022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3393,7 +2932,7 @@ Transform:
   m_Children:
   - {fileID: 1198541288}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1747798933
 GameObject:
@@ -3593,7 +3132,7 @@ Transform:
   m_Children:
   - {fileID: 147354555}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1781982891
 PrefabInstance:
@@ -3669,6 +3208,106 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9315cdb9dd95d3846978b39f2360756d, type: 3}
+--- !u!1001 &1793828365
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 367390584}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.34999996
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 340dae0524c13f34db139efff6a5c467, type: 2}
+    - target: {fileID: 919132149155446097, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_Name
+      value: LightCone 3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7326f592f0dee234485eb62a6c801cff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7326f592f0dee234485eb62a6c801cff, type: 3}
+--- !u!4 &1933467377 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2918495091527455589, guid: 8e44961fb20b8154889fe862444e0942,
+    type: 3}
+  m_PrefabInstance: {fileID: 2918495090953351749}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1955227066
 GameObject:
   m_ObjectHideFlags: 0
@@ -4101,7 +3740,7 @@ PrefabInstance:
     - target: {fileID: 356868696660427373, guid: bad5aaf12016cc545b8ae521b1f5906c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 356868696660427373, guid: bad5aaf12016cc545b8ae521b1f5906c,
         type: 3}
@@ -4185,7 +3824,7 @@ PrefabInstance:
     - target: {fileID: 2918495091219997903, guid: 8e44961fb20b8154889fe862444e0942,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2918495091219997903, guid: 8e44961fb20b8154889fe862444e0942,
         type: 3}
@@ -4236,6 +3875,71 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918495091527455589, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918495091527455589, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918495091527455589, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918495091527455589, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918495091527455589, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918495091527455589, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918495091527455589, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918495091527455591, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_Cookie
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918495091527455591, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918495092247321843, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918495092247321846, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_CameraType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918495092247321846, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_RendererIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497829462074538780, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: threshold
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e44961fb20b8154889fe862444e0942, type: 3}

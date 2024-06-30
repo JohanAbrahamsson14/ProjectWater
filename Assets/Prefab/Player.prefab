@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2918495091219997897}
   - component: {fileID: 2918495091219997902}
   - component: {fileID: 2918495091219997896}
+  - component: {fileID: 4954507581049016489}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -149,6 +150,8 @@ MonoBehaviour:
   isGrabbed: 0
   fogWall: {fileID: 2918495092968570031}
   playerMaxHealth: 100
+  interactRange: 0
+  inventory: []
 --- !u!114 &2918495091219997896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +170,18 @@ MonoBehaviour:
   underwaterFogEnd: 35
   underwaterPostProcessProfile: {fileID: 0}
   underwaterSunColor: {r: 0.2627451, g: 0.6313726, b: 0.7058824, a: 1}
+--- !u!114 &4954507581049016489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918495091219997891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9cc23d6501c4d4395f7b759111820b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2918495091527455578
 GameObject:
   m_ObjectHideFlags: 0
