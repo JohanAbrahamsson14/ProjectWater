@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: UnderWaterTest 2
-  m_Shader: {fileID: 4800000, guid: 29376f932ba061a4c876f18bb5d166b6, type: 3}
+  m_Name: Unlit_Even newer Shader
+  m_Shader: {fileID: 4800000, guid: ff1bd97b691188e41a03f58c0b9b92f2, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -26,9 +26,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _InterpolationFactor: 0.35
-    - _Smoothness: 0.5
+    - _InterpolationFactor: 1
+    - _Smoothness: 1
     m_Colors:
-    - _DepthColor: {r: 0, g: 0.4358999, b: 0.8396226, a: 1}
-    - _SurfaceColor: {r: 0, g: 0, b: 0, a: 1}
+    - _DepthColor: {r: 0, g: 0.19999993, b: 0.5, a: 1}
+    - _SurfaceColor: {r: 0.19999996, g: 0.8, b: 1, a: 1}
   m_BuildTextureStacks: []

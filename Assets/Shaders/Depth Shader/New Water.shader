@@ -1,4 +1,4 @@
-Shader "Custom/AdvancedUnderwaterShader"
+Shader "Custom/ImprovedUnderwaterShader"
 {
     Properties
     {
@@ -58,7 +58,10 @@ Shader "Custom/AdvancedUnderwaterShader"
                 
                 // Apply the smoothstep function for smoother interpolation
                 float t = smoothstep(_InterpolationFactor - _Smoothness, _InterpolationFactor + _Smoothness, viewAngle);
+                
+                // Apply color interpolation
                 float4 color = lerp(_DepthColor, _SurfaceColor, t);
+                
                 return color;
             }
             ENDCG

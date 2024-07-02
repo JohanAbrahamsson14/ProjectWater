@@ -1,4 +1,4 @@
-Shader "Custom/AdvancedUnderwaterShader"
+Shader "Custom/AdvancedUnderwaterShaderWithNoise"
 {
     Properties
     {
@@ -7,6 +7,7 @@ Shader "Custom/AdvancedUnderwaterShader"
         _SurfaceColor ("Surface Color", Color) = (0.2, 0.8, 1, 1)
         _InterpolationFactor ("Interpolation Factor", Range(0, 1)) = 0.5
         _Smoothness ("Smoothness", Range(0, 1)) = 0.5
+        _NoiseScale ("Noise Scale", Range(0, 1)) = 0.1
     }
     SubShader
     {
@@ -41,6 +42,12 @@ Shader "Custom/AdvancedUnderwaterShader"
             float4 _SurfaceColor;
             float _InterpolationFactor;
             float _Smoothness;
+            float _NoiseScale;
+
+            float random(float2 uv)
+            {
+                return frac(sin(dot(uv.xy ,float2(12.9898,78.233))) * 43758.5453);
+            }
 
             v2f vert (appdata v)
             {
@@ -56,9 +63,12 @@ Shader "Custom/AdvancedUnderwaterShader"
                 float3 viewDir = normalize(_WorldSpaceCameraPos - i.worldPos.xyz);
                 float viewAngle = dot(viewDir, float3(0, 1, 0));
                 
-                // Apply the smoothstep function for smoother interpolation
-                float t = smoothstep(_InterpolationFactor - _Smoothness, _InterpolationFactor + _Smoothness, viewAngle);
+                // Add noise to the view angle to break up banding
+                float noise = random(i.uv * _NoiseScale);
+                float t = smoothstep(_InterpolationFactor - _Smoothness, _InterpolationFactor + _Smoothness, viewAngle + noise);
+                
                 float4 color = lerp(_DepthColor, _SurfaceColor, t);
+                
                 return color;
             }
             ENDCG

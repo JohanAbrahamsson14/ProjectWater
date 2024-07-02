@@ -1,4 +1,4 @@
-Shader "Custom/AdvancedUnderwaterShader"
+Shader "Custom/DitheredUnderwaterShader"
 {
     Properties
     {
@@ -7,6 +7,7 @@ Shader "Custom/AdvancedUnderwaterShader"
         _SurfaceColor ("Surface Color", Color) = (0.2, 0.8, 1, 1)
         _InterpolationFactor ("Interpolation Factor", Range(0, 1)) = 0.5
         _Smoothness ("Smoothness", Range(0, 1)) = 0.5
+        _DitherIntensity ("Dither Intensity", Range(0, 0.1)) = 0.05
     }
     SubShader
     {
@@ -41,6 +42,11 @@ Shader "Custom/AdvancedUnderwaterShader"
             float4 _SurfaceColor;
             float _InterpolationFactor;
             float _Smoothness;
+            float _DitherIntensity;
+
+            float random(float2 st) {
+                return frac(sin(dot(st.xy, float2(12.9898,78.233))) * 43758.5453123);
+            }
 
             v2f vert (appdata v)
             {
@@ -55,10 +61,17 @@ Shader "Custom/AdvancedUnderwaterShader"
             {
                 float3 viewDir = normalize(_WorldSpaceCameraPos - i.worldPos.xyz);
                 float viewAngle = dot(viewDir, float3(0, 1, 0));
-                
+
                 // Apply the smoothstep function for smoother interpolation
                 float t = smoothstep(_InterpolationFactor - _Smoothness, _InterpolationFactor + _Smoothness, viewAngle);
+
+                // Apply dithering
+                float dither = random(i.uv) * _DitherIntensity;
+                t = t + dither;
+
+                // Apply color interpolation
                 float4 color = lerp(_DepthColor, _SurfaceColor, t);
+                
                 return color;
             }
             ENDCG
