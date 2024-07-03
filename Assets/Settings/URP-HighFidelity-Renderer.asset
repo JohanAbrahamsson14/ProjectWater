@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5003902269138599457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f641730561683b74e8539ac418c9e9b7, type: 3}
+  m_Name: FogRenderFeature2
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  settings:
+    fogMaterial: {fileID: 2100000, guid: b06c94e93fdad4543a82c8d4446e17ff, type: 2}
+--- !u!114 &-3780956373483801825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fcb6f4462a24464fa6ec84a7623a7cf, type: 3}
+  m_Name: FogRenderFeature3
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    fogMaterial: {fileID: 2100000, guid: 2329a679224aeb245a69610a5b0aa771, type: 2}
 --- !u!114 &-1878332245247344467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,8 +84,12 @@ MonoBehaviour:
       type: 3}
   m_RendererFeatures:
   - {fileID: -1878332245247344467}
-  - {fileID: 6588833945525555375}
-  m_RendererFeatureMap: adc0de57c6d2eee5af101677903d705b
+  - {fileID: 3941560004810373885}
+  - {fileID: -5003902269138599457}
+  - {fileID: 1716010256726099681}
+  - {fileID: 7500592052369123586}
+  - {fileID: -3780956373483801825}
+  m_RendererFeatureMap: adc0de57c6d2eee5fdfa9bebf03bb336df0139e565918ebae10616973c7ed01702699456bb7417681fb33fef355887cb
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -96,7 +130,22 @@ MonoBehaviour:
   m_ClusteredRendering: 0
   m_TileSize: 32
   m_IntermediateTextureMode: 0
---- !u!114 &6588833945525555375
+--- !u!114 &1716010256726099681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8668f204b44b5a478898d6058bb6355, type: 3}
+  m_Name: CustomRenderPassFeature
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  settings:
+    material: {fileID: 2100000, guid: 50f897e6902606e42b5467fe73923916, type: 2}
+--- !u!114 &3941560004810373885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,6 +157,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109fbafc769e6a84dbfe37d7d8941ce5, type: 3}
   m_Name: CustomFogRenderFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     fogMaterial: {fileID: 2100000, guid: 5eb727e69216d884c9cffc661bf60fa5, type: 2}
+--- !u!114 &7500592052369123586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb7720fd603395419557c673e441a09, type: 3}
+  m_Name: CustomRenderPassFeature2
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  settings:
+    material: {fileID: 2100000, guid: d5d49960c8db6af41a22757f95badfcc, type: 2}

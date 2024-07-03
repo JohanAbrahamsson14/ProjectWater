@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.6750623, g: 0.6885382, b: 0.6981132, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.05
@@ -3941,3 +3941,25 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2918495092247321842, guid: 8e44961fb20b8154889fe862444e0942, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8e44961fb20b8154889fe862444e0942, type: 3}
+--- !u!1 &2918495090953351750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2918495092247321844, guid: 8e44961fb20b8154889fe862444e0942,
+    type: 3}
+  m_PrefabInstance: {fileID: 2918495090953351749}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2918495090953351751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918495090953351750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eca09a9b3f4dd94ab8bdf14af276cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fogShader: {fileID: 4800000, guid: bf8b6144ee4321542b3691f846e08a6b, type: 3}
+  fogColor: {r: 1, g: 0, b: 0, a: 0}
+  fogDensity: 1
+  fogOffset: 0
