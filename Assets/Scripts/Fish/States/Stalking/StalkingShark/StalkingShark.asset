@@ -18,5 +18,5 @@ MonoBehaviour:
   stalkingStrength: 2
   minimumRange: 22
   maximumDistance: 30
-  timeToAttack: 20
+  timeToAttack: 50
   isMovingAway: 0

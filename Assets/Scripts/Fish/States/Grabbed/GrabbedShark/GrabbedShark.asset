@@ -16,7 +16,7 @@ MonoBehaviour:
   - {fileID: 0}
   agent: {fileID: 0}
   grabbedObject: {fileID: 0}
-  attackDistance: 8
+  attackDistance: 4
   speedIncreaseMultiplyer: 4
   selectionDistance: 30
   selectionPos: {x: -18.894085, y: 19.653873, z: -12.51954}

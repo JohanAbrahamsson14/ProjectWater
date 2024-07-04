@@ -7,6 +7,7 @@ public class AttackingShark : Attacking
 {
     private Transform selectedPlayer;
     public float attackRange = 6.0f;
+    public Vector3 attackedOffset;
     public float attackingStrength = 4.0f;
     public float speedIncreaseMultiplyer = 2.0f;
     
@@ -71,7 +72,7 @@ public class AttackingShark : Attacking
     public override void Transition()
     {
         base.Transition();
-        if (Vector3.Distance(agent.transform.position, selectedPlayer.position) < attackRange) stateMachine.StateTransformation(agent.attack);
+        if (Vector3.Distance(agent.transform.position+attackedOffset, selectedPlayer.position) < attackRange) stateMachine.StateTransformation(agent.attack);
         Vector3 dirFromAtoB = (selectedPlayer.position - agent.transform.position).normalized;
         float dotProd = Vector3.Dot(dirFromAtoB, agent.transform.forward);
         if(dotProd < 0.35f) stateMachine.StateTransformation(agent.retreating);

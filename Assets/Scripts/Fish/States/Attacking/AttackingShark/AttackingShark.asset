@@ -16,5 +16,6 @@ MonoBehaviour:
   - {fileID: 0}
   agent: {fileID: 0}
   attackRange: 4
+  attackedOffset: {x: 0, y: -0.561, z: 3.4}
   attackingStrength: 10
   speedIncreaseMultiplyer: 7
