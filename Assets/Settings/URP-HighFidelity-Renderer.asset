@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 0
   settings:
-    fogMaterial: {fileID: 2100000, guid: b06c94e93fdad4543a82c8d4446e17ff, type: 2}
+    fogMaterial: {fileID: 2100000, guid: 8c8ef11d27f28414c9fbea94566e2a1a, type: 2}
 --- !u!114 &-3780956373483801825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcb6f4462a24464fa6ec84a7623a7cf, type: 3}
   m_Name: FogRenderFeature3
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     fogMaterial: {fileID: 2100000, guid: 2329a679224aeb245a69610a5b0aa771, type: 2}
 --- !u!114 &-1878332245247344467
