@@ -14,7 +14,7 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        //if(player.isGrabbed) return;
+        if(player.isGrabbed) return;
         
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;

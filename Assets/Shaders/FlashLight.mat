@@ -46,13 +46,15 @@ Material:
     - _DistanceFadeLength: 15
     - _DstBlend: 10
     - _EdgeFallOff: 2
+    - _EndCullDistance: 35
     - _LengthStrengthFadeOut: 1
-    - _Opacity: 0.1
+    - _Opacity: 0.3
     - _OtherSpeed: 0.01
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Speed: 0.02
     - _SrcBlend: 5
+    - _StartCullDistance: 15
     - _Surface: 1
     - _UseCloud: 0
     - _ZTest: 4
