@@ -79,7 +79,7 @@ public class StalkingShark : Stalking
         Vector3 dirFromAtoB = (selectedPlayer.position - agent.transform.position).normalized;
         float dotProd = Vector3.Dot(dirFromAtoB, agent.transform.forward);
         
-        if (currentTime >= timeToAttack && dotProd > 0.95) stateMachine.StateTransformation(agent.attacking);
+        if (currentTime >= timeToAttack && dotProd > 0.98) stateMachine.StateTransformation(agent.attacking);
         base.Transition();
     }
 

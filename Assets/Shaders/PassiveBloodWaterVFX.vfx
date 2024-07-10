@@ -75,8 +75,8 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: Bleeding amount
-    path: Bleeding amount
+  - name: Bleeding Amount
+    path: Bleeding Amount
     tooltip: 
     sheetType: m_Float
     realType: Single
@@ -84,7 +84,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 0
     min: 0
     max: 1
     enumValues: []
@@ -7684,7 +7684,7 @@ MonoBehaviour:
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661615314}
-  m_ExposedName: Bleeding amount
+  m_ExposedName: Bleeding Amount
   m_Exposed: 1
   m_Order: 1
   m_Category: 
@@ -7742,7 +7742,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 0
     m_Space: 2147483647
   m_Property:
     name: o

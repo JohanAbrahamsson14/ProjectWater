@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.VFX;
 using Random = System.Random;
 
 [RequireComponent(typeof(CharacterController))]
@@ -28,6 +29,12 @@ public class FirstPersonController : MonoBehaviour, IDamageAble
     public float waterSurfaceLevel = 5.0f; // Example water surface level, adjust as needed
     public float Weight = 80f;
 
+    public VisualEffect blood;
+    public VisualEffect bloodPassive;
+    public VisualEffect bloodInWater;
+    public VisualEffect bloodInWaterPassive;
+    public float bloodEffectChange;
+    
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
     private bool isInWater = false;
@@ -230,6 +237,8 @@ public class FirstPersonController : MonoBehaviour, IDamageAble
     public float currentHealth { get; set; }
     public void GetDamaged(float value)
     {
+        if(bloodEffectChange<value) bloodInWater.SendEvent("OnPlayBlood");
+        bloodInWaterPassive.SetFloat("Bleeding Amount", 1-(currentHealth/maxHealth));
         currentHealth -= value;
         if (currentHealth <= 0) Death();
     }

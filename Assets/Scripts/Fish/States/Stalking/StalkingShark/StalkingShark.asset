@@ -16,7 +16,7 @@ MonoBehaviour:
   - {fileID: 0}
   agent: {fileID: 0}
   stalkingStrength: 2
-  minimumRange: 22
-  maximumDistance: 30
+  minimumRange: 30
+  maximumDistance: 50
   timeToAttack: 50
   isMovingAway: 0

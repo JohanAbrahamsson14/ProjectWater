@@ -48,7 +48,7 @@ public class AttackShark : Attack
 
             if (!Physics.Raycast(ray, (hitSelected.gameObject.transform.position - pointOfAttack).magnitude, wallLayerMask))
             {
-                attackedObject = hitSelected.CompareTag("Player") ? hitSelected.gameObject : null;
+                if (hitSelected.CompareTag("Player") && hitSelected.gameObject.TryGetComponent(out FirstPersonController player) && !player.isGrabbed) attackedObject = hitSelected.gameObject;
             }
         }
     }
