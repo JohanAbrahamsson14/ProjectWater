@@ -58,10 +58,10 @@ Material:
     - _Density: 0.033
     - _DstBlend: 0
     - _End: 35
-    - _Interpolation: 0.35
+    - _Interpolation: 0
     - _QueueControl: 0
     - _QueueOffset: -1
-    - _Smoothness: 0.8
+    - _Smoothness: 1
     - _SrcBlend: 1
     - _Start: 3
     - _Surface: 0
