@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 356868696660427371}
   - component: {fileID: 356868696660427369}
   - component: {fileID: 356868696660427372}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356868696660427350}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 60740b31f226d1a4487c581b06924a0d, type: 2}
+  - {fileID: 2100000, guid: 5288569e17cfc704c892845100f48200, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -130,7 +130,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.21
-  m_Height: 1.33
+  m_Radius: 0.83
+  m_Height: 7.41
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: -0.22}
+  m_Center: {x: 0, y: -0.3, z: 0.52}

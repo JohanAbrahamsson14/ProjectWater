@@ -33,7 +33,7 @@ public class Fish : MonoBehaviour
     public float distanceFromSelectionPoint = 10f;
     public Vector3 selectionPoint;
     [Header("Other")]
-    public Collider collider;
+    public Collider collider = null;
     
     private Vector3 velocity;
 
