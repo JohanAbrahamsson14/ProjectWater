@@ -14,4 +14,18 @@ public static class BezierCurve
 
         return p;
     }
+
+    public static float GetApproximateLength(Vector3 p0, Vector3 p1, Vector3 p2, int subdivisions = 10)
+    {
+        float length = 0f;
+        Vector3 previousPoint = p0;
+        for (int i = 1; i <= subdivisions; i++)
+        {
+            float t = i / (float)subdivisions;
+            Vector3 point = GetPoint(p0, p1, p2, t);
+            length += Vector3.Distance(previousPoint, point);
+            previousPoint = point;
+        }
+        return length;
+    }
 }
