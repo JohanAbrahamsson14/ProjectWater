@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class TrackFollower : MonoBehaviour
 {
-    public Transform[] waypoints;
-    private int currentWaypointIndex = 0;
+    public Transform[] controlPoints;
+    public float baseRotationSpeed = 1f;
+    public float maxSegmentLength = 0.1f;
+
     private TrolleyController trolleyController;
-    public float rotationSpeed = 5f; // Speed at which the trolley rotates
+    private int currentSegmentIndex = 0;
+    private float t = 0f;
 
     void Start()
     {
@@ -14,28 +17,46 @@ public class TrackFollower : MonoBehaviour
 
     void Update()
     {
-        if (waypoints.Length == 0)
+        if (controlPoints.Length < 3)
             return;
 
-        MoveTowardsWaypoint();
+        MoveAlongCurve();
     }
 
-    void MoveTowardsWaypoint()
+    void MoveAlongCurve()
     {
-        Transform targetWaypoint = waypoints[currentWaypointIndex];
-        Vector3 direction = (targetWaypoint.position - transform.position).normalized;
         float speed = trolleyController.CurrentSpeed;
 
-        // Move towards the waypoint
-        transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, speed * Time.deltaTime);
+        // Increment t based on speed and segment length
+        t += (speed / 10f) * Time.deltaTime;
 
-        // Smoothly rotate towards the waypoint
-        Quaternion targetRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-
-        if (Vector3.Distance(transform.position, targetWaypoint.position) < 0.1f)
+        // If t is greater than 1, move to the next segment
+        if (t > 1f)
         {
-            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+            t = 0f;
+            currentSegmentIndex += 2; // Move to the next set of points
+
+            if (currentSegmentIndex >= controlPoints.Length - 2)
+            {
+                currentSegmentIndex = 0; // Loop back to the start
+            }
         }
+
+        Vector3 p0 = controlPoints[currentSegmentIndex].position;
+        Vector3 p1 = controlPoints[currentSegmentIndex + 1].position;
+        Vector3 p2 = controlPoints[currentSegmentIndex + 2].position;
+
+        // Get the next position on the curve
+        Vector3 nextPosition = BezierCurve.GetPoint(p0, p1, p2, t);
+
+        // Move towards the next position
+        transform.position = Vector3.MoveTowards(transform.position, nextPosition, speed * Time.deltaTime);
+
+        // Smoothly rotate towards the next position
+        Vector3 direction = (nextPosition - transform.position).normalized;
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+        float angle = Quaternion.Angle(transform.rotation, targetRotation);
+        float rotationSpeed = baseRotationSpeed * (speed / trolleyController.maxSpeed) * (angle / 180f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 }
