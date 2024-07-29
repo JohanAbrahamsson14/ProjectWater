@@ -15,6 +15,13 @@ public static class BezierCurve
         return p;
     }
 
+    public static Vector3 GetTangent(Vector3 p0, Vector3 p1, Vector3 p2, float t)
+    {
+        float u = 1 - t;
+        Vector3 tangent = 2 * u * (p1 - p0) + 2 * t * (p2 - p1);
+        return tangent.normalized;
+    }
+
     public static float GetApproximateLength(Vector3 p0, Vector3 p1, Vector3 p2, int subdivisions = 10)
     {
         float length = 0f;

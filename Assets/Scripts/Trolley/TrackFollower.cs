@@ -6,20 +6,21 @@ public class TrackFollower : MonoBehaviour
     public Transform[] controlPoints; // Points defining the curvature
 
     public float baseRotationSpeed = 1f;
+    public float maxTiltAngle = 30f; // Increase maximum tilt angle for more noticeable effect
+    public float tiltDamping = 5f; // Damping factor for smoothing the tilt
     private TrolleyController trolleyController;
     private int currentSegmentIndex = 0;
     private float traveledDistance = 0f;
     private float segmentLength = 0f;
+    private float currentTiltAngle = 0f; // Current tilt angle for smoothing
 
     void Start()
     {
-        /*
         if (keyPoints.Length != controlPoints.Length + 1)
         {
             Debug.LogError("There should be one more key point than control points.");
             return;
         }
-        */
 
         trolleyController = GetComponent<TrolleyController>();
         CalculateSegmentLength();
@@ -60,16 +61,24 @@ public class TrackFollower : MonoBehaviour
 
         // Get the next position on the curve
         Vector3 nextPosition = BezierCurve.GetPoint(p0, p1, p2, t);
+        Vector3 tangent = BezierCurve.GetTangent(p0, p1, p2, t);
 
         // Move towards the next position
         transform.position = Vector3.MoveTowards(transform.position, nextPosition, speed * Time.deltaTime);
 
-        // Smoothly rotate towards the next position
-        Vector3 direction = (nextPosition - transform.position).normalized;
-        Quaternion targetRotation = Quaternion.LookRotation(direction);
+        // Smoothly rotate towards the tangent direction
+        Quaternion targetRotation = Quaternion.LookRotation(tangent);
         float angle = Quaternion.Angle(transform.rotation, targetRotation);
         float rotationSpeed = baseRotationSpeed * (speed / trolleyController.maxSpeed) * (angle / 180f);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+        // Calculate the z-rotation for tilt effect based on speed and curve angle
+        float curveAngle = Vector3.SignedAngle(transform.forward, tangent, Vector3.up);
+        float targetTiltAngle = Mathf.Clamp(-curveAngle, -maxTiltAngle, maxTiltAngle) * (speed / trolleyController.maxSpeed);
+        
+        // Smoothly interpolate the current tilt angle
+        currentTiltAngle = Mathf.Lerp(currentTiltAngle, targetTiltAngle, Time.deltaTime * tiltDamping);
+        transform.localRotation = Quaternion.Euler(transform.localRotation.eulerAngles.x, transform.localRotation.eulerAngles.y, currentTiltAngle);
     }
 
     void CalculateSegmentLength()
