@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 4831a5fd04bddc640acb431784dc6b28
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Motomangucode
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 24dfded34e0de194c81be9daa9509d7e, type: 3}
+  - {fileID: 12800000, guid: 233b20f4c11002f49a24a4fc9a6ec215, type: 3}
+  - {fileID: 12800000, guid: 158883dda55bd574abf20ac791a0095a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
