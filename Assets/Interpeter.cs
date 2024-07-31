@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 
@@ -22,9 +23,11 @@ public class Interpeter : MonoBehaviour
     {
         response.Clear();
 
-        string[] args = userInput.Split();
+        var capitalUserInput = userInput.ToUpper();
+        
+        string[] args = capitalUserInput.Split();
 
-        if (args[0] == "help")
+        if (args[0] == "HELP")
         {
             ListEntry("help", "returns a list of commands");
             ListEntry("stop", "pauses the game.");
@@ -33,7 +36,15 @@ public class Interpeter : MonoBehaviour
 
             return response;
         }
-        if (args[0] == "Boop")
+
+        if (args[0] == "ASCII")
+        {
+            LoadTitle("ascii.txt", "red", 2);
+
+            return response;
+        }
+        
+        if (args[0] == "BOOP")
         {
             response.Add("Thanks for using the Terminal!");
             response.Add("Boop!");
@@ -62,6 +73,28 @@ public class Interpeter : MonoBehaviour
     public void ListEntry(string a, string b)
     {
         response.Add(ColorString(a, colors["orange"]) + ": " + ColorString(b, colors["yellow"]));
+    }
+
+    public void LoadTitle(string path, string color, int spacing)
+    {
+        StreamReader file = new StreamReader(Path.Combine(Application.streamingAssetsPath, path));
+
+        for (int i = 0; i < spacing; i++)
+        {
+            response.Add("");
+        }
+
+        while (!file.EndOfStream)
+        {
+            response.Add(ColorString(file.ReadLine(), colors[color]));
+        }
+        
+        for (int i = 0; i < spacing; i++)
+        {
+            response.Add("");
+        }
+        
+        file.Close();
     }
     
 }
