@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,6 +15,13 @@ public class TerminalManager : MonoBehaviour
     public ScrollRect sr;
     public GameObject msgList;
 
+    public Interpeter interpeter;
+
+    private void Awake()
+    {
+        interpeter = GetComponent<Interpeter>();
+    }
+
     private void OnGUI()
     {
         if (terminalInput.isFocused && terminalInput.text != "" && Input.GetKey(KeyCode.Return))
@@ -27,6 +35,12 @@ public class TerminalManager : MonoBehaviour
             //Instansite a GameObject with a directory prefix
             AddDirectoryLine(userInput);
             
+            //Add the interpretation lines
+            int lines = AddInterpeterLines(interpeter.Interpret(userInput));
+            
+            //Scroll to the bottom of the scrollrect
+            ScrollToBottom(lines);
+            
             //Move the user input line to the end
             UserInputLine.transform.SetAsLastSibling();
             
@@ -34,6 +48,39 @@ public class TerminalManager : MonoBehaviour
             terminalInput.ActivateInputField();
             terminalInput.Select();
         }
+    }
+
+    private void ScrollToBottom(int lines)
+    {
+        if (lines > 4)
+        {
+            sr.velocity = new Vector2(0, 450);
+        }
+        else
+        {
+            sr.verticalNormalizedPosition = 0;
+        }
+    }
+
+    private int AddInterpeterLines(List<string> interpretation)
+    {
+        for (int i = 0; i < interpretation.Count; i++)
+        {
+            //Instantiate the response line.
+            GameObject res = Instantiate(responseLine, msgList.transform);
+            
+            //Set it to the end of all messages
+            res.transform.SetAsLastSibling();
+            
+            //Get the size of the message list, and resize
+            Vector2 listSize = msgList.GetComponent<RectTransform>().sizeDelta;
+            msgList.GetComponent<RectTransform>().sizeDelta = new Vector2(listSize.x, listSize.y + 35.0f);
+            
+            //Set the text of this response line to be whaterver the interpreter string is.
+            res.GetComponentInChildren<TextMeshProUGUI>().text = interpretation[i];
+        }
+
+        return interpretation.Count;
     }
 
     private void AddDirectoryLine(string userInput)

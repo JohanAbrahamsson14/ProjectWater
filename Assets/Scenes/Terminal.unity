@@ -1596,6 +1596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1383715359}
   - component: {fileID: 1383715360}
+  - component: {fileID: 1383715361}
   m_Layer: 5
   m_Name: Terminal
   m_TagString: Untagged
@@ -1644,6 +1645,19 @@ MonoBehaviour:
   UserInputLine: {fileID: 201024701}
   sr: {fileID: 285026028}
   msgList: {fileID: 390116516}
+  interpeter: {fileID: 0}
+--- !u!114 &1383715361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383715358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99842d9b44516974d838af890538e643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1453075463
 GameObject:
   m_ObjectHideFlags: 0
