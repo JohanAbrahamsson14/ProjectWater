@@ -44,6 +44,13 @@ public class Interpeter : MonoBehaviour
             return response;
         }
         
+        if (args[0] == "RR")
+        {
+            LoadTitle("rickroll.txt", "red", 2);
+
+            return response;
+        }
+        
         if (args[0] == "BOOP")
         {
             response.Add("Thanks for using the Terminal!");

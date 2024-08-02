@@ -54,7 +54,7 @@ public class TerminalManager : MonoBehaviour
     {
         if (lines > 4)
         {
-            sr.velocity = new Vector2(0, 450);
+            sr.velocity = new Vector2(0, 150*lines);
         }
         else
         {
