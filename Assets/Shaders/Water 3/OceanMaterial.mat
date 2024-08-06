@@ -35,8 +35,8 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Foam_Texture:
-        m_Texture: {fileID: 2800000, guid: 7b06461d3956ac544b2ab47aa09c01dc, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: caddd14035e552942a273d1b026a6f87, type: 3}
+        m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _Normal01:
         m_Texture: {fileID: 2800000, guid: 49413e19d68a65442a2d6cfb7a6271fb, type: 3}
@@ -61,21 +61,28 @@ Material:
     m_Ints: []
     m_Floats:
     - _Amplitude: 5
+    - _Crest_Falloff: 2
+    - _Crest_Offset: 0
+    - _Crest_Size: 0
+    - _Edge_Hardness: 10
+    - _Extra_Dispersion: 0
+    - _Extra_Expersion: 0
     - _Foam_Bands: 7
-    - _Foam_Falloff: 2
+    - _Foam_Falloff: 0.5
     - _Foam_Removal: 0.3
-    - _Foam_Width: 1
-    - _Frequency: 0.05
-    - _Frequency_2: 0.12
+    - _Foam_Width: 0.4
+    - _Frequency: 0.1
+    - _Frequency_2: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Ripple_Speed: 0.06
     - _Ripple_Strength: 0.52
     - _Ripple_Tiling: 0.2
-    - _Speed: 2.5
-    - _Speed_2: 1.37
-    - _Steepness: 0.001
+    - _Smoothness: 0.75
+    - _Speed: 0.5
+    - _Speed_2: 0.274
+    - _Steepness: 0.008
     m_Colors:
     - _Direction: {r: 1, g: 0, b: 0, a: 0}
-    - _Direction_2: {r: 1, g: -0.3, b: 0, a: 0}
+    - _Direction_2: {r: 1, g: -0.5, b: 0, a: 0}
   m_BuildTextureStacks: []
