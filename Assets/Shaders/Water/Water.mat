@@ -65,7 +65,7 @@ Material:
     - _Blend: 0
     - _CastShadows: 0
     - _Cull: 2
-    - _Curve_Strength: -0.00001
+    - _Curve_Strength: 0
     - _Depth: 10
     - _Displacement: 30
     - _DstBlend: 10
