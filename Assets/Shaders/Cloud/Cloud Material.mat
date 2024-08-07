@@ -35,8 +35,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Cloud_Cutoff: 0.85
-    - _Cloud_Softness: 0.92
+    - _Cloud_Cutoff: 0.672
+    - _Cloud_Softness: 1.75
     - _Edge: -0.27
     - _QueueControl: 0
     - _QueueOffset: 0
