@@ -61,14 +61,15 @@ Material:
     m_Ints: []
     m_Floats:
     - _Amplitude: 5
-    - _Colour_Strength: 0.8
+    - _Colour_Strength: 0.09
     - _Crest_Falloff: 2
     - _Crest_Offset: 0
     - _Crest_Size: 0
-    - _Depth: 5
+    - _Curve_Strenght: -0.0001
+    - _Depth: 0
     - _Depth_Strength: 0
-    - _Depth_Strength_1: 0.1
-    - _Edge_Hardness: 30
+    - _Depth_Strength_1: 0.07
+    - _Edge_Hardness: 10
     - _Extra_Dispersion: 0
     - _Extra_Expersion: 0
     - _Foam_Bands: 7
@@ -86,13 +87,13 @@ Material:
     - _Smoothness: 0.75
     - _Speed: 0.5
     - _Speed_2: 0.27
-    - _Steepness: 0.02
+    - _Steepness: 0.008
     - _Water_Edge_Oacity: 1
     - _Water_Opacity: 1
     m_Colors:
-    - _Color_01: {r: 0.24328041, g: 0.4741488, b: 0.7264151, a: 0.5019608}
-    - _Color_02: {r: 0.09104661, g: 0.15916523, b: 0.5849056, a: 1}
-    - _Direction: {r: 1, g: 1.19, b: 0, a: 0}
-    - _Direction_2: {r: 1, g: -0.5, b: 0, a: 0}
-    - _Foam_Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color_01: {r: 0.27367392, g: 0.5134686, b: 0.7735849, a: 0.5019608}
+    - _Color_02: {r: 0.081434675, g: 0.11181036, b: 0.2830189, a: 1}
+    - _Direction: {r: 1, g: -1.5, b: 0, a: 0}
+    - _Direction_2: {r: 1, g: -1, b: 0, a: 0}
+    - _Foam_Color: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
   m_BuildTextureStacks: []
