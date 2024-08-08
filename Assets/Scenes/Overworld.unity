@@ -1712,7 +1712,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 10000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -1790,7 +1790,6 @@ GameObject:
   - component: {fileID: 1182317747}
   - component: {fileID: 1182317746}
   - component: {fileID: 1182317745}
-  - component: {fileID: 1182317748}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -1847,7 +1846,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182317743}
-  m_Mesh: {fileID: -2432090755550338912, guid: eca775d4b1261cc4d91e6cf3bf24a645, type: 3}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1182317747
 Transform:
   m_ObjectHideFlags: 0
@@ -1863,24 +1862,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
---- !u!114 &1182317748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182317743}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ff468919f92037408ba870e7be6c171, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontalStackSize: 5
-  cloudHeight: 9.44
-  quadMesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
-  cloudMaterial: {fileID: 2100000, guid: c89c05093abf5b74e9638a7edf89b896, type: 2}
-  layer: 0
-  camera: {fileID: 1176333048}
 --- !u!1 &1186570804
 GameObject:
   m_ObjectHideFlags: 0
@@ -2560,7 +2541,6 @@ GameObject:
   - component: {fileID: 1344399690}
   - component: {fileID: 1344399689}
   - component: {fileID: 1344399688}
-  - component: {fileID: 1344399687}
   m_Layer: 0
   m_Name: Plane (3)
   m_TagString: Untagged
@@ -2568,24 +2548,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1344399687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344399686}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ff468919f92037408ba870e7be6c171, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontalStackSize: 5
-  cloudHeight: 9.44
-  quadMesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
-  cloudMaterial: {fileID: 2100000, guid: c89c05093abf5b74e9638a7edf89b896, type: 2}
-  layer: 0
-  camera: {fileID: 1176333048}
 --- !u!23 &1344399688
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2635,7 +2597,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344399686}
-  m_Mesh: {fileID: -2432090755550338912, guid: eca775d4b1261cc4d91e6cf3bf24a645, type: 3}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1344399690
 Transform:
   m_ObjectHideFlags: 0
@@ -3705,7 +3667,6 @@ GameObject:
   - component: {fileID: 1676927285}
   - component: {fileID: 1676927284}
   - component: {fileID: 1676927283}
-  - component: {fileID: 1676927282}
   m_Layer: 0
   m_Name: Plane (2)
   m_TagString: Untagged
@@ -3713,24 +3674,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1676927282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676927281}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ff468919f92037408ba870e7be6c171, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontalStackSize: 5
-  cloudHeight: 9.44
-  quadMesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
-  cloudMaterial: {fileID: 2100000, guid: c89c05093abf5b74e9638a7edf89b896, type: 2}
-  layer: 0
-  camera: {fileID: 1176333048}
 --- !u!23 &1676927283
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3780,7 +3723,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676927281}
-  m_Mesh: {fileID: -2432090755550338912, guid: eca775d4b1261cc4d91e6cf3bf24a645, type: 3}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1676927285
 Transform:
   m_ObjectHideFlags: 0
