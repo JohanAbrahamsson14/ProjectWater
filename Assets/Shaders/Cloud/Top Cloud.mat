@@ -52,11 +52,11 @@ Material:
     - _Cloud_Cutoff: 0.075
     - _Cloud_Height: -5
     - _Cloud_Softness: 2.9
-    - _Colour_applidue: 10
+    - _Colour_applidue: 8.5
     - _Edge: 0.08
     - _MidYValue: 100
     - _MovementStrength: 1
-    - _Noise_Scale: 3
+    - _Noise_Scale: 2.88
     - _Opacity: 0
     - _QueueControl: 0
     - _QueueOffset: 0
