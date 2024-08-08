@@ -36,12 +36,14 @@ Material:
     m_Ints: []
     m_Floats:
     - _Blend: 1
-    - _Cloud_Cutoff: 0.586
+    - _Cloud_Cutoff: 0.075
     - _Cloud_Height: -5
-    - _Cloud_Softness: 0.35
-    - _Colour_applidue: 1
-    - _Edge: 0.3
+    - _Cloud_Softness: 2.9
+    - _Colour_applidue: 8
+    - _Edge: 0.2
     - _MidYValue: 100
+    - _MovementStrength: 1
+    - _Noise_Scale: 2
     - _Opacity: 0
     - _QueueControl: 0
     - _QueueOffset: 0
