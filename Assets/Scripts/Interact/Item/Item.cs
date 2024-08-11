@@ -6,7 +6,7 @@ using UnityEngine;
 public class Item : MonoBehaviour, IInteractable
 {
     public GameObject itemObject;
-
+    public float size;
     public float weight;
 
     public void Start()

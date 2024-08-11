@@ -53,6 +53,7 @@ public class FirstPersonController : MonoBehaviour, IDamageAble
     public float interactRange;
 
     public List<Item> inventory;
+    public Item activeItem;
 
     void Start()
     {
@@ -73,6 +74,15 @@ public class FirstPersonController : MonoBehaviour, IDamageAble
         staminaCurrent = Mathf.Clamp(staminaCurrent, 0, staminaBase);
         fogWall.SetActive(isInWater);
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (activeItem != null && activeItem is Tool)
+            {
+                Tool activeTool = (Tool)activeItem;
+                activeTool.ToolAction();
+            }
+        }
+        
         if (isGrabbed)
         {
             GrabbedMovement();
