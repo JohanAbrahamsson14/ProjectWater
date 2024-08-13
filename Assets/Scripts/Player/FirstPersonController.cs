@@ -52,8 +52,11 @@ public class FirstPersonController : MonoBehaviour, IDamageAble
     private Interactor _interactor;
     public float interactRange;
 
+    /*
     public List<Item> inventory;
     public Item activeItem;
+    */
+    public Inventory inventory;
     public GameObject activeItemObject;
 
     void Start()
@@ -78,9 +81,8 @@ public class FirstPersonController : MonoBehaviour, IDamageAble
         
         if (Input.GetMouseButtonDown(0))
         {
-            if (activeItem != null && activeItem is Tool)
+            if (inventory.activeItem != null && inventory.activeItem is Tool activeTool)
             {
-                Tool activeTool = (Tool)activeItem;
                 activeTool.ToolAction();
             }
         }
@@ -118,14 +120,14 @@ public class FirstPersonController : MonoBehaviour, IDamageAble
         {
             _interactor.Interact(_camera.ViewportPointToRay(new Vector3 (0.5f, 0.5f, 0)), interactRange, this);
         }
-        if (Input.GetKeyDown(KeyCode.G) && inventory.Count > 0)
+        if (Input.GetKeyDown(KeyCode.G) && inventory.inventoryCollection.Count > 0)
         {
-            Item selectedItem = inventory.Last();
+            Item selectedItem = inventory.inventoryCollection.Last();
             GameObject selectedItemObject = selectedItem.itemObject;
             selectedItemObject.transform.position = transform.position+Vector3.down;
             Weight -= selectedItem.weight;
             selectedItemObject.SetActive(true);
-            inventory.Remove(selectedItem);
+            inventory.inventoryCollection.Remove(selectedItem);
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
@@ -167,14 +169,14 @@ public class FirstPersonController : MonoBehaviour, IDamageAble
             {
                 _interactor.Interact(_camera.ViewportPointToRay(new Vector3 (0.5f, 0.5f, 0)), interactRange, this);
             }
-            if (Input.GetKeyDown(KeyCode.G) && inventory.Count > 0)
+            if (Input.GetKeyDown(KeyCode.G) && inventory.inventoryCollection.Count > 0)
             {
-                Item selectedItem = inventory.Last();
+                Item selectedItem = inventory.inventoryCollection.Last();
                 GameObject selectedItemObject = selectedItem.itemObject;
                 selectedItemObject.transform.position = transform.position+Vector3.down;
                 Weight -= selectedItem.weight;
                 selectedItemObject.SetActive(true);
-                inventory.Remove(selectedItem);
+                inventory.inventoryCollection.Remove(selectedItem);
             }
 
 

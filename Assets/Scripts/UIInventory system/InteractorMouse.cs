@@ -6,8 +6,8 @@ using UnityEngine;
 
 interface IInteractableMouse
 {
-    public void Interact(InteractorMouse interactor, bool isPrimary);
-    public void SecondaryInteract(InteractorMouse interactor);
+    public void Interact(InteractorMouse interactor, Inventory inventory, bool isPrimary);
+    public void SecondaryInteract(InteractorMouse interactor, Inventory inventory);
 }
 interface IDragable
 {
@@ -17,6 +17,7 @@ interface IDragable
 
 public class InteractorMouse : MonoBehaviour
 {
+    public Inventory inventory;
     public Camera InteractorSource;
     [SerializeField] private Transform heldObj;
     private int renderIndex;
@@ -60,7 +61,7 @@ public class InteractorMouse : MonoBehaviour
             spriteRenderer.rendererPriority = 99;
         }
         
-        interactableObj.Interact(this, Input.GetMouseButtonDown(0));
+        interactableObj.Interact(this, inventory,Input.GetMouseButtonDown(0));
     }
 
     public void Drag(Vector2 screenPoss)

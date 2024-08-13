@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class ItemUIInteractable : MonoBehaviour, IInteractableMouse
 {
-    public void Interact(InteractorMouse interactor, bool isPrimary)
+    [SerializeField] public Item item;
+    public void Interact(InteractorMouse interactor, Inventory inventory, bool isPrimary)
     {
         if (!isPrimary)
         {
-            SecondaryInteract(interactor);
+            SecondaryInteract(interactor, inventory);
             return;
         }
-        gameObject.transform.localScale *= 0.5f;
+
+        inventory.SetActiveItem(this, item, inventory.activeItem == item);
     }
 
-    public void SecondaryInteract(InteractorMouse interactor)
+    public void SecondaryInteract(InteractorMouse interactor, Inventory inventory)
     {
-        gameObject.transform.localScale *= 2;
+        inventory.inventoryCollection.Remove(item);
+        Destroy(gameObject);
     }
 }
