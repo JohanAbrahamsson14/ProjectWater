@@ -1904,18 +1904,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1050490506 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3448522797453830314, guid: 8e44961fb20b8154889fe862444e0942,
-    type: 3}
-  m_PrefabInstance: {fileID: 2918495090953351749}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 499cbae4b0e1e6e4e8fcaf03c7be67a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1056563690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2714,37 +2702,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 21
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1298412597
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1298412598}
-  m_Layer: 0
-  m_Name: Active Item
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1298412598
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298412597}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1998223897}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1414578326 stripped
 Transform:
@@ -3886,12 +3843,6 @@ MonoBehaviour:
   itemObject: {fileID: 598650750}
   size: 0
   weight: 5
---- !u!4 &1998223897 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2918495092968570030, guid: 8e44961fb20b8154889fe862444e0942,
-    type: 3}
-  m_PrefabInstance: {fileID: 2918495090953351749}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2066303023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4155,21 +4106,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2918495091219997896, guid: 8e44961fb20b8154889fe862444e0942,
-        type: 3}
-      propertyPath: sun
-      value: 
-      objectReference: {fileID: 410087040}
-    - target: {fileID: 2918495091219997902, guid: 8e44961fb20b8154889fe862444e0942,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2918495091219997902, guid: 8e44961fb20b8154889fe862444e0942,
-        type: 3}
-      propertyPath: activeItem
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2918495091219997903, guid: 8e44961fb20b8154889fe862444e0942,
         type: 3}
       propertyPath: m_RootOrder
@@ -4225,27 +4161,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2918495091527455591, guid: 8e44961fb20b8154889fe862444e0942,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.7764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 2918495091527455591, guid: 8e44961fb20b8154889fe862444e0942,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2918495091527455591, guid: 8e44961fb20b8154889fe862444e0942,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.99607843
-      objectReference: {fileID: 0}
-    - target: {fileID: 3176134832258228150, guid: 8e44961fb20b8154889fe862444e0942,
-        type: 3}
-      propertyPath: activeItem
-      value: 
-      objectReference: {fileID: 1050490506}
-    m_RemovedComponents:
-    - {fileID: 6797141002136804003, guid: 8e44961fb20b8154889fe862444e0942, type: 3}
-    - {fileID: 3438256373136406353, guid: 8e44961fb20b8154889fe862444e0942, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e44961fb20b8154889fe862444e0942, type: 3}
