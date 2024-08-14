@@ -9,6 +9,6 @@ public class Interactor : MonoBehaviour
     public void Interact(Ray ray, float distance, FirstPersonController player)
     {
         if (!Physics.Raycast(ray, out RaycastHit hitData, distance, LayerMask.GetMask("Interactable"))) return;
-        if (hitData.collider.gameObject.TryGetComponent<IInteractable>(out IInteractable interactable)) interactable.Action(player);
+        if (hitData.collider.gameObject.TryGetComponent(out IInteractable interactable)) interactable.Action(player);
     }
 }

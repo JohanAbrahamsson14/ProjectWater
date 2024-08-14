@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Inventory : MonoBehaviour
 {
@@ -10,6 +13,16 @@ public class Inventory : MonoBehaviour
     public GameObject activeItemHolder;
     public GameObject activeAmmoHolder;
     public GameObject holder;
+
+    public GameObject prefabUI;
+    public GameObject spawnPoint;
+
+    private FirstPersonController player;
+
+    private void Awake()
+    {
+        player = GetComponentInParent<FirstPersonController>();
+    }
 
     public void SetActiveItem(ItemUIInteractable itemUIInteractable, Item item, bool isActive)
     {
@@ -47,5 +60,23 @@ public class Inventory : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.freezeRotation = true;
         rb.gravityScale = 0;
+    }
+
+    public void addUIItem(Item item)
+    {
+        GameObject gameObject = Instantiate(prefabUI, spawnPoint.transform.position, quaternion.identity, holder.transform);
+        gameObject.GetComponent<ItemUIInteractable>().item = item;
+        gameObject.transform.localScale *= item.size;
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-0.45f,0.45f)*500, -100);
+    }
+    public void removeUIItem(Item item)
+    {
+        if (item == activeItem) activeItem = null;
+        inventoryCollection.Remove(item);
+        GameObject selectedItemObject = item.itemObject;
+        selectedItemObject.transform.position = transform.position+Vector3.down;
+        player.Weight -= item.weight;
+        selectedItemObject.SetActive(true);
+        inventoryCollection.Remove(item);
     }
 }

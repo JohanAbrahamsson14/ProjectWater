@@ -12,9 +12,11 @@ public class FlashLight : Tool
 
     public void Awake()
     {
-        flashLightMaterial = GetComponent<Renderer>().material;
+        flashLightMaterial = GetComponentInParent<Renderer>().material;
         flashLightOnColor = flashLightMaterial.GetColor("_EmissionColor");
-        ToolAction();
+        
+        lightCone.SetActive(isLightActive);
+        flashLightMaterial.SetColor("_EmissionColor", isLightActive ? flashLightOnColor : Color.black);
     }
 
     public override void ToolAction()

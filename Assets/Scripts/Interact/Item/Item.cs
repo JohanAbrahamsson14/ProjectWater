@@ -20,6 +20,7 @@ public class Item : MonoBehaviour, IInteractable
     public void Action(FirstPersonController player)
     {
         player.inventory.inventoryCollection.Add(this);
+        player.inventory.addUIItem(this);
         player.Weight += weight;
         itemObject.SetActive(false);
     }

@@ -18,7 +18,7 @@ public class ItemUIInteractable : MonoBehaviour, IInteractableMouse
 
     public void SecondaryInteract(InteractorMouse interactor, Inventory inventory)
     {
-        inventory.inventoryCollection.Remove(item);
+        inventory.removeUIItem(item);
         Destroy(gameObject);
     }
 }
