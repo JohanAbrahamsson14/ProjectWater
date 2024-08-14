@@ -6,15 +6,24 @@ public class MouseLook : MonoBehaviour
     public Transform playerBody;
     public FirstPersonController player;
     float xRotation = 0f;
+    public bool mouseActive;
 
     void Start()
     {
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
-        if(player.isGrabbed) return;
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            mouseActive = !mouseActive;
+            Cursor.visible = mouseActive;
+            Cursor.lockState = mouseActive ? CursorLockMode.None : CursorLockMode.Locked;
+        }
+        
+        if(player.isGrabbed || Cursor.lockState == CursorLockMode.None) return;
         
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
