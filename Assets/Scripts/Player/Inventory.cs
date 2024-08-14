@@ -44,7 +44,7 @@ public class Inventory : MonoBehaviour
 
     private void IsNotActiveItem(Rigidbody2D rb, ItemUIInteractable itemUIInteractable)
     {
-        activeItem = null;
+        RemoveSetActiveItem();
         itemUIInteractable.gameObject.transform.SetParent(holder.transform);
         itemUIInteractable.gameObject.transform.localPosition = Vector3.zero;
         rb.velocity = Vector2.zero;
@@ -54,7 +54,7 @@ public class Inventory : MonoBehaviour
     
     private void IsActiveItem(Rigidbody2D rb, ItemUIInteractable itemUIInteractable, Item item)
     {
-        activeItem = item;
+        SetToActiveItem(item);
         itemUIInteractable.gameObject.transform.SetParent(activeItemHolder.transform);
         itemUIInteractable.gameObject.transform.localPosition = Vector3.zero;
         rb.velocity = Vector2.zero;
@@ -71,12 +71,44 @@ public class Inventory : MonoBehaviour
     }
     public void removeUIItem(Item item)
     {
-        if (item == activeItem) activeItem = null;
         inventoryCollection.Remove(item);
         GameObject selectedItemObject = item.itemObject;
         selectedItemObject.transform.position = transform.position+Vector3.down;
         player.Weight -= item.weight;
         selectedItemObject.SetActive(true);
         inventoryCollection.Remove(item);
+    }
+
+    public void SetToActiveItem(Item item)
+    {
+        if (activeItem != null)
+        {
+            RemoveSetActiveItem();
+        }
+        activeItem = item;
+        item.itemObject.transform.SetParent(player.activeItemObject.transform);
+        item.itemObject.transform.localPosition = Vector3.zero;
+        activeItem.itemObject.transform.localRotation = Quaternion.identity;
+        item.itemObject.SetActive(true);
+        item.itemObject.TryGetComponent(out DropDownItem dropDownItem);
+        dropDownItem.enabled = false;
+        item.TryGetComponent(out Collider collider);
+        collider.enabled = false;
+    }
+
+    private void RemoveSetActiveItem()
+    {
+        if (activeItem != null)
+        {
+            activeItem.itemObject.transform.SetParent(player.inventoryHolder.transform);
+            activeItem.itemObject.transform.localPosition = Vector3.zero;
+            activeItem.itemObject.transform.localRotation = Quaternion.identity;
+            activeItem.itemObject.SetActive(false);
+            activeItem.itemObject.TryGetComponent(out DropDownItem dropDownItemLastActive);
+            dropDownItemLastActive.enabled = true;
+            activeItem.TryGetComponent(out Collider colliderLastActive);
+            colliderLastActive.enabled = true;
+            activeItem = null;
+        }
     }
 }

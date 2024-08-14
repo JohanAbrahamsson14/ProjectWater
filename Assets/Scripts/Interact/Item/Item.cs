@@ -22,6 +22,7 @@ public class Item : MonoBehaviour, IInteractable
         player.inventory.inventoryCollection.Add(this);
         player.inventory.addUIItem(this);
         player.Weight += weight;
+        itemObject.transform.SetParent(player.inventoryHolder.transform);
         itemObject.SetActive(false);
     }
 }

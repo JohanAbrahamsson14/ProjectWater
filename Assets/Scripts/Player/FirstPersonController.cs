@@ -58,6 +58,7 @@ public class FirstPersonController : MonoBehaviour, IDamageAble
     */
     public Inventory inventory;
     public GameObject activeItemObject;
+    public GameObject inventoryHolder;
 
     void Start()
     {
