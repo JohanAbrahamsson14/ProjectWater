@@ -8,10 +8,11 @@ public class MouseLook : MonoBehaviour
     float xRotation = 0f;
     public bool mouseActive;
 
-    void Start()
+    void Awake()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        player.inventoryGraphicHolder.transform.position = new Vector3(580.5f,-304.5f,0);
     }
 
     void Update()
@@ -21,6 +22,7 @@ public class MouseLook : MonoBehaviour
             mouseActive = !mouseActive;
             Cursor.visible = mouseActive;
             Cursor.lockState = mouseActive ? CursorLockMode.None : CursorLockMode.Locked;
+            player.inventoryGraphicHolder.transform.position =  mouseActive? new Vector3(580.5f,304.5f,0) : new Vector3(580.5f,-304.5f,0);
         }
         
         if(player.isGrabbed || Cursor.lockState == CursorLockMode.None) return;

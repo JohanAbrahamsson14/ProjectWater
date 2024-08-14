@@ -46,7 +46,7 @@ public class Inventory : MonoBehaviour
     {
         RemoveSetActiveItem();
         itemUIInteractable.gameObject.transform.SetParent(holder.transform);
-        itemUIInteractable.gameObject.transform.localPosition = Vector3.zero;
+        itemUIInteractable.gameObject.transform.position = spawnPoint.transform.position;
         rb.velocity = Vector2.zero;
         rb.freezeRotation = false;
         rb.gravityScale = 10;
@@ -71,10 +71,12 @@ public class Inventory : MonoBehaviour
     }
     public void removeUIItem(Item item)
     {
+        RemoveSetActiveItem();
         inventoryCollection.Remove(item);
         GameObject selectedItemObject = item.itemObject;
         selectedItemObject.transform.position = transform.position+Vector3.down;
         player.Weight -= item.weight;
+        selectedItemObject.transform.parent = null;
         selectedItemObject.SetActive(true);
         inventoryCollection.Remove(item);
     }

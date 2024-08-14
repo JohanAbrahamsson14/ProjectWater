@@ -1636,6 +1636,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &597863279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2252580337940764769, guid: 8e44961fb20b8154889fe862444e0942,
+    type: 3}
+  m_PrefabInstance: {fileID: 2918495090953351749}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &598650750
 GameObject:
   m_ObjectHideFlags: 0
@@ -4295,6 +4301,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 398025493515029109, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 398025493515029109, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 398025493515029109, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 398025493515029109, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 398025493515029109, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 398025493515029109, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 398025493515029109, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 398025493515029109, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2918495091219997891, guid: 8e44961fb20b8154889fe862444e0942,
         type: 3}
       propertyPath: m_Name
@@ -4315,6 +4361,11 @@ PrefabInstance:
       propertyPath: activeItemObject
       value: 
       objectReference: {fileID: 1160825076}
+    - target: {fileID: 2918495091219997902, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: inventoryGraphicHolder
+      value: 
+      objectReference: {fileID: 597863279}
     - target: {fileID: 2918495091219997903, guid: 8e44961fb20b8154889fe862444e0942,
         type: 3}
       propertyPath: m_RootOrder

@@ -60,6 +60,8 @@ public class FirstPersonController : MonoBehaviour, IDamageAble
     public GameObject activeItemObject;
     public GameObject inventoryHolder;
 
+    public GameObject inventoryGraphicHolder;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
