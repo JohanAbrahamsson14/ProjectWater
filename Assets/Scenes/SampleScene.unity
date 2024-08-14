@@ -2198,6 +2198,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1160825076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 817242977403414317, guid: 8e44961fb20b8154889fe862444e0942,
+    type: 3}
+  m_PrefabInstance: {fileID: 2918495090953351749}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1177687158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4128,6 +4134,11 @@ PrefabInstance:
       propertyPath: underwaterPostProcessProfile
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2918495091219997902, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: activeItemObject
+      value: 
+      objectReference: {fileID: 1160825076}
     - target: {fileID: 2918495091219997903, guid: 8e44961fb20b8154889fe862444e0942,
         type: 3}
       propertyPath: m_RootOrder
@@ -4182,6 +4193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3176134832258228150, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: activeItem
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7989052230512942379, guid: 8e44961fb20b8154889fe862444e0942,
         type: 3}
