@@ -2709,6 +2709,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2918495090953351749}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1414578328 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3176134832258228150, guid: 8e44961fb20b8154889fe862444e0942,
+    type: 3}
+  m_PrefabInstance: {fileID: 2918495090953351749}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f88b9ff85588d64fb8366f574bb5814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1479816892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4106,6 +4118,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2918495091219997896, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: sun
+      value: 
+      objectReference: {fileID: 410087040}
+    - target: {fileID: 2918495091219997896, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: underwaterPostProcessProfile
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2918495091219997903, guid: 8e44961fb20b8154889fe862444e0942,
         type: 3}
       propertyPath: m_RootOrder
@@ -4161,5 +4183,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7989052230512942379, guid: 8e44961fb20b8154889fe862444e0942,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1414578328}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e44961fb20b8154889fe862444e0942, type: 3}
