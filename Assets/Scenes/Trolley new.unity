@@ -4444,7 +4444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path1Segment: {fileID: 771826895}
   path2Segment: {fileID: 1899677491}
-  choosePath2: 0
+  choosePath2: 1
 --- !u!1 &923430885
 GameObject:
   m_ObjectHideFlags: 0
