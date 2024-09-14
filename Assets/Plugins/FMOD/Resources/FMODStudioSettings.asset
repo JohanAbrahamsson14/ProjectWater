@@ -402,7 +402,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
@@ -416,21 +417,21 @@ MonoBehaviour:
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131617
-  HideSetupWizard: 0
+  HideSetupWizard: 1
   LastEventReferenceScanVersion: 131617
   Platforms:
-  - {fileID: 3164545519559082730}
-  - {fileID: 8852046453658862732}
-  - {fileID: 2221342471704291448}
-  - {fileID: 6144643555092323988}
-  - {fileID: 3752961325692783182}
-  - {fileID: -3939235439121164997}
-  - {fileID: 7840335157153945422}
-  - {fileID: -883405484728300787}
   - {fileID: -9058636644495398295}
-  - {fileID: -4380038197073491051}
   - {fileID: -6448271953270510875}
+  - {fileID: -4380038197073491051}
+  - {fileID: -3939235439121164997}
+  - {fileID: -883405484728300787}
+  - {fileID: 2221342471704291448}
+  - {fileID: 3164545519559082730}
+  - {fileID: 3752961325692783182}
   - {fileID: 4049415760840811708}
+  - {fileID: 6144643555092323988}
+  - {fileID: 7840335157153945422}
+  - {fileID: 8852046453658862732}
   MigratedPlatforms: 0c000000150000000b0000000a0000000900000012000000000000000800000005000000060000000200000001000000
 --- !u!114 &2221342471704291448
 MonoBehaviour:
@@ -940,16 +941,16 @@ MonoBehaviour:
     HasValue: 0
   displaySortOrder: 0
   childIdentifiers:
-  - c88d16e5272a4e241b0ef0ac2e53b73d
-  - fd7c55dab0fce234b8c25f6ffca523c1
-  - 2c5177b11d81d824dbb064f9ac8527da
-  - de700ef3f37a49b58a57ae3addf01ad9
-  - e7a046c753c3c3d4aacc91f6597f310d
-  - 52eb9df5db46521439908db3a29a1bbb
   - b7716510a1f36934c87976f3a81dbf3d
-  - 0f8eb3f400726694eb47beb1a9f94ce8
   - 46fbfdf3fc43db0458918377fd40293e
+  - 0f8eb3f400726694eb47beb1a9f94ce8
+  - de700ef3f37a49b58a57ae3addf01ad9
+  - 52eb9df5db46521439908db3a29a1bbb
+  - c88d16e5272a4e241b0ef0ac2e53b73d
+  - 2c5177b11d81d824dbb064f9ac8527da
   - 2fea114e74ecf3c4f920e1d5cc1c4c40
+  - fd7c55dab0fce234b8c25f6ffca523c1
+  - e7a046c753c3c3d4aacc91f6597f310d
   codecChannels:
     Value: []
     HasValue: 0

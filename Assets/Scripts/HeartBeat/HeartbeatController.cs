@@ -1,17 +1,22 @@
 using System.Collections;
 using UnityEngine;
+using FMODUnity;
+
 
 public class HeartbeatController : MonoBehaviour
 {
-    public AudioSource heartbeatSource;
-    public AudioClip heartbeatClip;
+    // public AudioSource heartbeatSource;
+    // public AudioClip heartbeatClip;
     public float bpm = 60f;
     private float nextBeatTime = 0f;
     private float beatInterval;
 
+    public EventReference heartbeatRef;
+
     void Start()
     {
-        if (heartbeatSource == null)
+
+        /*if (heartbeatSource == null)
         {
             heartbeatSource = GetComponent<AudioSource>();
         }
@@ -27,7 +32,8 @@ public class HeartbeatController : MonoBehaviour
             return;
         }
 
-        heartbeatSource.clip = heartbeatClip;
+        heartbeatSource.clip = heartbeatClip;*/
+
         beatInterval = 60f / bpm;
         nextBeatTime = Time.time + beatInterval;
     }
@@ -36,11 +42,13 @@ public class HeartbeatController : MonoBehaviour
     {
         beatInterval = 60f / bpm;
 
-        if (heartbeatSource != null && Time.time >= nextBeatTime)
+        if (/*heartbeatSource != null &&*/ Time.time >= nextBeatTime)
         {
-            heartbeatSource.PlayOneShot(heartbeatClip);
+            RuntimeManager.PlayOneShot(heartbeatRef);
+            //heartbeatSource.PlayOneShot(heartbeatClip);
             nextBeatTime = Time.time + beatInterval;
         }
+
     }
 
     public void SetBPM(float newBPM)
